@@ -1,6 +1,6 @@
 # Research Thesis: Physical AI Technology Baseline
 
-**Constitution Ref**: workspace/constitution.md (pin `1.2.0`)
+**Constitution Ref**: workspace/constitution.md (pin `1.3.0`)
 **Created**: 2026-09-10
 **Status**: Active
 **Phase**: 0 — Foundation (GATES ALL)
@@ -55,7 +55,7 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 
 **wrong_if**: `metric=general_purpose_humanoid_commercial_units_deployed threshold=>10000 source=company_and_fleet_disclosures`
 
-**Subscribed**: `TSLA × secular-trends`, `ISRG × secular-trends`, `TSLA × unit-economics`, `ISRG × unit-economics`, `AMZN × operational-kpi`
+**Subscribed**: `TSLA × secular-trends`, `ISRG × secular-trends`, `TSLA × unit-economics`, `ISRG × unit-economics`, `AMZN × operational-kpi`, `SPCX × supply-chain`
 
 
 > Delivering P1 alone MUST yield a defensible partial conclusion. Research is
@@ -65,18 +65,19 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 ## 2. Universe Definition
 | Ticker | Company | Sector | Weight in Thesis | Rationale for Inclusion |
 |---|---|---|:---:|---|
-| NVDA | Compute reference | IT | 20% | Baseline for the compute-boundness counterfactual |
-| ISRG | Robotic reliability benchmark | Health Care | 20% | Only US-listed company with a decade of surgical-robot MTBF disclosure |
-| TSLA | Integrated humanoid programme | Cons Disc | 20% | Only US-listed large-cap with a disclosed humanoid programme |
-| AMZN | Warehouse automation deployer | Cons Disc | 20% | Largest disclosed fleet-scale robotics deployer |
-| PH | Motion-control proxy | Industrials | 20% | Only analyzable large-cap with a disclosed Motion Systems segment — the sole route to actuator content |
+| NVDA | Compute reference | IT | ~16.7% | Baseline for the compute-boundness counterfactual |
+| ISRG | Robotic reliability benchmark | Health Care | ~16.7% | Only US-listed company with a decade of surgical-robot MTBF disclosure |
+| TSLA | Integrated humanoid programme | Cons Disc | ~16.7% | Only US-listed large-cap with a disclosed humanoid programme |
+| AMZN | Warehouse automation deployer | Cons Disc | ~16.7% | Largest disclosed fleet-scale robotics deployer |
+| PH | Motion-control proxy | Industrials | ~16.7% | Only analyzable large-cap with a disclosed Motion Systems segment — the sole route to actuator content |
+| SPCX | End-market robotics/automation deployer | Industrials | ~16.7% | Largest end-market name (constitution 1.3.0): Starlink backhaul for autonomy fleets, in-house robotics/automation at scale, capex/compute demand feeding the upstream chain; one public quarter (10-Q 2026-08-04), held to the P8 evidence loop |
 
 ## 3. Skill Deployment Matrix
 | Skill | Vertical | Depth | Tickers | Market Data Stage (Q41) | Purpose |
 |---|---|:---:|---|---|---|
 | `secular-trends` | equity-research-core | standard | NVDA, ISRG, TSLA | none | Technology adoption curve and disruption timing |
 | `unit-economics` | business-intelligence | standard | TSLA, ISRG, PH | none | Per-unit cost structure; PH Motion Systems segment cost stack |
-| `supply-chain` | industry-analysis | standard | NVDA, AMZN, PH | none | Physical dependency mapping; actuator/motion component chain |
+| `supply-chain` | industry-analysis | standard | NVDA, AMZN, PH, SPCX | none | Physical dependency mapping; actuator/motion component chain; SPCX upstream capex/compute demand (timing evidence for PIL-4) |
 | `operational-kpi` | business-intelligence | standard | ISRG, AMZN | none | Reliability and utilisation metrics |
 | `risk` | equity-research-core | standard | NVDA, TSLA | none | Technology and execution risk |
 
@@ -97,7 +98,7 @@ This thesis is the workspace's technology primitive. Every downstream thesis (T-
 ## 7. Thesis Phases
 | Phase | Tasks | Duration | Dependencies |
 |:---:|------|:---:|------|
-| 1 — Literature and physics baseline | T-001 tasks: torque density, energy density, BOM physics | Week 1 | Constitution v1.2.0 |
+| 1 — Literature and physics baseline | T-001 tasks: torque density, energy density, BOM physics | Week 1 | Constitution v1.3.0 |
 | 2 — Data-economics quantification | Cost per hour of teleop vs egocentric vs synthetic | Week 2 | Phase 1 |
 | 3 — Reliability evidence | MTBF, task success rates from filings and transcripts | Week 3 | Phase 2 |
 | 4 — Timing synthesis | Publish the capability timeline with falsifiers | Week 4 | Phase 3 |
@@ -113,12 +114,12 @@ pillars:
   title: Data, not compute, is the binding constraint
   wrong_if:
     metric: embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude
-    threshold: '>1000'
+    threshold: '>3'
     source: industry_technical_disclosures
     op: '>'
   subscriptions:
   - secular-trends × default
-  - business-model × default
+  - supply-chain × default
 - id: PIL-2
   priority: P2
   title: Actuators dominate BOM; compute is marginal
@@ -140,6 +141,7 @@ pillars:
     op: '>'
   subscriptions:
   - operational-kpi × default
+  - secular-trends × default
   - risk × default
 - id: PIL-4
   priority: P4
@@ -149,8 +151,10 @@ pillars:
     threshold: '>10000'
     source: company_and_fleet_disclosures
   subscriptions:
-  - secular-trends × deep
-  - recent-quarter × default
+  - secular-trends × standard
+  - unit-economics × default
+  - operational-kpi × default
+  - supply-chain × default
 budget:
   max_tasks: 80
   max_retries_per_task: 2
@@ -159,10 +163,15 @@ expiry_triggers:
 - constitution_bump
 - skill_version_mix
 macro_sensitivity: medium
-constitution_pin: 1.2.0
+constitution_pin: 1.3.0
 ```
 
 ## Clarifications
+
+- [2026-09-10] Q: Constitution 1.3.0 added SPCX to the covered universe; T-001 pins 1.2.0 and is marked Stale (re-examination pending gate-5). How should SPCX enter T-001's §2 Universe Definition? → A: Add SPCX now and re-pin to 1.3.0: §2 gains an SPCX row, constitution_pin moves to 1.3.0, and Status moves from Stale to Active. This advances T-001's share of the 1.3.0 SPCX re-examination ahead of gate-5.
+- [2026-09-10] Q: Universe weights are currently equal (5 × 20%, per clarify round 1; T-015 overrides with real sizing). What weight does SPCX get in the Weight in Thesis column? → A: Equal weight: six names at ~16.7% each, continuing the round-1 equal-weight ruling; T-015 still overrides with real sizing.
+- [2026-09-10] Q: Which pillars should carry SPCX in their Subscribed lines (TICKER × skill pairs)? This determines which claims SPCX evidence feeds and which tasks flip on SPCX events. → A: P4 only. P4's Subscribed line gains SPCX × supply-chain — SPCX capex/compute demand is the upstream leading indicator of embodied-AI deployment timing. No P1/P3 subscription.
+- [2026-09-10] Q: Which §3 Skill Deployment Matrix rows should add SPCX (Depth: standard, matching existing rows)? → A: supply-chain only: the row becomes NVDA, AMZN, PH, SPCX and its purpose extends to SPCX's upstream capex/compute demand. No secular-trends or operational-kpi row for SPCX — one public quarter (10-Q 2026-08-04 plus 8-Ks) is insufficient KPI history.
 
 - [2026-09-10] Q: PIL-1 wrong_if: the metric measures orders of magnitude; the threshold was stated as a raw multiple (>1000). Which unit governs? → A: Threshold restated in the metric own units: threshold=>3 (the embodied-data gap exceeds 3 orders of magnitude, ~1000x). Source unchanged: industry_technical_disclosures. The prior >1000 was dimensionally ambiguous.
 - [2026-09-10] Q: Pillar subscriptions were skill-only tokens (e.g. secular-trends x default) with no ticker. dispatch.py matches ticker in subs for earnings-trigger flips and thesis_status.py regex-extracts tickers, so both silently broke. Which prefixing scheme? → A: Explicit ticker per subscription, matching the spec-template example form NVDA x business-model. P1: NVDA x secular-trends, NVDA x business-model. P2: TSLA x unit-economics, AMZN x supply-chain. P3: ISRG x operational-kpi, ISRG x risk. P4: TSLA x secular-trends, NVDA x recent-quarter. Derived ticker coverage now resolves to NVDA, TSLA, ISRG, AMZN.

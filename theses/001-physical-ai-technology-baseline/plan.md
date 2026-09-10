@@ -6,10 +6,10 @@
 > after sizing (aggregate), because `position_pct` does not exist until then.
 
 **Thesis**: `theses/001-physical-ai-technology-baseline/`
-**Constitution pin**: `1.2.0`
-**Planned**: 2026-09-10 (rev. 3 — see Revision Note)
+**Constitution pin**: `1.3.0`
+**Planned**: 2026-09-10 (rev. 4 — see Revision Note)
 **Phase**: 0 — Foundation (gates all other theses)
-**Tasks**: 25 generated (23 decomposition + 2 synthesis), 13 parallelisable — see `tasks.md`
+**Tasks**: 26 generated (24 decomposition + 2 synthesis), 14 parallelisable — see `tasks.md`
 
 ---
 
@@ -52,6 +52,33 @@ upstream generator.
    renumbered, reordered or deleted from"). The header now states the append-only
    rule and carries the `agentii.converge` marker.
 
+Rev. 4 additions (constitution 1.3.0 re-examination, 2026-09-10): the MINOR bump
+(SPCX added to P2; P8 PDCA added) marked T-001 stale and dispatched re-examination
+through gate 5. This plan is the P8 Check→Plan return: the amended P2 surfaced a
+new key question ("does SPCX evidence enter the technology baseline?") and the
+answer changed the plan, not the pillars.
+
+9. **SPCX entered the universe and exactly one evidence path.** §2 gains an SPCX
+   row (equal weight ~16.7%, six names — clarify round 2 continues the round-1
+   equal-weight ruling; T-015 still overrides with real sizing). `SPCX ×
+   supply-chain` is subscribed to PIL-4 only: SPCX capex/compute demand is the
+   upstream leading indicator of embodied-AI deployment timing. No P1/P3
+   subscription, and no `secular-trends`/`operational-kpi` row — one public
+   quarter (10-Q 2026-08-04 plus 8-Ks) is insufficient KPI history.
+10. **Generator regression found and fixed.** The rev. 3 upstream fixes to
+    `scripts/agentii_cmd.py` — pillar derivation from the spec's `Subscribed:`
+    lists and Purpose-column passthrough — had been lost in a plugin reset, so
+    the `tasks` subcommand regressed to `src: P1` / "per spec deployment matrix"
+    on every row. Restored (`_pillars_of_skills` + purpose passthrough) and
+    verified byte-comparable against rev. 3's rows before regenerating.
+11. **Task ledger regenerated.** The matrix change (supply-chain row now NVDA,
+    AMZN, PH, SPCX) inserts T016 `SPCX × supply-chain` and renumbers the tail:
+    24 decomposition + 2 synthesis = 26 tasks, 14 `[P]`. `tasks.md` was
+    re-generated (plan re-authoring exception, documented in its header) and
+    `agentii.converge` re-ran to re-derive the Convergence section — 24
+    missing-artifact rows, content-derived IDs unchanged where state is
+    unchanged.
+
 ---
 
 ## Constitution Check — first evaluation (scalar + scope)
@@ -60,10 +87,10 @@ Run at plan start, before any dispatch.
 
 | Constraint | Status | Evidence |
 |---|---|---|
-| Research scope — market cap | **PASS** | NVDA, ISRG, TSLA, AMZN, PH all exceed the $100M floor and sit below the $2T ceiling |
-| Research scope — regions | **PASS** | All five US-listed: NVDA/ISRG/TSLA/AMZN Nasdaq, PH NYSE (`sec166`, CIK 0000076334) |
+| Research scope — market cap | **PASS** | All six exceed the $100M floor and sit below the $2T ceiling — SPCX at $1.62T (`get_company_profile`, freshness 2026-08-26) is the largest but in-range |
+| Research scope — regions | **PASS** | All six US-listed: NVDA/ISRG/TSLA/AMZN Nasdaq, PH NYSE (`sec166`, CIK 0000076334), SPCX Nasdaq (CIK 0001181412) |
 | Research scope — excluded sectors | **PASS** | Constitution excludes none categorically; theses span IT, Health Care, Cons Disc, Industrials by design |
-| P2 — coverage-bounded universe | **PASS** | All five return filings, documents and XBRL facts. PH: 166 filings, 80 docs, 36 revenue facts (FY26 revenue $21.499B per `ph-20260630.htm`) |
+| P2 — coverage-bounded universe | **PASS** | All six return filings, documents and XBRL facts. PH: 166 filings, 80 docs, 36 revenue facts (FY26 revenue $21.499B per `ph-20260630.htm`). SPCX: 9 filings (8-K ×8, 10-Q ×1; sec1–sec9, first 2026-06-15), H1-2026 revenue $12.508B (`spcx-20260630.htm`, is_primary) |
 | P2.1 — coverage verification | **PASS** | Each ticker confirmed by direct retrieval across two revenue concepts, not by index lookup |
 | POS_SINGLE (≤8%) | **N/A at plan time** | Position sizing does not exist until Phase 5; evaluated in the second Constitution Check |
 | STOP_THESIS (≤30%) | **N/A at plan time** | As above |
@@ -82,17 +109,17 @@ Every `ticker × skill` pair below appears in `spec.md` §3 and in its pillar's
 | Phase | Content | Skills (ticker × skill × mode) | Depends on |
 |:---:|------|------|---|
 | 1 — Physics and Literature Baseline | Primitive quantities: torque density, energy density, actuator power budget, thermal envelope | `NVDA × secular-trends × standard`, `ISRG × secular-trends × standard`, `TSLA × secular-trends × standard` | Constitution loaded |
-| 2 — Component Economics and Dependency | Actuator/motion cost stack and the physical supply chain — the PIL-2 evidence base | `PH × unit-economics × standard`, `PH × supply-chain × standard`, `TSLA × unit-economics × standard`, `ISRG × unit-economics × standard`, `NVDA × supply-chain × standard`, `AMZN × supply-chain × standard` | Phase 1 |
+| 2 — Component Economics and Dependency | Actuator/motion cost stack and the physical supply chain — the PIL-2 evidence base; SPCX upstream capex/compute demand (PIL-4 timing evidence) | `PH × unit-economics × standard`, `PH × supply-chain × standard`, `SPCX × supply-chain × standard`, `TSLA × unit-economics × standard`, `ISRG × unit-economics × standard`, `NVDA × supply-chain × standard`, `AMZN × supply-chain × standard` | Phase 1 |
 | 3 — Reliability Evidence | Disclosed MTBF, task success rates, deployment scale from filings and transcripts | `ISRG × operational-kpi × standard`, `AMZN × operational-kpi × standard` | Phase 2 |
 | 4 — Risk and Timing Synthesis | Fuse phases 1–3 into a dated capability timeline with explicit falsifiers; produce cross-stock synthesis and snapshot | `NVDA × risk × standard`, `TSLA × risk × standard`, cross-stock synthesis | Phases 1–3 |
 | 5 — Trade Ideas | Dateable catalysts + sizing per `constitution.yaml` | Position sizing + catalyst dating | Phase 4 |
 
-**Budget**: 25 tasks (see `tasks.md`) — 23 ticker×skill×mode rows plus 2 synthesis
+**Budget**: 26 tasks (see `tasks.md`) — 24 ticker×skill×mode rows plus 2 synthesis
 deliverables. Within the `max_tasks: 80` thesis budget and the `max_tasks_per_day: 60`
-workspace budget. 13 tasks carry `[P]` and may run concurrently; 10 serialise behind
+workspace budget. 14 tasks carry `[P]` and may run concurrently; 10 serialise behind
 their `(ticker, skill)` predecessor; the 2 synthesis tasks are never `[P]` (cross-ticker).
 Each task's `src:` names the pillar it serves, derived from the spec's `Subscribed:`
-lists via the fixed generator.
+lists via the restored rev. 3 generator.
 
 ---
 
@@ -106,7 +133,7 @@ check that caught the rev. 1 defect.
 | PIL-1 — Data, not compute, is binding | P1 | `embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude > 3` | `NVDA × secular-trends`, `NVDA × supply-chain`, `AMZN × supply-chain` | yes |
 | PIL-2 — Actuators dominate BOM | P2 | `actuator_share_of_humanoid_bom_pct < 35` | `PH × unit-economics`, `PH × supply-chain` | yes — **added rev. 2** |
 | PIL-3 — Manipulation reliability gates | P3 | `humanoid_mtbf_hours_in_commercial_deployment > 2000` | `ISRG × operational-kpi`, `ISRG × secular-trends`, `NVDA × risk`, `TSLA × risk` | yes |
-| PIL-4 — GPT-3.5 moment 2027–2028 | P4 | `general_purpose_humanoid_commercial_units_deployed > 10000` | `TSLA × secular-trends`, `ISRG × secular-trends`, `TSLA × unit-economics`, `ISRG × unit-economics`, `AMZN × operational-kpi` | yes |
+| PIL-4 — GPT-3.5 moment 2027–2028 | P4 | `general_purpose_humanoid_commercial_units_deployed > 10000` | `TSLA × secular-trends`, `ISRG × secular-trends`, `TSLA × unit-economics`, `ISRG × unit-economics`, `AMZN × operational-kpi`, `SPCX × supply-chain` | yes |
 
 **P1 alone yields a defensible partial conclusion** (Q30): if budget halts after
 Phase 1, PIL-1 is testable from `secular-trends` and `supply-chain` output alone.
@@ -156,10 +183,11 @@ when Phase 5 produces sizing.
 
 ### Pre-flagged for T-015
 
-With PH added, T-001's research universe is 20% Industrials (PH) and 40% Consumer
-Discretionary (TSLA, AMZN) if read as a portfolio. **40% sits exactly at the
-`CONC_SECTOR` ceiling.** T-001 is research-only and the constraint does not bind here,
-but T-015 must not carry this weighting forward without re-checking.
+With six names at ~16.7% each, T-001's research universe reads as Consumer
+Discretionary 33.3% (TSLA, AMZN), Industrials 33.3% (PH, SPCX), IT 16.7% (NVDA),
+Health Care 16.7% (ISRG) — all below the `CONC_SECTOR` ceiling of 40%. T-001 is
+research-only and the constraint does not bind here, but T-015 must still derive
+its own sizing rather than carrying this weighting forward unchecked.
 
 ---
 
@@ -197,6 +225,13 @@ but T-015 must not carry this weighting forward without re-checking.
    are SKILL.md *section headings* (`triggers`, `defaults`, `methodology`,
    `retrieval-scope`, `retrieval-strategy`) rather than analysis modes. This plan uses
    `standard` throughout. See the upstream note in `reproduce.md`.
+7. **SPCX is a one-quarter public issuer.** Its evidence base is a single 10-Q
+   (2026-08-04) plus 8-Ks; there is no multi-year disclosure history. The PIL-4
+   supply-chain evidence sought from SPCX is capex/compute demand as a *timing*
+   indicator — not a robotics disclosure. Treat any SPCX automation deployment
+   claims like PIL-4's unit counts: promotional claims to triangulate, not
+   measurements. Starlink's relevance to embodied AI is indirect (P3: connectivity
+   backhaul, not embodiment itself) — keep it out of the pillar falsifiers.
 
 ---
 

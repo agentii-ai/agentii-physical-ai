@@ -15,11 +15,11 @@
 
 | skill | mode | version_hash (skill_pin) |
 |---|---|---|
-| `secular-trends` | standard | *(populated at implement)* |
-| `unit-economics` | standard | *(populated at implement)* |
-| `supply-chain` | standard | *(populated at implement)* |
-| `operational-kpi` | standard | *(populated at implement)* |
-| `risk` | standard | *(populated at implement)* |
+| `secular-trends` | standard | `e6b41dbb2426` |
+| `unit-economics` | standard | `e87ee63269a2` |
+| `supply-chain` | standard | `8cb3ac1de486` |
+| `operational-kpi` | standard | `0730fd170124` |
+| `risk` | standard | `953fc5d396e7` |
 
 **Skill source**: `agentii-investment-intelligence` @ `75ce82d`, installed flat to
 `~/.claude/skills/agentii/` (70 skills, 248 reference files).
@@ -30,12 +30,12 @@
 
 | pin | value | note |
 |---|---|---|
-| `constitution_pin` | **`1.2.0`** | P2 corrected 12→15→~30 names; P7.1 (no leverage) and P7.2 (liquidity) added |
+| `constitution_pin` | **`1.3.0`** | P2 extended ~30→~31 names (SPCX added to the end-market layer); P8 PDCA added |
 | `assumption_pin` | **`1`** | `assumptions.yaml` v1, effective 2026-09-10 |
 | `corpus_version` | `agentii-2026-09-10` | Workspace retrieval snapshot |
 | `as_of` | **2026-09-10** | Date of all retrieval in this plan |
-| `skill_pin` | `75ce82d` | Kit commit; per-skill hashes populate at implement |
-| `plan_rev` | `3` | rev.2 fixed the PIL-2 evidence gap + reconciled deployment sets; rev.3 fixed generator src:/purpose, added synthesis tasks, made tasks.md append-only |
+| `skill_pin` | per-skill hashes (table above) | recorded to `skill_pins.jsonl` at implement (Q57) |
+| `plan_rev` | `4` | rev.2 fixed the PIL-2 evidence gap + reconciled deployment sets; rev.3 fixed generator src:/purpose, added synthesis tasks, made tasks.md append-only; rev.4 constitution 1.3.0 re-examination: SPCX added to the universe, supply-chain row extended, tasks regenerated (26 tasks) |
 
 **Reproducibility caveat.** A reader reconstructing this work at a later date must
 supply `constitution_pin: 1.2.0` and `assumption_pin: 1`. If the constitution has
@@ -120,3 +120,10 @@ python3 scripts/agentii_cmd.py tasks \
    `0b43378`): the subscription capture was not line-anchored, and its predicate
    accepted `skill × mode` in place of `TICKER × skill`. Together these produced one
    false positive per spec while missing every real violation.
+6. **`dispatch.py` journals only the cwd-fallback path** (S1 scope; the full
+   implement wrapper is upstream task T053). With `--thesis-dir` passed explicitly
+   — the mandatory Q37 path — no journal line is written. The 24 dispatch records
+   in `shards/run1.ndjson` were therefore written by the implementer via
+   `journal.append_entry` with `thesis_resolution: explicit`, then reduced by
+   `reduce_journals.py` (24 entries). Until T053 lands, implement must append
+   explicit-path dispatch records itself or the reducer sees an empty journal.
