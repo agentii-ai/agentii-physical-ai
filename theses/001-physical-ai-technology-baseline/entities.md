@@ -57,6 +57,8 @@ entity_claims:
 | *(industry)* | teleop_cost_per_hour | usd | teardown / trade press | PIL-1 |
 | *(industry)* | egocentric_capture_cost_per_hour | usd | teardown / trade press | PIL-1 |
 | *(industry)* | embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude | orders | technical publication | PIL-1 |
+| PH | motion_systems_segment_operating_margin | pct | 10-K segment data | PIL-2 |
+| PH | motion_systems_segment_revenue | usd | 10-K segment data | PIL-2 |
 | *(industry)* | actuator_share_of_humanoid_bom_pct | pct | teardown | PIL-2 |
 | *(industry)* | planetary_roller_screw_share_of_bom_pct | pct | teardown | PIL-2 |
 | *(industry)* | humanoid_mtbf_hours_in_commercial_deployment | hours | company / fleet operator | PIL-3 |
@@ -80,7 +82,7 @@ Every entity must be confirmed retrievable before its claims are used.
 | ISRG | 173 | present | 63 revenue facts | **retrievable** |
 | TSLA | 259 | 92 | 63,523 facts | **retrievable** |
 | AMZN | 86 | present | present | **retrievable** |
-| PH | 166 | 80 | 36 revenue facts | retrievable (used in PIL-2 context) |
+| PH | 166 | 80 | 36 revenue facts (FY26 rev $21.499B) | **retrievable — added to T-001 universe in plan rev. 2 to carry PIL-2** |
 | EMR | 67 | present | present | retrievable (used in PIL-2 context) |
 
 **No entity in this thesis was declared out-of-universe from an index lookup.** Each

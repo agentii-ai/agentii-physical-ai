@@ -15,13 +15,11 @@
 
 | skill | mode | version_hash (skill_pin) |
 |---|---|---|
-| `secular-trends` | default | *(populated at implement)* |
-| `business-model` | default | *(populated at implement)* |
-| `operational-kpi` | default | *(populated at implement)* |
-| `recent-quarter` | default | *(populated at implement)* |
-| `risk` | default | *(populated at implement)* |
-| `supply-chain` | deep | *(populated at implement)* |
+| `secular-trends` | standard | *(populated at implement)* |
 | `unit-economics` | standard | *(populated at implement)* |
+| `supply-chain` | standard | *(populated at implement)* |
+| `operational-kpi` | standard | *(populated at implement)* |
+| `risk` | standard | *(populated at implement)* |
 
 **Skill source**: `agentii-investment-intelligence` @ `75ce82d`, installed flat to
 `~/.claude/skills/agentii/` (70 skills, 248 reference files).
@@ -37,6 +35,7 @@
 | `corpus_version` | `agentii-2026-09-10` | Workspace retrieval snapshot |
 | `as_of` | **2026-09-10** | Date of all retrieval in this plan |
 | `skill_pin` | `75ce82d` | Kit commit; per-skill hashes populate at implement |
+| `plan_rev` | `2` | Plan revision — rev. 2 fixed the PIL-2 evidence gap and reconciled the three deployment sets |
 
 **Reproducibility caveat.** A reader reconstructing this work at a later date must
 supply `constitution_pin: 1.2.0` and `assumption_pin: 1`. If the constitution has
@@ -103,3 +102,17 @@ python3 scripts/agentii_cmd.py tasks \
 2. **`frameworks` and `strategies` knowledge stores returned empty** for the
    NVDA/fundamental query on 2026-09-10. The brief records this rather than
    substituting invented references.
+3. **`depth: deep` is unsafe for 62 of 71 skills.** `skill-registry.yaml` leaves
+   `essentials_modes` empty for those skills, so `depth_to_modes` expands `deep` to
+   the skill's `modes` list — but for these skills those slugs are **SKILL.md section
+   headings** (`triggers`, `defaults`, `methodology`, `retrieval-scope`,
+   `retrieval-strategy`), not analysis modes. A `deep` matrix row therefore generates
+   tasks named after document structure. Skills with real modes (e.g. `business-model`:
+   `business-model-classification`, `distribution-channel-analysis`, …) behave
+   correctly. This thesis uses `standard` throughout. **Upstream fix needed**: populate
+   `essentials_modes` for the 62 affected skills, or make `depth_to_modes` reject
+   section-heading slugs.
+4. **`agentii.clarify` scanner had two defects** (fixed upstream, kit commit
+   `0b43378`): the subscription capture was not line-anchored, and its predicate
+   accepted `skill × mode` in place of `TICKER × skill`. Together these produced one
+   false positive per spec while missing every real violation.

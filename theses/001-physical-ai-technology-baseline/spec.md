@@ -22,7 +22,7 @@ Robotics foundation models train on a small fraction of frontier compute because
 
 **wrong_if**: `metric=embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude threshold=>3 source=industry_technical_disclosures op=>`
 
-**Subscribed**: `NVDA × secular-trends`, `NVDA × business-model`
+**Subscribed**: `NVDA × secular-trends`, `NVDA × supply-chain`, `AMZN × supply-chain`
 
 ### Pillar 2 — Actuators dominate BOM; compute is marginal (Priority: P2)
 Actuator + screw + reducer + motor content is 40-70% of a humanoid's bill of materials; the AI compute stack is only ~10-15%.
@@ -33,7 +33,7 @@ Actuator + screw + reducer + motor content is 40-70% of a humanoid's bill of mat
 
 **wrong_if**: `metric=actuator_share_of_humanoid_bom_pct threshold=<35 source=public_teardown_or_10K_disclosure op=<`
 
-**Subscribed**: `TSLA × unit-economics`, `AMZN × supply-chain`
+**Subscribed**: `PH × unit-economics`, `PH × supply-chain`
 
 ### Pillar 3 — Manipulation reliability, not intelligence, gates deployment (Priority: P3)
 The gating engineering problem is mean-time-between-failure and task success rate in unstructured environments — not model capability.
@@ -44,7 +44,7 @@ The gating engineering problem is mean-time-between-failure and task success rat
 
 **wrong_if**: `metric=humanoid_mtbf_hours_in_commercial_deployment threshold=>2000 source=company_disclosure_or_fleet_operator op=>`
 
-**Subscribed**: `ISRG × operational-kpi`, `ISRG × risk`
+**Subscribed**: `ISRG × operational-kpi`, `ISRG × secular-trends`, `NVDA × risk`, `TSLA × risk`
 
 ### Pillar 4 — The 'GPT-3.5 moment' arrives late 2027 through 2028 (Priority: P4)
 Consensus timing for a step-change in general-purpose embodied capability is 2027-2028, not 2026.
@@ -55,7 +55,7 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 
 **wrong_if**: `metric=general_purpose_humanoid_commercial_units_deployed threshold=>10000 source=company_and_fleet_disclosures`
 
-**Subscribed**: `TSLA × secular-trends`, `NVDA × recent-quarter`
+**Subscribed**: `TSLA × secular-trends`, `ISRG × secular-trends`, `TSLA × unit-economics`, `ISRG × unit-economics`, `AMZN × operational-kpi`
 
 
 > Delivering P1 alone MUST yield a defensible partial conclusion. Research is
@@ -65,17 +65,18 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 ## 2. Universe Definition
 | Ticker | Company | Sector | Weight in Thesis | Rationale for Inclusion |
 |---|---|---|:---:|---|
-| NVDA | Compute reference | IT | 25% | Baseline for the compute-boundness counterfactual |
-| ISRG | Robotic reliability benchmark | Health Care | 25% | Only US-listed company with a decade of surgical-robot MTBF disclosure |
-| TSLA | Integrated humanoid programme | Cons Disc | 25% | Only US-listed large-cap with a disclosed humanoid programme |
-| AMZN | Warehouse automation deployer | Cons Disc | 25% | Largest disclosed fleet-scale robotics deployer |
+| NVDA | Compute reference | IT | 20% | Baseline for the compute-boundness counterfactual |
+| ISRG | Robotic reliability benchmark | Health Care | 20% | Only US-listed company with a decade of surgical-robot MTBF disclosure |
+| TSLA | Integrated humanoid programme | Cons Disc | 20% | Only US-listed large-cap with a disclosed humanoid programme |
+| AMZN | Warehouse automation deployer | Cons Disc | 20% | Largest disclosed fleet-scale robotics deployer |
+| PH | Motion-control proxy | Industrials | 20% | Only analyzable large-cap with a disclosed Motion Systems segment — the sole route to actuator content |
 
 ## 3. Skill Deployment Matrix
 | Skill | Vertical | Depth | Tickers | Market Data Stage (Q41) | Purpose |
 |---|---|:---:|---|---|---|
-| `secular-trends` | equity-research-core | deep | NVDA, ISRG, TSLA | none | Technology adoption curve and disruption timing |
-| `unit-economics` | business-intelligence | standard | TSLA, ISRG | none | Per-unit cost structure |
-| `supply-chain` | industry-analysis | deep | NVDA, AMZN | none | Physical dependency mapping |
+| `secular-trends` | equity-research-core | standard | NVDA, ISRG, TSLA | none | Technology adoption curve and disruption timing (was deep — 8 modes pulled in EV and quantum modes with no physical-AI bearing) |
+| `unit-economics` | business-intelligence | standard | TSLA, ISRG, PH | none | Per-unit cost structure; PH Motion Systems segment cost stack for PIL-2 |
+| `supply-chain` | industry-analysis | standard | NVDA, AMZN, PH | none | Physical dependency mapping; actuator/motion chain for PIL-2. Standard until registry essentials_modes are populated |
 | `operational-kpi` | business-intelligence | standard | ISRG, AMZN | none | Reliability and utilisation metrics |
 | `risk` | equity-research-core | standard | NVDA, TSLA | none | Technology and execution risk |
 
