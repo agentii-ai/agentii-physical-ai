@@ -1,0 +1,35 @@
+# assumptions.yaml — the quantitative assumption ledger (spec 046 Q4).
+# Versioned; pinned by artifacts via assumption_pin. Agents NEVER write this file —
+# changes go through agentii.constitution (single-threaded approval).
+# Deviating from a value without an explicit declared justification is silent drift.
+#
+# Ratified 2026-09-10. Market inputs observed 2026-09-10 (see sources).
+version: 1
+effective: 2026-09-10
+approved_by: workspace owner
+rationale: "Initial ratification. Rate inputs reflect the observed 2026-09-10 curve —
+  10Y at 4.83% following the September long-end selloff on oil-driven inflation
+  concerns. ERP held at 4.75 as multiples remain full. Terminal growth 2.50% is
+  deliberately below the risk-free rate (enforced by value-checks rule
+  terminal_growth_below_risk_free)."
+
+macro:
+  risk_free_rate:   { value: 4.83, source: "US 10Y Treasury, 2026-09-10", tolerance: 0.25 }
+  erp:              { value: 4.75, source: "Damodaran-style implied ERP, 2026-09" }
+  terminal_growth:  { value: 2.50, tolerance: 0.25 }
+  us_real_gdp_next_year: { value: 2.00 }
+
+sector_wacc:            # skills computing WACC must land inside the band or explain
+  # Bands are wide by design: physical-AI names carry betas from ~0.9 (automation
+  # incumbents) to ~1.6 (early-revenue pure-plays). A skill landing outside its
+  # band must state why in the artifact.
+  Information Technology: { value: 9.50, band: [8.0, 12.0] }
+  Industrials:            { value: 8.75, band: [7.5, 10.5] }
+  Consumer Discretionary: { value: 9.50, band: [8.5, 11.5] }
+  Materials:              { value: 8.50, band: [7.5, 10.0] }
+
+commodities:
+  # NdPr is the binding input for humanoid actuators (NdFeB magnets). August 2026
+  # ex-China prices fell below the $110/kg DoD floor set for MP Materials and Lynas.
+  NdPr_oxide: { value: 107.0, unit: "USD/kg, China domestic" }
+  Copper:     { value: 4.60, unit: "USD/lb" }

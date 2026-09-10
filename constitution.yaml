@@ -1,0 +1,59 @@
+# constitution.yaml — executable L1 constraints (spec 046 Q16/Q58/Q67).
+# Workspace copy scaffolded by agentii.constitution; ratified by a human.
+# Any remaining all-caps placeholder makes aggregate checks HARD-FAIL until
+# replaced (Q83) — see scripts/agentii_cmd.py:constitution_ratified.
+#
+# Ratified 2026-09-10 (constitution_pin: 1.0.0). Values trace to constitution.md
+# "Risk Framework" — change there first, then here, via `constitution amend`.
+version: 2
+constraints:
+  - id: POS_SINGLE
+    arity: scalar
+    field: position_pct
+    max: 8
+  - id: POS_BINARY
+    arity: scalar
+    field: position_pct
+    max: 4
+    when: catalyst_type == binary
+  - id: STOP_THESIS
+    arity: scalar
+    field: stop_loss_pct
+    max: 30
+  - id: CONC_SECTOR
+    arity: aggregate
+    group_by: sector
+    max: 40
+  - id: EXPO_MACRO
+    arity: aggregate
+    group_by: macro_driven
+    max: 30
+  # P7.1 — no leverage. Enforced as: gross exposure may never exceed net capital.
+  - id: LEVERAGE
+    arity: aggregate
+    field: gross_exposure_pct
+    max: 100
+  # P7.2 — liquidity. No position above 15% of 20-day ADV.
+  - id: LIQUIDITY_ADV
+    arity: scalar
+    field: position_pct_of_adv
+    max: 15
+
+# Q58 workspace-level budgets (task-count based; deterministic, harness-agnostic)
+budgets:
+  max_concurrent_subagents: 8
+  max_tasks_per_day: 60
+  max_theses_active: 3
+
+# Q67 drift thresholds: regime declarations paired with deterministic leading-indicator
+# triggers. The dispatcher daily sweep compares these mechanically; drift findings
+# go to converge + the IC agenda — detection is deterministic, correction is human.
+regime:
+  declared: EXPANSION
+  drift_triggers:
+    - indicator: ISM Manufacturing PMI
+      condition: ISM < 50 for 2 consecutive months
+    # Portfolio-level regime drift: a sustained 10Y break above 5.0% de-rates
+    # long-duration growth multiples — the central risk stated in constitution.md.
+    - indicator: US 10Y Treasury Yield
+      condition: 10Y > 5.0 for 10 consecutive trading days
