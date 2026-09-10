@@ -1,0 +1,236 @@
+<section class="page">
+<h2>Executive Summary</h2>
+<p>Across six names and 24 artifacts, the Q3-2026 disclosure record is consistent with — but does not prove — the thesis's central claim: embodied AI is data- and reliability-bound rather than compute-bound, with a step-change window of <b>2027-Q4 to 2028-Q2</b>.</p>
+<div class="headline"><b>Headline output:</b> GPT-3.5-moment interval <b>2027-Q4 to 2028-Q2</b>, confidence <b>medium</b> — an interval with a confidence band, never a point estimate.</div>
+<h3>Pillar verdicts</h3>
+<ul>
+<li><b>PIL-1 — data-bound: indeterminate.</b> No company discloses embodied-data volumes; the &gt;3-orders-of-magnitude gap test is unmeasurable. Mechanism evidence (NVDA simulation-first, TSLA fleet-data strategy) is directionally consistent; TSLA's chip-supply commentary is a recorded counterpoint.</li>
+<li><b>PIL-2 — actuator BOM 40–70%: indeterminate.</b> No teardown or 10-K discloses a humanoid BOM anywhere; PH's premium-margin Motion Systems franchise is the closest structural proxy and supports direction, not magnitude.</li>
+<li><b>PIL-3 — reliability gates: supported.</b> No MTBF is disclosed anywhere — including ISRG after 25 years and 13M+ procedures; TSLA management twice states reliability (not capability) is the deployment gate. Falsifier (&gt;2,000h MTBF disclosed) untriggered.</li>
+<li><b>PIL-4 — 2027-Q4–2028 inflection: supported.</b> TSLA's own 10-K: "we have yet to commercialize Bots"; no commercial humanoid units disclosed by anyone; TSLA's ramp, ISRG's S-curves, AMZN's sequencing and SPCX's compute-led capex all point to late-2027/2028. Unit-count aspirations treated as promotional.</li>
+</ul>
+<p><b>Method note.</b> This report is the single-point synthesis of the thesis's 24 per-ticker markdown artifacts (NVDA ×6, ISRG ×5, TSLA ×7, AMZN ×2, PH ×2, SPCX ×1), the cross-stock synthesis task T025, constitution pin 1.3.0, as of 2026-09-10. All evidence and citations are carried verbatim from those artifacts — no retrieval was performed for this report.</p>
+</section>
+
+<section class="page">
+<h2>Pillar Verdicts</h2>
+<table>
+<thead><tr><th style="width:12%">Pillar</th><th style="width:14%">Verdict</th><th>Falsifier note</th></tr></thead>
+<tbody>
+<tr><td><b>PIL-1</b></td><td>indeterminate</td><td>Embodied-data gap &gt;3 orders of magnitude — UNTESTABLE (no embodied-data volumes disclosed anywhere in the corpus)</td></tr>
+<tr><td><b>PIL-2</b></td><td>indeterminate</td><td>Actuator share &lt;35% — NOT TRIGGERED but NO EVIDENCE EXISTS (no humanoid teardown or 10-K BOM disclosure anywhere; 40–70% remains industry estimate)</td></tr>
+<tr><td><b>PIL-3</b></td><td>supported</td><td>Humanoid MTBF &gt;2,000h disclosed — NOT TRIGGERED (no MTBF disclosed anywhere, incl. ISRG); gating premise corroborated by TSLA management statements</td></tr>
+<tr><td><b>PIL-4</b></td><td>supported</td><td>&gt;10,000 commercial humanoid units before 2027-Q4 — NOT TRIGGERED (TSLA 10-K: "We have yet to commercialize Bots"; zero disclosed units)</td></tr>
+</tbody>
+</table>
+<h3>PIL-1 — Data, not compute, is the binding constraint</h3>
+<p><span class="wrong_if">metric=embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude threshold=&gt;3 source=industry_technical_disclosures op=&gt;</span></p>
+<p><b>Falsifier test result: UNTESTABLE</b> — not triggered, not passed. No industry technical disclosure quantifying embodied-data volumes versus LLM pretrain tokens exists in the retrieval scope, and no company in the six-name corpus discloses any embodied-data volume (dataset hours, teleoperation hours, episodes, or tokens). The metric cannot be computed; the pillar can be neither falsified nor confirmed in magnitude.</p>
+<p><b>Best evidence:</b></p>
+<ul>
+<li><b>NVDA</b> (compute-boundness counterfactual): management names energy, data-center capacity and capital as the binding constraints on the LLM regime — bounding PIL-1's scope to embodied AI, exactly as the thesis frames it. NVDA's embodied-AI strategy is simulation-first (Omniverse, Cosmos, DRIVE re-simulation), consistent with field embodied data being scarce, but discloses zero embodied-data quantities. <a href="https://agentii.ai/v/NVDA/sec169/36">sec169/36</a> <a href="https://agentii.ai/v/NVDA/sec169/7">sec169/7</a></li>
+<li><b>TSLA</b> (mechanism, no magnitude): discloses the embodied-data collection stack in full — factory-human observation fleet, dedicated demo team, internet video, Optimus Academy RL loop — and earmarks the first Optimus builds for data collection rather than sale, but zero volumes. Its disclosures are compute-rich (~250 MW → ~400 MW planned; AI-infrastructure PP&amp;E $10.8B) and data-poor in units. Recorded counterpoint, not suppressed: management itself treats chip supply as a prospective binding constraint ("we simply won't have enough AI chips" to scale Optimus). <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a> <a href="https://agentii.ai/v/TSLA/ect61/3">ect61/3</a> <a href="https://agentii.ai/v/TSLA/sec258/10">sec258/10</a> <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a></li>
+<li><b>AMZN:</b> &gt;1M warehouse robots are the largest disclosed generator of industrial embodied-robot operational data; no data volumes disclosed. <a href="https://agentii.ai/v/AMZN/ect81/5">ect81/5</a></li>
+<li><b>ISRG:</b> the data flywheel is monetized (84% recurring revenue) and the dv5 10,000× compute step was spent on data-capture infrastructure — compute enabling data capture, not replacing it; no dataset-size disclosure. <a href="https://agentii.ai/v/ISRG/sec166/page78">sec166/page78</a> <a href="https://agentii.ai/v/ISRG/sec166/page8">sec166/page8</a></li>
+</ul>
+<p><b>Verdict: indeterminate</b> — plausible and directionally corroborated, but the falsifier is unmeasurable from this corpus. Not upgraded (no_verdict_inflation).</p>
+</section>
+
+<section class="page">
+<h2>PIL-2 — Actuators dominate BOM; compute is marginal</h2>
+<p><span class="wrong_if">metric=actuator_share_of_humanoid_bom_pct threshold=&lt;35 source=public_teardown_or_10K_disclosure op=&lt;</span></p>
+<p><b>Falsifier test result: NOT TRIGGERED, but no evidence of either sign exists.</b> No humanoid teardown is in the corpus and no 10-K discloses any humanoid BOM split whatsoever. The 40–70% actuator / 10–15% compute claim remains an industry estimate: an honest reading cannot falsify it from filings, and equally cannot confirm it.</p>
+<p><b>Best evidence:</b></p>
+<ul>
+<li><b>PH (closest structural proxy):</b> Motion Systems — the platform containing the exact PIL-2 categories (electromechanical/hydraulic actuators, pumps/motors, drives/controllers) — $3,580M FY2026. Premium economics: DI segment operating margin 23.8%, Aerospace 26.0%, consolidated GM 37.7% — actuators are high-value engineered content, directionally consistent with a large BOM share. But PH has zero humanoid/robotics disclosure ("robot" = 0 hits in the FY2026 10-K), no content-per-platform dollars, no platform-level profitability, and no quantitative rare-earth data. <a href="https://agentii.ai/v/PH/sec166/44">sec166/44</a> <a href="https://agentii.ai/v/PH/sec166/25">sec166/25</a> <a href="https://agentii.ai/v/PH/sec166/26">sec166/26</a> <a href="https://agentii.ai/v/PH/sec166/23">sec166/23</a> <a href="https://agentii.ai/v/PH/sec166/11">sec166/11</a></li>
+<li><b>ISRG (disclosed analogue, direction only):</b> effectively ~100% of its revenue stack is actuation-adjacent — instruments &amp; accessories 59.8% of FY2025 revenue, actuated capital at $0.6–3.1M, precision-maintenance service $95–225K/yr — and da Vinci ASPs rose $1.50M → $1.66M on actuation/feature content while compute costs elsewhere deflate. The finest disclosed cost cut is product vs service gross margin (66.3%/64.6%); no BOM-level split exists to calibrate the 40–70% magnitude. <a href="https://agentii.ai/v/ISRG/sec166/page77">sec166/page77</a> <a href="https://agentii.ai/v/ISRG/sec166/page78">sec166/page78</a> <a href="https://agentii.ai/v/ISRG/sec166/page79">sec166/page79</a></li>
+<li><b>TSLA:</b> zero Optimus BOM or per-unit cost disclosure. The only cost-structure commentary is compute-side — "a lot of really specialized power electronics and circuit boards", Samsung/TSMC/Micron AI-compute investment — consistent with compute being the scarce minority (~10–15%) of BOM, silent on the actuator figure. <a href="https://agentii.ai/v/TSLA/sec253/36">sec253/36</a> <a href="https://agentii.ai/v/TSLA/ect61/5">ect61/5</a> <a href="https://agentii.ai/v/TSLA/ect61/3">ect61/3</a></li>
+<li><b>NVDA (supplier-side mix, not a BOM):</b> today's value-weighted physical-AI stack is compute, not actuators (Data Center $75.2B vs Edge $6.4B Q1 FY2027) — a statement about the build-out phase, not a humanoid's bill of materials. <a href="https://agentii.ai/v/NVDA/sec173/21">sec173/21</a></li>
+</ul>
+<p><b>Verdict: indeterminate</b> — the &lt;35% falsifying evidence has not appeared and nothing contradicts the claim, but the claim itself is an unverified industry estimate; PH's Motion Systems segment is the structural proxy to monitor.</p>
+</section>
+
+<section class="page">
+<h2>PIL-3 — Manipulation reliability, not intelligence, gates deployment</h2>
+<p><span class="wrong_if">metric=humanoid_mtbf_hours_in_commercial_deployment threshold=&gt;2000 source=company_disclosure_or_fleet_operator op=&gt;</span></p>
+<p><b>Falsifier test result: NOT TRIGGERED</b> — no company or fleet operator discloses a humanoid MTBF at all, let alone one above 2,000 hours. The disclosure that would falsify the pillar does not exist anywhere in the six-name corpus, including ISRG.</p>
+<p><b>Best evidence:</b></p>
+<ul>
+<li><b>ISRG (the reliability benchmark's own non-disclosure):</b> after 25+ years, &gt;13M cumulative Xi procedures, and ~13k installed systems, ISRG publishes no MTBF, uptime, or failure-rate metric anywhere in its 10-K/10-Q/transcripts; reliability appears only as a design goal. The only quantitative reliability-adjacent metric is utilization (procedures/system/year): +3% FY2025, +3% Q2 2026. Even the leader runs a human service layer around reliability — 24/7 support, proactive health monitoring, OnSite: reliability is a serviced, fleet-level property, not a published spec. <a href="https://agentii.ai/v/ISRG/ect75/page1">ect75/page1</a> <a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a> <a href="https://agentii.ai/v/ISRG/sec172/page32">sec172/page32</a> <a href="https://agentii.ai/v/ISRG/sec166/page11">sec166/page11</a></li>
+<li><b>TSLA (the only disclosed humanoid programme — management corroboration):</b> two independent statements name reliability, not model capability, as the gate: robotaxi scaling constrained by "the March of 9s of reliability... Ideally, you want 99.999% reliable" — "the only thing really constraining our growth in robotaxi"; and "if we injure even one person... regulators will immediately clamp down on our activities". Optimus "needs to be out in the field and not break down". Capability exists (FSD v14 in production, v15 tracks merged) while deployment is throttled — capability ≠ deployment. No quantitative MTBF disclosed for either program. <a href="https://agentii.ai/v/TSLA/ect61/4">ect61/4</a> <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a></li>
+<li><b>AMZN (production-scale counterexample in structured environments):</b> 1M+ warehouse robots with the manipulation sub-fleet (Cardinal, Sparrow arms) doubling in 2026, and measurable payback — fulfillment intensity 15.4% → 15.2% of net sales. Manipulation reliability has cleared the gate in semi-structured settings, reinforcing that the residual gate is unstructured-environment reliability. No per-task reliability metrics disclosed; warehouse automation is not humanoids. <a href="https://agentii.ai/v/AMZN/ect83/2">ect83/2</a> <a href="https://agentii.ai/v/AMZN/sec131/25">sec131/25</a></li>
+<li><b>NVDA (compute-side calibration):</b> the deployment-gate shock that has materialized in AI is regulatory, not reliability — the $4.5B H20 charge against $119B supply commitments — a different gate, but the same structural lesson: gates land on the balance sheet of whoever holds forward supply. <a href="https://agentii.ai/v/NVDA/sec169/10">sec169/10</a></li>
+</ul>
+<p><b>Verdict: supported</b> — falsifier untriggered; the gating premise is corroborated by the actors themselves (TSLA) and by the reliability leader's non-disclosure pattern (ISRG). Caveat: no quantitative humanoid MTBF exists to measure against the 2,000h threshold — the verdict rests on gating-premise evidence, not on an MTBF observation.</p>
+</section>
+
+<section class="page">
+<h2>PIL-4 — The GPT-3.5 moment arrives late 2027 through 2028</h2>
+<p><span class="wrong_if">metric=general_purpose_humanoid_commercial_units_deployed threshold=&gt;10000 source=company_and_fleet_disclosures</span></p>
+<p>A commercially deployed, general-purpose humanoid fleet at scale before 2027-Q4 falsifies the pillar. <b>Falsifier test result: NOT TRIGGERED</b> — zero commercial general-purpose humanoid units are disclosed by any company in the corpus. TSLA's own filings state "We have yet to commercialize Bots" and describe a "nascent industry that has yet to develop commercially"; no other name discloses a humanoid deployment at all. <a href="https://agentii.ai/v/TSLA/sec253/21">sec253/21</a> <a href="https://agentii.ai/v/TSLA/sec253/20">sec253/20</a></p>
+<p><b>Best evidence:</b></p>
+<ul>
+<li><b>TSLA (the only filed humanoid timeline):</b> starter production late Jul-Aug 2026; initial S-curve "quite flat and long" across "10,000 unique items"; "useful outside of Tesla sometime next year" (2027); second factory (Giga Texas) ~summer 2027; first builds go to Optimus Academy data collection, not customers. The "1 million bots delivered" CEO-award milestone and the "10 million units a year" Optimus 4 aspiration are promotional and excluded from the verdict. <a href="https://agentii.ai/v/TSLA/ect60/3">ect60/3</a> <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a> <a href="https://agentii.ai/v/TSLA/ect60/1">ect60/1</a> <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a> <a href="https://agentii.ai/v/TSLA/sec253/86">sec253/86</a> <a href="https://agentii.ai/v/TSLA/ect61/5">ect61/5</a></li>
+<li><b>ISRG (deployment-curve floor rate):</b> ~25 years to reach ~12–13k systems at ~1.7–2.0k placements/year; the dv5 generational-compute transition reached ~1.7k units in ~2 years. A &gt;10,000-unit humanoid fleet by 2027-Q4 would require a deployment curve roughly 6× faster than the most successful surgical-robot platform transition on record, in a less-proven application. Hardware cycles are multi-year S-curves (7-year Xi precedent), and deployment-cost deflation arrives via tiering and cost-per-use (extended-use instruments from H1 2027), not list-price collapse. <a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a> <a href="https://agentii.ai/v/ISRG/ect75/page5">ect75/page5</a> <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a></li>
+<li><b>AMZN (robotics sequencing):</b> greenfield-only (Shreveport, 2024) → fleetwide retrofit mandate (2026) is a ~2-year bridge — warehouse automation, not humanoids — but the pattern implies capex intensity concentrates in years 2–4 of a deployment wave. <a href="https://agentii.ai/v/AMZN/ect77/4">ect77/4</a> <a href="https://agentii.ai/v/AMZN/ect82/2">ect82/2</a></li>
+<li><b>SPCX (upstream leading indicator):</b> compute-led capex — H1 2026 capex $28.5B (+309% YoY), AI segment 82.7%; nameplate compute 0.4 → 1.4 GW; $6.7B of cloud contracts signed in early Q3 2026 on 6-month terms. The infrastructure for the 2027–2028 window is being capitalized now, while the deployment-rate analogue (launches, mass to orbit) is flat-to-down — growth is compute-led, not launch-led. One-quarter issuer; treat forward compute targets as promotional. <a href="https://agentii.ai/v/SPCX/sec8/9">sec8/9</a> <a href="https://agentii.ai/v/SPCX/sec8/30">sec8/30</a> <a href="https://agentii.ai/v/SPCX/sec8/36">sec8/36</a> <a href="https://agentii.ai/v/SPCX/ect1/3">ect1/3</a> <a href="https://agentii.ai/v/SPCX/sec8/35">sec8/35</a></li>
+<li><b>NVDA (compute-platform readiness):</b> VeraRubin production shipments begin Q3 2026 — the compute side is ready ahead of the window; Uber robotaxi fleet targeted across ~30 cities and 4 continents by 2028. <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a></li>
+</ul>
+<p><b>Verdict: supported</b> — falsifier untriggered (zero commercial units exist, so a &gt;10,000-unit fleet before 2027-Q4 cannot exist), and five independent disclosure sets each place first meaningful scale in late-2027/2028. Disclosed unit-count and aspiration claims are promotional and excluded.</p>
+</section>
+
+<section class="page">
+<h2>Capability Timeline</h2>
+<p><b>GPT-3.5 moment estimate: 2027-Q4 to 2028-Q2</b> — an interval with a confidence band, never a point estimate. <b>Confidence: medium.</b></p>
+<table>
+<thead><tr><th style="width:22%">Phase</th><th>Evidence anchors (citations carried from artifacts)</th></tr></thead>
+<tbody>
+<tr><td><b>2026 H2 — compute and data infrastructure completes</b></td><td>VeraRubin ships Q3 2026 <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a>; Optimus starter production late Jul-Aug 2026, first builds → data collection <a href="https://agentii.ai/v/TSLA/ect60/3">ect60/3</a> <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a>; AMZN robotic-arm fleet doubles in 2026 <a href="https://agentii.ai/v/AMZN/ect83/2">ect83/2</a>; SPCX compute draw 1.4 GW with ~$18B/quarter capex run-rate <a href="https://agentii.ai/v/SPCX/sec8/36">sec8/36</a> <a href="https://agentii.ai/v/SPCX/ect1/4">ect1/4</a>; TSLA 2026 capex &gt;$20B → &gt;$25B including the Optimus factory <a href="https://agentii.ai/v/TSLA/ect59/2">ect59/2</a> <a href="https://agentii.ai/v/TSLA/sec259/30">sec259/30</a></td></tr>
+<tr><td><b>2027 H1 — capacity and cost-curve preparation</b></td><td>Giga Texas Optimus plant ~summer 2027; "useful outside Tesla" sometime 2027 <a href="https://agentii.ai/v/TSLA/ect60/1">ect60/1</a>; ISRG extended-use instruments H1 2027 — the cost-per-use deflation template <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a>; Rubin ramping <a href="https://agentii.ai/v/NVDA/sec173/33">sec173/33</a></td></tr>
+<tr><td><b>2027-Q4 to 2028-Q2 — the band (headline output)</b></td><td>First meaningful Optimus scale per the flat-and-long S-curve and "no significant production volume until end of 2026" <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a> <a href="https://agentii.ai/v/TSLA/ect59/3">ect59/3</a>; deployment-cost inflection via tiering + cost-per-use per the ISRG template <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a>; SPCX 6-month cloud contracts (from Oct 2026) absorbing compute capacity <a href="https://agentii.ai/v/SPCX/ect1/3">ect1/3</a></td></tr>
+<tr><td><b>2028+ — fleet formation</b></td><td>Uber robotaxi fleet ~30 cities / 4 continents by 2028 <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a>; NVDA "physical AI third wave" 5-year framing, directional and undated <a href="https://agentii.ai/v/NVDA/ect81/5">ect81/5</a></td></tr>
+</tbody>
+</table>
+<p><b>Band rationale.</b> The lower bound (2027-Q4) is set by TSLA's own filed statements — no significant production volume before end-2026, external usefulness in 2027, second factory summer 2027 — and by the falsifier design itself (a &gt;10,000-unit fleet before 2027-Q4 falsifies PIL-4; nothing in the corpus suggests that is possible). The upper bound (2028-Q2) reflects the deployment-cost deflation mechanism (ISRG tiering/cost-per-use) and the capex absorption cycle (SPCX contract-backed compute). <b>Confidence is medium, not high</b>, because: (1) every timing input is company disclosure with promotional bias; (2) no unit-cost data exists anywhere, so an inflection cannot be measured as it arrives; (3) ISRG and AMZN are analogue curves, not humanoid data; (4) the falsifier is untriggered only because no units exist at all — the negative evidence is absence, not measurement.</p>
+</section>
+
+<section class="page">
+<h2>Evidence — NVDA</h2>
+<table>
+<thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>FY2026 revenue</td><td>$215.9B (+65%)</td><td><a href="https://agentii.ai/v/NVDA/sec169/37">sec169/37</a></td></tr>
+<tr><td>Q1 FY2027 revenue</td><td>$81.6B (+85% YoY)</td><td><a href="https://agentii.ai/v/NVDA/sec173/21">sec173/21</a></td></tr>
+<tr><td>Data Center Q1 FY2027 / FY2026</td><td>$75.2B (+92%) / $193.7B (90% of revenue)</td><td><a href="https://agentii.ai/v/NVDA/sec173/21">sec173/21</a> ; <a href="https://agentii.ai/v/NVDA/sec169/79">sec169/79</a></td></tr>
+<tr><td>Edge Computing (contains robotics) Q1 FY2027</td><td>$6.4B (+29%)</td><td><a href="https://agentii.ai/v/NVDA/sec173/21">sec173/21</a></td></tr>
+<tr><td>Physical AI revenue (LTM)</td><td>&gt;$9B</td><td><a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a></td></tr>
+<tr><td>Manufacturing/supply/capacity commitments</td><td>$119B (Apr 26, 2026)</td><td><a href="https://agentii.ai/v/NVDA/sec173/16">sec173/16</a></td></tr>
+<tr><td>VeraRubin production shipments</td><td>Q3 2026 (POs in hand)</td><td><a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a></td></tr>
+<tr><td>China Hopper shipments Q1 FY2027</td><td>$0 (vs $4.6B a year earlier)</td><td><a href="https://agentii.ai/v/NVDA/sec173/25">sec173/25</a></td></tr>
+</tbody>
+</table>
+<p>NVDA is the compute-boundness counterfactual — and the compute side is ready ahead of the 2027-Q4–2028-Q2 window (VeraRubin Q3 2026). Its robotics revenue remains undifferentiated inside Edge Computing.</p>
+</section>
+
+<section class="page">
+<h2>Evidence — ISRG</h2>
+<table>
+<thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>FY2025 revenue / procedures / installed base</td><td>$10,064.7M (+21%) / 3,153k (+18%) / 11,106 da Vinci (+12%)</td><td><a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a></td></tr>
+<tr><td>Utilization (only quantitative reliability proxy)</td><td>+3% FY2025; +3% Q2 2026</td><td><a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a> ; <a href="https://agentii.ai/v/ISRG/sec172/page32">sec172/page32</a></td></tr>
+<tr><td>Recurring revenue share</td><td>84% FY2025 ($8,465.3M); 85% Q2 2026</td><td><a href="https://agentii.ai/v/ISRG/sec166/page78">sec166/page78</a></td></tr>
+<tr><td>I&amp;A revenue / per procedure</td><td>$6,018.9M FY2025; $900–3,700 per procedure (range); ~$1.83K Q2 2026</td><td><a href="https://agentii.ai/v/ISRG/sec166/page77">sec166/page77</a> ; <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a></td></tr>
+<tr><td>da Vinci ASP trajectory</td><td>~$1.50M (2024) → $1.60M (2025) → $1.66M (H1 2026)</td><td><a href="https://agentii.ai/v/ISRG/sec166/page78">sec166/page78</a> ; <a href="https://agentii.ai/v/ISRG/sec172/page40">sec172/page40</a></td></tr>
+<tr><td>dv5 compute vs Xi / dv5 placements</td><td>&gt;10,000× / 870 FY2025, 246 Q2 2026</td><td><a href="https://agentii.ai/v/ISRG/sec166/page8">sec166/page8</a> ; <a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a></td></tr>
+<tr><td>MTBF disclosure</td><td>None anywhere (negative finding)</td><td><a href="https://agentii.ai/v/ISRG/ect75/page1">ect75/page1</a></td></tr>
+</tbody>
+</table>
+<p>ISRG is the reliability benchmark — and its 25-year non-disclosure of MTBF is itself the PIL-3 evidence. Utilization and I&amp;A-per-procedure are the only quantitative reliability proxies in the corpus.</p>
+</section>
+
+<section class="page">
+<h2>Evidence — TSLA</h2>
+<table>
+<thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>FY2025 revenue / R&amp;D</td><td>$94,827M (−3%) / $6,411M (+41%)</td><td><a href="https://agentii.ai/v/TSLA/sec253/page36">sec253/page36</a> ; <a href="https://agentii.ai/v/TSLA/sec253/page44">sec253/page44</a></td></tr>
+<tr><td>Commercial Bots status</td><td>"We have yet to commercialize Bots" (10-K)</td><td><a href="https://agentii.ai/v/TSLA/sec253/21">sec253/21</a></td></tr>
+<tr><td>Optimus production timeline</td><td>Late Jul-Aug 2026 (Fremont); Giga Texas plant ~summer 2027</td><td><a href="https://agentii.ai/v/TSLA/ect60/3">ect60/3</a> ; <a href="https://agentii.ai/v/TSLA/ect60/1">ect60/1</a></td></tr>
+<tr><td>Optimus unit economics</td><td>None disclosed (BOM/cost/price absent)</td><td><a href="https://agentii.ai/v/TSLA/sec253/36">sec253/36</a></td></tr>
+<tr><td>FSD data asset / subscriptions / deferred revenue</td><td>~17.2B cumulative miles / 1.48M active / $4.05B</td><td><a href="https://agentii.ai/v/TSLA/sec258/11">sec258/11</a> ; <a href="https://agentii.ai/v/TSLA/sec258/8">sec258/8</a> ; <a href="https://agentii.ai/v/TSLA/sec259/10">sec259/10</a></td></tr>
+<tr><td>Unsupervised robotaxi miles</td><td>380,000+, zero notable incidents</td><td><a href="https://agentii.ai/v/TSLA/ect61/3">ect61/3</a></td></tr>
+<tr><td>Training compute</td><td>Cortex 1+2 &gt;205 MW; ~400 MW planned Dec-2026</td><td><a href="https://agentii.ai/v/TSLA/sec258/10">sec258/10</a></td></tr>
+<tr><td>2026 capex</td><td>FY2025 actual $8.53B → &gt;$20B guided (Q4 call) → &gt;$25B (10-Q)</td><td><a href="https://agentii.ai/v/TSLA/sec253/36">sec253/36</a> ; <a href="https://agentii.ai/v/TSLA/ect59/2">ect59/2</a> ; <a href="https://agentii.ai/v/TSLA/sec259/30">sec259/30</a></td></tr>
+</tbody>
+</table>
+<p>TSLA is the only filed humanoid programme. The reliability gate (management's "March of 9s" statement, <a href="https://agentii.ai/v/TSLA/ect61/4">ect61/4</a>) and the flat-and-long S-curve are the timing anchors for the 2027-Q4–2028-Q2 band.</p>
+</section>
+
+<section class="page">
+<h2>Evidence — AMZN</h2>
+<table>
+<thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>Robots in fulfillment network</td><td>&gt;1,000,000 (Feb 2026)</td><td><a href="https://agentii.ai/v/AMZN/ect81/5">ect81/5</a></td></tr>
+<tr><td>Robotic arms (Cardinal, Sparrow) 2026</td><td>More than double the fleet</td><td><a href="https://agentii.ai/v/AMZN/ect83/2">ect83/2</a></td></tr>
+<tr><td>FY2025 net sales / cash capex</td><td>$716.9B (+12%) / $128.3B (vs $77.7B)</td><td><a href="https://agentii.ai/v/AMZN/sec131/69">sec131/69</a> ; <a href="https://agentii.ai/v/AMZN/sec131/23">sec131/23</a></td></tr>
+<tr><td>H1 2026 cash capex</td><td>$96.3B (Q2 alone $53.1B)</td><td><a href="https://agentii.ai/v/AMZN/sec177/27">sec177/27</a></td></tr>
+<tr><td>Segment P&amp;E net additions FY2025</td><td>NA (fulfillment) $35.9B vs AWS $96.5B</td><td><a href="https://agentii.ai/v/AMZN/sec131/70">sec131/70</a></td></tr>
+<tr><td>Fulfillment intensity</td><td>$109.1B = 15.2% of net sales (vs 15.4%)</td><td><a href="https://agentii.ai/v/AMZN/sec131/25">sec131/25</a></td></tr>
+<tr><td>"robot" in FY2025 10-K</td><td>Zero hits (negative finding)</td><td>— (keyword scan, sec131)</td></tr>
+</tbody>
+</table>
+<p>AMZN is warehouse automation, not humanoids — its evidence bears on deployment economics and sequencing only (greenfield → fleetwide retrofit, a ~2-year bridge).</p>
+</section>
+
+<section class="page">
+<h2>Evidence — PH &amp; SPCX</h2>
+<h3>PH — the actuator franchise</h3>
+<table>
+<thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>Motion Systems revenue</td><td>$3,580M FY2026 / $3,341M FY2025 / $3,706M FY2024</td><td><a href="https://agentii.ai/v/PH/sec166/44">sec166/44</a></td></tr>
+<tr><td>Total net sales FY2026</td><td>$21,499M</td><td><a href="https://agentii.ai/v/PH/sec166/23">sec166/23</a></td></tr>
+<tr><td>Segment operating margins</td><td>DI 23.8% / Aerospace 26.0%; consolidated GM 37.7%</td><td><a href="https://agentii.ai/v/PH/sec166/25">sec166/25</a> ; <a href="https://agentii.ai/v/PH/sec166/26">sec166/26</a> ; <a href="https://agentii.ai/v/PH/sec166/23">sec166/23</a></td></tr>
+<tr><td>Backlog (record)</td><td>$12.8B (Jun 30, 2026)</td><td><a href="https://agentii.ai/v/PH/sec166/5">sec166/5</a></td></tr>
+<tr><td>Rare-earth sourcing</td><td>"limited number of suppliers" (qualitative only)</td><td><a href="https://agentii.ai/v/PH/sec166/11">sec166/11</a></td></tr>
+<tr><td>Robotics disclosure</td><td>Zero "robot" hits in 10-K and both transcripts (negative finding)</td><td>— (keyword scans, sec166/ect72/ect71)</td></tr>
+</tbody>
+</table>
+<h3>SPCX — upstream leading indicator</h3>
+<table>
+<thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>H1 2026 revenue</td><td>$12,508M</td><td><a href="https://agentii.ai/v/SPCX/sec8/13">sec8/13</a></td></tr>
+<tr><td>H1 2026 capex</td><td>$28,476M vs $6,965M (+309%)</td><td><a href="https://agentii.ai/v/SPCX/sec8/9">sec8/9</a></td></tr>
+<tr><td>AI segment share of capex</td><td>82.7% H1 / 86.2% Q2 2026</td><td><a href="https://agentii.ai/v/SPCX/sec8/30">sec8/30</a> ; <a href="https://agentii.ai/v/SPCX/sec8/31">sec8/31</a></td></tr>
+<tr><td>Nameplate compute draw</td><td>0.4 GW → 1.4 GW YoY</td><td><a href="https://agentii.ai/v/SPCX/sec8/36">sec8/36</a></td></tr>
+<tr><td>Servers &amp; networking equipment</td><td>$22,694M → $34,771M in six months</td><td><a href="https://agentii.ai/v/SPCX/sec8/14">sec8/14</a></td></tr>
+<tr><td>Contracted cloud demand</td><td>+$1.6B Q2 2026; +$6.7B contracted early Q3 2026</td><td><a href="https://agentii.ai/v/SPCX/sec8/44">sec8/44</a> ; <a href="https://agentii.ai/v/SPCX/ect1/3">ect1/3</a></td></tr>
+<tr><td>Deployment-rate analogue</td><td>Falcon launches 77 H1 2026 (vs 81); mass to orbit 485t (vs 652t)</td><td><a href="https://agentii.ai/v/SPCX/sec8/35">sec8/35</a></td></tr>
+</tbody>
+</table>
+<p>PH's zero-robotics disclosure is the single most important PIL-4 negative evidence; SPCX's compute-led capex is the upstream timing indicator — growth is compute-led, not launch-led.</p>
+</section>
+
+<section class="page">
+<h2>Coverage Gaps</h2>
+<p>Aggregated from the artifacts — ten items that bound what this report can and cannot claim.</p>
+<h3>Universe-level gaps</h3>
+<ul>
+<li><b>No embodied-data volumes disclosed anywhere</b> in the six-name corpus — no dataset hours, teleoperation hours, episodes, or synthetic-data volumes (NVDA, TSLA, ISRG, AMZN, PH all silent). PIL-1's magnitude test requires industry-technical sources beyond SEC filings; the retrieval scope cannot reach them.</li>
+<li><b>No MTBF disclosed anywhere</b>, including ISRG (the only US-listed company with a decade of surgical-robot reliability disclosure). ISRG's utilization (+3%) and I&amp;A-per-procedure are the only quantitative reliability proxies in the corpus.</li>
+<li><b>No humanoid BOM split or teardown anywhere.</b> PIL-2's 40–70% actuator / 10–15% compute split is an industry estimate; TSLA discloses no Optimus BOM/cost/price; ISRG discloses no BOM-level cost cut; PH discloses no content-per-platform dollars; AMZN's robotics is vertically integrated with no component-supplier disclosure.</li>
+<li><b>No commercial humanoid units disclosed by anyone.</b> TSLA discloses no Optimus unit counts or revenue; NVDA's robotics sits undifferentiated inside Edge Computing ($6.4B).</li>
+</ul>
+<h3>Ticker-level gaps (as declared by the artifacts)</h3>
+<ul>
+<li><b>AMZN</b> is warehouse automation, not humanoids: its evidence bears on deployment economics only; the word "robot" appears zero times in the FY2025 10-K — fleet metrics (&gt;1M robots, arm doubling) live only in earnings-call transcripts.</li>
+<li><b>PH</b> has zero robotics disclosure: zero "robot" hits in the FY2026 10-K and the Q3/Q4 FY2026 transcripts; no quantitative rare-earth/magnet sourcing data; no platform-level COGS or margin for Motion Systems; no supplier names. The largest listed actuator franchise does not yet claim a humanoid revenue stream — the single most important PIL-4 negative evidence.</li>
+<li><b>SPCX</b> is a one-quarter issuer: a single 10-Q (2026-08-04) plus 8-Ks; no multi-year history; no named GPU/ASIC/memory/power suppliers in filings (NVIDIA is transcript-only); supplier contracts carry no long-term binding purchase orders. Forward compute targets (&gt;2 GW end-2026, 10 GW end-2027) are promotional.</li>
+<li><b>NVDA</b>: no robotics standalone revenue; no embodied-data quantities; no China outlook beyond "no China data-center compute revenue"; Q2 FY2027 10-Q not yet filed (corpus one quarter stale for near-term risk reads).</li>
+<li><b>TSLA</b>: no per-unit economics for Optimus or FSD (no churn/MRR); no quantitative reliability metrics (miles-per-incident, MTBF); robotaxi fleet size disclosed only qualitatively; H2 2026 filings absent.</li>
+<li><b>ISRG</b>: no I&amp;A standalone gross margin; no CAC/payback per hospital; Q2 2026 10-Q citation_ids not surfaced by search_documents (quarterly data cited via transcript + XBRL).</li>
+</ul>
+</section>
+
+<section class="page">
+<h2>Data-Quality Flags &amp; Contract Compliance</h2>
+<h3>Flags surfaced by the agents</h3>
+<ol>
+<li><b>PH get_segment_data conflict:</b> gold reports Motion Systems FY2025 $3,830M vs 10-K $3,341M (and Aerospace FY2025 operating income $854M vs 10-K $1,441M) — gold's product-axis rows appear stale or mis-mapped; <b>10-K values used throughout</b>.</li>
+<li><b>AMZN fiscal-calendar registry mismatch:</b> gold registry returns FY-end month 2 for AMZN, but the 10-K is for the fiscal year ended Dec 31, 2025; fiscal-year-filtered XBRL queries returned empty, so calendar-dated facts and filing text were used.</li>
+<li><b>NVDA RevenueFromContractWithCustomerExcludingAssessedTax untagged:</b> empty result set; revenue verified via consolidated plus dimensioned Revenues facts (OperatingSegments/ProductOrService axes).</li>
+<li><b>ISRG / TSLA / PH / SPCX single revenue concept:</b> us-gaap:Revenues (and ...IncludingAssessedTax) return zero facts for each; P2.1 two-concept verification was handled by triangulation — same concept across two fiscal years and dimensions, reconciled to 10-K income-statement and MD&amp;A tables.</li>
+<li><b>AMZN XBRL revenue/capex concepts empty:</b> us-gaap:Revenues and PaymentsToAcquirePropertyPlantAndEquipment return no AMZN facts (custom taxonomy not loaded in the store); values taken from 10-K/10-Q text pages and earnings calls.</li>
+<li><b>Additional:</b> NVDA capex concept stale (last used 2020; current series is PaymentsToAcquireProductiveAssets); TSLA XBRL DeferredRevenue empty (FSD deferred revenue $4.05B from 10-Q Note 1 text); TSLA search_sec_filings shows 0 records (discovery via search_documents/list_sources); ISRG fiscal-calendar returns FY-end month 1 inconsistent with calendar-year reporting; TSLA FSD cumulative-miles chart values post-Jun-2024 flagged as visually estimated (~17.2B approximate); an un-attributed $71M LossContingencyDamagesAwardedValue XBRL fact (TSLA, Q1 2026 10-Q) was excluded by the agent.</li>
+</ol>
+<h3>Contract compliance (output-schemas.md §2)</h3>
+<ul>
+<li><b>falsifier_evidence:</b> every pillar verdict is backed by a stated falsifier test result (PIL-1: untestable — metric uncomputable; PIL-2: not triggered — no evidence exists; PIL-3: not triggered — no MTBF disclosed; PIL-4: not triggered — zero disclosed commercial units).</li>
+<li><b>no_verdict_inflation:</b> PIL-1 and PIL-2 are held at indeterminate despite directional support — no unsupported pillar was upgraded. PIL-3 and PIL-4 are supported strictly on the evidence stated.</li>
+<li><b>interval_estimate:</b> the capability timeline carries an explicit interval (2027-Q4 to 2028-Q2) with a stated confidence band (medium), never a point estimate.</li>
+</ul>
+<p class="citation">Citations use the agentii viewer: <code>https://agentii.ai/v/{ticker}/{citation_id}/{N}</code> — every link in this report is copied verbatim from the source artifacts.</p>
+</section>
