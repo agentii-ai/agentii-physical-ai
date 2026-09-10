@@ -20,9 +20,9 @@ Robotics foundation models train on a small fraction of frontier compute because
 
 **Independently falsifiable**: Measure the embodied-data gap directly; if robotics models demonstrably consume frontier-scale compute, the claim fails.
 
-**wrong_if**: `metric=embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude threshold=>1000 source=industry_technical_disclosures op=>`
+**wrong_if**: `metric=embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude threshold=>3 source=industry_technical_disclosures op=>`
 
-**Subscribed**: `secular-trends × default`, `business-model × default`
+**Subscribed**: `NVDA × secular-trends`, `NVDA × business-model`
 
 ### Pillar 2 — Actuators dominate BOM; compute is marginal (Priority: P2)
 Actuator + screw + reducer + motor content is 40-70% of a humanoid's bill of materials; the AI compute stack is only ~10-15%.
@@ -33,7 +33,7 @@ Actuator + screw + reducer + motor content is 40-70% of a humanoid's bill of mat
 
 **wrong_if**: `metric=actuator_share_of_humanoid_bom_pct threshold=<35 source=public_teardown_or_10K_disclosure op=<`
 
-**Subscribed**: `unit-economics × default`, `supply-chain × default`
+**Subscribed**: `TSLA × unit-economics`, `AMZN × supply-chain`
 
 ### Pillar 3 — Manipulation reliability, not intelligence, gates deployment (Priority: P3)
 The gating engineering problem is mean-time-between-failure and task success rate in unstructured environments — not model capability.
@@ -44,7 +44,7 @@ The gating engineering problem is mean-time-between-failure and task success rat
 
 **wrong_if**: `metric=humanoid_mtbf_hours_in_commercial_deployment threshold=>2000 source=company_disclosure_or_fleet_operator op=>`
 
-**Subscribed**: `operational-kpi × default`, `risk × default`
+**Subscribed**: `ISRG × operational-kpi`, `ISRG × risk`
 
 ### Pillar 4 — The 'GPT-3.5 moment' arrives late 2027 through 2028 (Priority: P4)
 Consensus timing for a step-change in general-purpose embodied capability is 2027-2028, not 2026.
@@ -55,7 +55,7 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 
 **wrong_if**: `metric=general_purpose_humanoid_commercial_units_deployed threshold=>10000 source=company_and_fleet_disclosures`
 
-**Subscribed**: `secular-trends × deep`, `recent-quarter × default`
+**Subscribed**: `TSLA × secular-trends`, `NVDA × recent-quarter`
 
 
 > Delivering P1 alone MUST yield a defensible partial conclusion. Research is
@@ -65,10 +65,10 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 ## 2. Universe Definition
 | Ticker | Company | Sector | Weight in Thesis | Rationale for Inclusion |
 |---|---|---|:---:|---|
-| NVDA | Compute reference | IT | — | Baseline for the compute-boundness counterfactual |
-| ISRG | Robotic reliability benchmark | Health Care | — | Only US-listed company with a decade of surgical-robot MTBF disclosure |
-| TSLA | Integrated humanoid programme | Cons Disc | — | Only US-listed large-cap with a disclosed humanoid programme |
-| AMZN | Warehouse automation deployer | Cons Disc | — | Largest disclosed fleet-scale robotics deployer |
+| NVDA | Compute reference | IT | 25% | Baseline for the compute-boundness counterfactual |
+| ISRG | Robotic reliability benchmark | Health Care | 25% | Only US-listed company with a decade of surgical-robot MTBF disclosure |
+| TSLA | Integrated humanoid programme | Cons Disc | 25% | Only US-listed large-cap with a disclosed humanoid programme |
+| AMZN | Warehouse automation deployer | Cons Disc | 25% | Largest disclosed fleet-scale robotics deployer |
 
 ## 3. Skill Deployment Matrix
 | Skill | Vertical | Depth | Tickers | Market Data Stage (Q41) | Purpose |
@@ -160,3 +160,10 @@ expiry_triggers:
 macro_sensitivity: medium
 constitution_pin: 1.2.0
 ```
+
+## Clarifications
+
+- [2026-09-10] Q: PIL-1 wrong_if: the metric measures orders of magnitude; the threshold was stated as a raw multiple (>1000). Which unit governs? → A: Threshold restated in the metric own units: threshold=>3 (the embodied-data gap exceeds 3 orders of magnitude, ~1000x). Source unchanged: industry_technical_disclosures. The prior >1000 was dimensionally ambiguous.
+- [2026-09-10] Q: Pillar subscriptions were skill-only tokens (e.g. secular-trends x default) with no ticker. dispatch.py matches ticker in subs for earnings-trigger flips and thesis_status.py regex-extracts tickers, so both silently broke. Which prefixing scheme? → A: Explicit ticker per subscription, matching the spec-template example form NVDA x business-model. P1: NVDA x secular-trends, NVDA x business-model. P2: TSLA x unit-economics, AMZN x supply-chain. P3: ISRG x operational-kpi, ISRG x risk. P4: TSLA x secular-trends, NVDA x recent-quarter. Derived ticker coverage now resolves to NVDA, TSLA, ISRG, AMZN.
+- [2026-09-10] Q: All four universe rows had an em-dash in the Weight column. What should T-001 declare? → A: Equal weight, 25% each. T-001 is a research baseline and expresses no preference between names at this stage; T-015 (portfolio-construction-hedge) overrides with real sizing. Noted for T-015: this thesis is 50% Consumer Discretionary (TSLA, AMZN), which would breach CONC_SECTOR (max 40%) if treated as a portfolio. It is research-only, and the aggregate constraint applies in T-015, not here.
+- [2026-09-10] Q: clarify scanner bug: agentii_cmd.py used a character class intended to stop at newline but which matched them, and validated only the substring x rather than a ticker prefix. Fix? → A: Fixed upstream in scripts/agentii_cmd.py and committed. Two defects: (a) the capture ran to EOF, so every spec reported one bogus malformed-subscription made of fragments from unrelated lines; (b) the test accepted skill x mode, so ticker-less tokens were never caught. Now line-anchored with a left-anchored ticker regex. Verified against three synthetic cases (correct, ticker-less, bare) and against T-001, where it correctly flags all four pillars the old scanner missed.
