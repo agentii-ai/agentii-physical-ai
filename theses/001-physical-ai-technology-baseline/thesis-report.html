@@ -41,7 +41,7 @@
   body { margin: 0; background: #fff; color: var(--primary-foreground);
          font-family: Georgia, 'Times New Roman', serif; font-size: var(--font-base);
          line-height: 1.45; }
-  .page { width: 215.9mm; height: 279.4mm; padding: 16mm 15mm;
+  .page { width: 215.9mm; min-width: 215.9mm; height: 279.4mm; padding: 16mm 15mm;
           page-break-after: always; overflow: hidden; position: relative; }
   .page:last-child { page-break-after: auto; }
   h1 { font-size: 20pt; color: var(--accent); border-bottom: 2px solid var(--primary); }
@@ -132,6 +132,11 @@
   .print-btn:active { transform: scale(0.97); }
   .cover .print-btn { background: var(--primary); color: var(--primary-foreground); }
   .cover .print-btn:hover { background: var(--accent-foreground); color: var(--accent); }
+  .print-center { position: absolute; left: 50%; transform: translateX(-50%);
+                  display: flex; align-items: center; gap: 2mm; }
+  .print-hint { font-family: 'Courier New', monospace; font-size: 6.5pt;
+                letter-spacing: 0.08em; text-transform: uppercase; color: #888; }
+  .cover .print-hint { color: #b8b08a; }
   .reg { position: absolute; width: 3mm; height: 3mm; }
   .reg-tl { top: 5mm; left: 5mm; border-top: 0.5mm solid var(--primary); border-left: 0.5mm solid var(--primary); }
   .reg-tr { top: 5mm; right: 5mm; border-top: 0.5mm solid var(--primary); border-right: 0.5mm solid var(--primary); }
@@ -157,10 +162,17 @@
   .cover-motif { position: absolute; right: 12mm; bottom: 16mm; width: 68mm; opacity: 0.55; }
 
   @media print {
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    /* AI-Sci-Vi print contract (letter): the page box IS the paper — no
+       dialog margins, no shrink-to-fit, one section = exactly one sheet. */
+    html, body { background: #fff; margin: 0 !important; padding: 0 !important; }
+    .page { zoom: 1 !important; break-after: page; page-break-after: always;
+            break-inside: avoid; page-break-inside: avoid; }
+    .page:last-child { break-after: auto; page-break-after: auto; }
     .page-overflow { page-break-after: always; }
     .stale-bar { display: none !important; }
     .no-print { display: none !important; }
+    * { animation: none !important; transition: none !important;
+        -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
@@ -184,7 +196,7 @@
     <tr><th>Constitution pin</th><td id="cover-pin">1.3.0</td></tr>
     <tr><th>As of</th><td id="cover-as-of">2026-09-10</td></tr>
     <tr><th>Universe</th><td id="cover-universe">NVDA ~16.7% · ISRG ~16.7% · TSLA ~16.7% · AMZN ~16.7% · PH ~16.7% · SPCX ~16.7%</td></tr>
-    <tr><th>Generated</th><td id="cover-generated">2026-09-10 16:48 UTC</td></tr>
+    <tr><th>Generated</th><td id="cover-generated">2026-09-10 16:58 UTC</td></tr>
   </table>
   <div id="cover-toc" class="toc"><h2>Contents</h2><ol><li><a href="#page-2">Executive Summary</a></li><li><a href="#page-3">Pillar Verdicts</a></li><li><a href="#page-4">PIL-2 — Actuators dominate BOM; compute is marginal</a></li><li><a href="#page-5">PIL-3 — Manipulation reliability, not intelligence, gates deployment</a></li><li><a href="#page-6">PIL-4 — The GPT-3.5 moment arrives late 2027 through 2028</a></li><li><a href="#page-7">Capability Timeline</a></li><li><a href="#page-8">NVDA — the compute-boundness counterfactual</a></li><li><a href="#page-9">ISRG — the deployed-robot economics analogue</a></li><li><a href="#page-10">TSLA — the only filed humanoid timeline</a></li><li><a href="#page-11">AMZN — deployment economics, not humanoids</a></li><li><a href="#page-12">PH — the motion-control proxy</a></li><li><a href="#page-13">SPCX — compute-led capex, one public quarter</a></li><li><a href="#page-14">Coverage Gaps</a></li><li><a href="#page-15">Data-Quality Flags &amp;amp; Contract Compliance</a></li></ol></div>
   <svg class="cover-motif" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -200,10 +212,10 @@
       <path d="M 11.1 0 A 6.9 6.9 0 0 1 4.2 6.9"/>
     </g>
   </svg>
-  <div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">01 / 15</span></div>
+  <div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">01 / 15</span></div>
 </section>
 
-<section class="page" data-report-page="2" id="page-2"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">02 / 15</span></div>
+<section class="page" data-report-page="2" id="page-2"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">02 / 15</span></div>
 <span class="sec-kicker">Executive Summary · Thesis 001 · As of 2026-09-10</span>
 <h2>Executive Summary</h2>
 <div class="stat-row">
@@ -223,7 +235,7 @@
 <p><b>Method note.</b> This report is the single-point synthesis of the thesis's 24 per-ticker markdown artifacts (NVDA ×6, ISRG ×5, TSLA ×7, AMZN ×2, PH ×2, SPCX ×1), the cross-stock synthesis task T025, constitution pin 1.3.0. All evidence and citations are carried verbatim from those artifacts — no retrieval was performed for this report.</p>
 </section>
 
-<section class="page" data-report-page="3" id="page-3"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">03 / 15</span></div>
+<section class="page" data-report-page="3" id="page-3"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">03 / 15</span></div>
 <span class="sec-kicker">Falsifier Evaluation · The Four Pillars</span>
 <h2>Pillar Verdicts</h2>
 <table>
@@ -247,7 +259,7 @@
 <p><b>Verdict: indeterminate</b> — plausible and directionally corroborated, but the falsifier is unmeasurable from this corpus. Not upgraded (no_verdict_inflation).</p>
 </section>
 
-<section class="page" data-report-page="4" id="page-4"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">04 / 15</span></div>
+<section class="page" data-report-page="4" id="page-4"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">04 / 15</span></div>
 <span class="sec-kicker">Falsifier Evaluation · Pillar 2</span>
 <h2>PIL-2 — Actuators dominate BOM; compute is marginal</h2>
 <p><span class="wrong_if">metric=actuator_share_of_humanoid_bom_pct threshold=&lt;35 source=public_teardown_or_10K_disclosure op=&lt;</span></p>
@@ -261,7 +273,7 @@
 <p><b>Verdict: indeterminate</b> — the &lt;35% falsifying evidence has not appeared and nothing contradicts the claim, but the claim itself is an unverified industry estimate; PH's Motion Systems segment is the structural proxy to monitor.</p>
 </section>
 
-<section class="page" data-report-page="5" id="page-5"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">05 / 15</span></div>
+<section class="page" data-report-page="5" id="page-5"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">05 / 15</span></div>
 <span class="sec-kicker">Falsifier Evaluation · Pillar 3</span>
 <h2>PIL-3 — Manipulation reliability, not intelligence, gates deployment</h2>
 <p><span class="wrong_if">metric=humanoid_mtbf_hours_in_commercial_deployment threshold=&gt;2000 source=company_disclosure_or_fleet_operator op=&gt;</span></p>
@@ -275,7 +287,7 @@
 <p><b>Verdict: supported</b> — falsifier untriggered; the gating premise is corroborated by the actors themselves (TSLA) and by the reliability leader's non-disclosure pattern (ISRG). Caveat: no quantitative humanoid MTBF exists to measure against the 2,000h threshold — the verdict rests on gating-premise evidence, not on an MTBF observation.</p>
 </section>
 
-<section class="page" data-report-page="6" id="page-6"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">06 / 15</span></div>
+<section class="page" data-report-page="6" id="page-6"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">06 / 15</span></div>
 <span class="sec-kicker">Falsifier Evaluation · Pillar 4</span>
 <h2>PIL-4 — The GPT-3.5 moment arrives late 2027 through 2028</h2>
 <p><span class="wrong_if">metric=general_purpose_humanoid_commercial_units_deployed threshold=&gt;10000 source=company_and_fleet_disclosures</span></p>
@@ -290,7 +302,7 @@
 <p><b>Verdict: supported</b> — falsifier untriggered (zero commercial units exist, so a &gt;10,000-unit fleet before 2027-Q4 cannot exist), and five independent disclosure sets each place first meaningful scale in late-2027/2028. Disclosed unit-count and aspiration claims are promotional and excluded.</p>
 </section>
 
-<section class="page" data-report-page="7" id="page-7"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">07 / 15</span></div>
+<section class="page" data-report-page="7" id="page-7"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">07 / 15</span></div>
 <span class="sec-kicker">Headline Output · Capability Curve</span>
 <h2>Capability Timeline</h2>
 <p><b>GPT-3.5 moment estimate: 2027-Q4 to 2028-Q2</b> — an interval with a confidence band, never a point estimate. <b>Confidence: medium.</b></p>
@@ -315,7 +327,7 @@
 <p><b>Band rationale.</b> The lower bound (2027-Q4) is set by TSLA's own filed statements — no significant production volume before end-2026, external usefulness in 2027, second factory summer 2027 — and by the falsifier design itself (a &gt;10,000-unit fleet before 2027-Q4 falsifies PIL-4; nothing in the corpus suggests that is possible). The upper bound (2028-Q2) reflects the deployment-cost deflation mechanism (ISRG tiering/cost-per-use) and the capex absorption cycle (SPCX contract-backed compute). <b>Confidence is medium, not high</b>, because: (1) every timing input is company disclosure with promotional bias; (2) no unit-cost data exists anywhere, so an inflection cannot be measured as it arrives; (3) ISRG and AMZN are analogue curves, not humanoid data; (4) the falsifier is untriggered only because no units exist at all — the negative evidence is absence, not measurement.</p>
 </section>
 
-<section class="page" data-report-page="8" id="page-8"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">08 / 15</span></div>
+<section class="page" data-report-page="8" id="page-8"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">08 / 15</span></div>
 <span class="sec-kicker">The Corpus · Compute Reference</span>
 <h2>NVDA — the compute-boundness counterfactual</h2>
 <div class="stat-row">
@@ -340,7 +352,7 @@
 <p><span class="badge badge-fact">fact</span> 204 · <span class="badge badge-deducted">deducted</span> 43 · <span class="badge badge-view">view</span> 22 · 114 citations (7 artifacts). The compute side is ready ahead of the 2027-Q4–2028-Q2 window; the deployment-gate shock that has materialized is regulatory, not reliability.</p>
 </section>
 
-<section class="page" data-report-page="9" id="page-9"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">09 / 15</span></div>
+<section class="page" data-report-page="9" id="page-9"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">09 / 15</span></div>
 <span class="sec-kicker">The Corpus · Reliability Benchmark</span>
 <h2>ISRG — the deployed-robot economics analogue</h2>
 <div class="stat-row">
@@ -364,7 +376,7 @@
 <p><span class="badge badge-fact">fact</span> 165 · <span class="badge badge-deducted">deducted</span> 29 · <span class="badge badge-view">view</span> 19 · 59 citations (5 artifacts). The reliability benchmark's 25-year MTBF non-disclosure is itself the PIL-3 evidence — reliability is a serviced, fleet-level property, not a published spec.</p>
 </section>
 
-<section class="page" data-report-page="10" id="page-10"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">10 / 15</span></div>
+<section class="page" data-report-page="10" id="page-10"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">10 / 15</span></div>
 <span class="sec-kicker">The Corpus · Integrated Humanoid Programme</span>
 <h2>TSLA — the only filed humanoid timeline</h2>
 <div class="stat-row">
@@ -389,7 +401,7 @@
 <p><span class="badge badge-fact">fact</span> 147 · <span class="badge badge-deducted">deducted</span> 34 · <span class="badge badge-view">view</span> 28 · 135 citations (7 artifacts). The reliability gate ("March of 9s", <a href="https://agentii.ai/v/TSLA/ect61/4">ect61/4</a>) and the flat-and-long S-curve are the timing anchors for the 2027-Q4–2028-Q2 band.</p>
 </section>
 
-<section class="page" data-report-page="11" id="page-11"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">11 / 15</span></div>
+<section class="page" data-report-page="11" id="page-11"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">11 / 15</span></div>
 <span class="sec-kicker">The Corpus · Fleet-Scale Deployer</span>
 <h2>AMZN — deployment economics, not humanoids</h2>
 <div class="stat-row">
@@ -414,7 +426,7 @@
 <p><span class="badge badge-fact">fact</span> 59 · <span class="badge badge-deducted">deducted</span> 16 · <span class="badge badge-view">view</span> 7 · 23 citations (2 artifacts). Greenfield → fleetwide retrofit is a ~2-year bridge: capex intensity concentrates in years 2–4 of a deployment wave.</p>
 </section>
 
-<section class="page" data-report-page="12" id="page-12"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">12 / 15</span></div>
+<section class="page" data-report-page="12" id="page-12"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">12 / 15</span></div>
 <span class="sec-kicker">The Corpus · Actuator Franchise</span>
 <h2>PH — the motion-control proxy</h2>
 <div class="stat-row">
@@ -437,7 +449,7 @@
 <p><span class="badge badge-fact">fact</span> 65 · <span class="badge badge-deducted">deducted</span> 13 · <span class="badge badge-view">view</span> 6 · 34 citations (2 artifacts). PH's zero-robotics disclosure is the single most important PIL-4 negative evidence: the largest listed actuator franchise does not yet claim a humanoid revenue stream.</p>
 </section>
 
-<section class="page" data-report-page="13" id="page-13"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">13 / 15</span></div>
+<section class="page" data-report-page="13" id="page-13"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">13 / 15</span></div>
 <span class="sec-kicker">The Corpus · Upstream Leading Indicator</span>
 <h2>SPCX — compute-led capex, one public quarter</h2>
 <div class="stat-row">
@@ -462,7 +474,7 @@
 <p><span class="badge badge-fact">fact</span> 38 · <span class="badge badge-deducted">deducted</span> 8 · <span class="badge badge-view">view</span> 11 · 26 citations (1 artifact). Growth is compute-led, not launch-led — the infrastructure for the 2027–2028 window is being capitalized now. One-quarter issuer: forward compute targets are promotional.</p>
 </section>
 
-<section class="page" data-report-page="14" id="page-14"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">14 / 15</span></div>
+<section class="page" data-report-page="14" id="page-14"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">14 / 15</span></div>
 <span class="sec-kicker">What This Report Cannot Claim</span>
 <h2>Coverage Gaps</h2>
 <p>Aggregated from the artifacts — ten items that bound what this report can and cannot claim.</p>
@@ -484,7 +496,7 @@
 </ul>
 </section>
 
-<section class="page" data-report-page="15" id="page-15"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><button type="button" class="print-btn no-print" onclick="window.print()">Print / PDF</button><span class="page-mark">15 / 15</span></div>
+<section class="page" data-report-page="15" id="page-15"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="print-center no-print"><button type="button" class="print-btn" title="Safari print dialog — Paper: US Letter · Margins: None · Scale: 100% · Print backgrounds: ON" onclick="window.print()">Print / PDF</button><span class="print-hint">US Letter · Margins: None · Scale: 100% · Print backgrounds</span></span><span class="page-mark">15 / 15</span></div>
 <span class="sec-kicker">Data Quality · Contract Compliance</span>
 <h2>Data-Quality Flags &amp; Contract Compliance</h2>
 <h3>Flags surfaced by the agents</h3>
