@@ -1,0 +1,2586 @@
+{
+  "pack_version": "2.0",
+  "thesis": "002-value-chain-profit-pool-map",
+  "tickers": {
+    "AMBA": {
+      "artifacts": [
+        "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md",
+        "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+      ],
+      "key_metrics": {
+        "revenue_fy2026_usd": 390702000,
+        "revenue_fy2025_usd": 284865000,
+        "revenue_fy2024_usd": 226474000,
+        "gross_margin_fy2026_pct": 59.2,
+        "gross_margin_fy2025_pct": 60.5,
+        "gross_margin_fy2024_pct": 60.4,
+        "gm_gap_change_fy2024_to_fy2026_pp": -1.2,
+        "non_gaap_gross_margin_fy2026_pct": 60.7,
+        "wt_revenue_share_fy2026_pct": 70,
+        "taiwan_bill_to_share_fy2026_pct": 69.6,
+        "iot_revenue_share_fy2026_pct": 80,
+        "contract_manufacturer_purchase_commitments_jan2026_usd": 80400000,
+        "inventory_days_q1_fy2027": 145,
+        "revenue_usd_fy2026": 390700000,
+        "revenue_usd_fy2025": 284865000,
+        "revenue_usd_fy2024": 226474000,
+        "gross_margin_pct_fy2026": 59,
+        "gross_margin_pct_fy2025": 60,
+        "gross_margin_pct_fy2024": 60,
+        "rnd_pct_of_revenue_fy2026": 61,
+        "wt_distributor_share_pct_fy2026": 70,
+        "asia_pacific_bill_to_share_pct_fy2026": 87.8
+      },
+      "metric_sources": {
+        "revenue_fy2026_usd": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "revenue_fy2025_usd": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "revenue_fy2024_usd": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "gross_margin_fy2026_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "gross_margin_fy2025_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "gross_margin_fy2024_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "gm_gap_change_fy2024_to_fy2026_pp": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "non_gaap_gross_margin_fy2026_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "wt_revenue_share_fy2026_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "taiwan_bill_to_share_fy2026_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "iot_revenue_share_fy2026_pct": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "contract_manufacturer_purchase_commitments_jan2026_usd": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "inventory_days_q1_fy2027": [
+          "artifacts/AMBA/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "revenue_usd_fy2026": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "revenue_usd_fy2025": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "revenue_usd_fy2024": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "gross_margin_pct_fy2026": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "gross_margin_pct_fy2025": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "gross_margin_pct_fy2024": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "rnd_pct_of_revenue_fy2026": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "wt_distributor_share_pct_fy2026": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "asia_pacific_bill_to_share_pct_fy2026": [
+          "artifacts/AMBA/2026-09-11_0022_competitive-positioning_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "AMBA",
+          "metric": "revenue_usd",
+          "value": 390702000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page72",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_usd",
+          "value": 284865000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page72",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_usd",
+          "value": 226474000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "10-K:page72",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_pct",
+          "value": 59.2,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page72",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_pct",
+          "value": 60.5,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page72",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_pct",
+          "value": 60.4,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page72",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_usd",
+          "value": 390700000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page57",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_usd",
+          "value": 284865000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page57",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_usd",
+          "value": 226474000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "10-K:page57",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_pct",
+          "value": 59,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page55",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_pct",
+          "value": 60,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page55",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_pct",
+          "value": 60,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page55",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_growth_yoy_pct",
+          "value": 37.2,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page57",
+          "retrieved_at": "2026-09-11",
+          "derivation": "[DEDUCTED] arithmetic on revenue_usd; filing states 37.2%"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "revenue_growth_yoy_pct",
+          "value": 25.8,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page57",
+          "retrieved_at": "2026-09-11",
+          "derivation": "[DEDUCTED] arithmetic on revenue_usd; filing states 25.8%"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "gross_margin_yoy_change_pp",
+          "value": -1.0,
+          "unit": "pp",
+          "period": "FY2026",
+          "source": "10-K:page55",
+          "retrieved_at": "2026-09-11",
+          "derivation": "[DEDUCTED] arithmetic on gross_margin_pct FY2026 vs FY2025"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "taiwan_share_of_revenue_pct",
+          "value": 69.6,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page97",
+          "retrieved_at": "2026-09-11",
+          "derivation": "[DEDUCTED] arithmetic on revenue_usd (271,928 / 390,702)"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "asia_pacific_share_of_revenue_pct",
+          "value": 87.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page97",
+          "retrieved_at": "2026-09-11",
+          "derivation": "[DEDUCTED] arithmetic on revenue_usd ((271,928+71,032) / 390,702)"
+        },
+        {
+          "entity": "AMBA",
+          "metric": "us_share_of_revenue_pct",
+          "value": 1.5,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page97",
+          "retrieved_at": "2026-09-11",
+          "derivation": "[DEDUCTED] arithmetic on revenue_usd (5,844 / 390,702)"
+        }
+      ],
+      "conclusions": [
+        "AMBA runs a fully outsourced fabless chain: Samsung supplies the substantial majority of SoCs (current nodes 10/5/4 nm, first 2 nm tape-out); assembly/test is split across Signetics, STATS ChipPAC, ASE, Sigurd and KYEC; each SoC is single-sourced at one facility with no long-term supply agreements.",
+        "The sensing-layer GM series held ~60%: 60.4% (FY2024) to 60.5% (FY2025) to 59.2% (FY2026), a -1.2pp three-year drift driven by advanced-node manufacturing costs — far from the PIL-1b -10pp falsifier and consistent with a resilient sensing-silicon margin anchor.",
+        "Customer and geographic concentration is extreme: WT Microelectronics (Taiwan) channeled ~70% of FY2026 revenue; Taiwan bill-to was 69.6% of revenue; end-market mix is ~80% IoT (physical-security-led) and ~20% automotive (telematics-led).",
+        "Robotics exposure is indirect and early-stage: one warehouse-robotics design win in low-volume production plus further perception/fusion design wins (mostly 5 nm CVflow), with humanoid-type engagements acknowledged but not yet disclosable. AMBA maps to the sensing-silicon layer, not to a direct humanoid BOM.",
+        "AMBA's sensing-layer moat is design-in stickiness plus software/algorithm IP (CVflow, NN-ISP) priced at a stable ~59-60% gross margin, not foundry or scale advantage.",
+        "FY2026 gross margin erosion (-1pp) is supply-side (advanced-node manufacturing costs, reserved-inventory sales), not price-war-driven; ASP mix is shifting toward higher-priced AI inference processors.",
+        "PIL-2 China exposure is bilateral: 23% of employees in China plus an Asia-heavy revenue base (87.8% bill-to Asia Pacific) versus BIS Entity List restrictions on China customers and local-substitution pressure from HiSilicon/Horizon Robotics.",
+        "Robotics exposure is indirect and emerging (CV7/N1-655 VLM/VLA SoCs); no robotics revenue is disclosed - labeled honestly."
+      ],
+      "counts": {
+        "facts_count": 71,
+        "deducted_count": 23,
+        "views_count": 9,
+        "citation_count": 82
+      }
+    },
+    "CGNX": {
+      "artifacts": [
+        "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+      ],
+      "key_metrics": {
+        "revenue_fy2023_usd": 837547000,
+        "revenue_fy2024_usd": 914515000,
+        "revenue_fy2025_usd": 994359000,
+        "cost_of_revenue_fy2023_usd": 236306000,
+        "cost_of_revenue_fy2024_usd": 288721000,
+        "cost_of_revenue_fy2025_usd": 328966000,
+        "gross_margin_fy2023_pct": 71.8,
+        "gross_margin_fy2024_pct": 68.4,
+        "gross_margin_fy2025_pct": 66.9,
+        "gm_3fy_change_pp": -4.9,
+        "non_us_revenue_share_fy2025_pct": 67,
+        "greater_china_revenue_share_fy2025_pct": 16,
+        "single_customer_revenue_share_fy2025_pct": 15,
+        "service_revenue_share_fy2025_pct_lt": 10,
+        "application_specific_solutions_share_fy2025_pct": 11.5
+      },
+      "metric_sources": {
+        "revenue_fy2023_usd": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "revenue_fy2024_usd": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "revenue_fy2025_usd": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "cost_of_revenue_fy2023_usd": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "cost_of_revenue_fy2024_usd": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "cost_of_revenue_fy2025_usd": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "gross_margin_fy2023_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "gross_margin_fy2024_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "gross_margin_fy2025_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "gm_3fy_change_pp": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "non_us_revenue_share_fy2025_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "greater_china_revenue_share_fy2025_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "single_customer_revenue_share_fy2025_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "service_revenue_share_fy2025_pct_lt": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ],
+        "application_specific_solutions_share_fy2025_pct": [
+          "artifacts/CGNX/2026-09-11_0026_supply-chain_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "CGNX",
+          "metric": "revenue_usd",
+          "value": 837547000,
+          "unit": "USD",
+          "period": "FY2023",
+          "source": "10-K:page59",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "CGNX",
+          "metric": "revenue_usd",
+          "value": 914515000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "10-K:page59",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "CGNX",
+          "metric": "revenue_usd",
+          "value": 994359000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page59",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "CGNX",
+          "metric": "gross_margin_pct",
+          "value": 71.8,
+          "unit": "pct",
+          "period": "FY2023",
+          "source": "XBRL:RFCCExcludingAssessedTax+COGSandServicesSold",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "CGNX",
+          "metric": "gross_margin_pct",
+          "value": 68.4,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "XBRL:RFCCExcludingAssessedTax+COGSandServicesSold",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "CGNX",
+          "metric": "gross_margin_pct",
+          "value": 66.9,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "XBRL:RFCCExcludingAssessedTax+COGSandServicesSold",
+          "retrieved_at": "2026-09-11"
+        }
+      ],
+      "conclusions": [
+        "CGNX is the automation-side sensing profit-pool reference: 66.9% FY2025 gross margin, -4.9pp over FY2023-FY2025 (PIL-1b input).",
+        "Asset-light supply structure: EMS contract manufacturing (Indonesia/Malaysia) + in-house optics (China/Vietnam) + software loading at own DCs.",
+        "Demand concentration: 4 end markets ~85% of revenue; single customer 15% (2025); 67% of revenue non-US.",
+        "Recurring/software share is low and not separately disclosed: services <10%; software largely embedded with hardware.",
+        "Robotics exposure is INDIRECT (factory-automation vision, robot guidance) — no humanoid robotics revenue claim can be made from filings."
+      ],
+      "counts": {
+        "facts_count": 32,
+        "deducted_count": 7,
+        "views_count": 6,
+        "citation_count": 15
+      }
+    },
+    "ISRG": {
+      "artifacts": [
+        "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md",
+        "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md",
+        "artifacts/ISRG/2026-09-11_0025_business-model_business-model-classification.md",
+        "artifacts/ISRG/2026-09-11_0025_business-model_distribution-channel-analysis.md",
+        "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md",
+        "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+      ],
+      "key_metrics": {
+        "fy2025_revenue_total_usd": 10064700000,
+        "fy2025_ia_revenue_usd": 6018900000,
+        "fy2025_systems_revenue_usd": 2473700000,
+        "fy2025_service_revenue_usd": 1572100000,
+        "fy2025_ia_share_pct": 59.8,
+        "fy2025_systems_share_pct": 24.6,
+        "fy2025_service_share_pct": 15.6,
+        "fy2025_recurring_revenue_usd": 8465300000,
+        "fy2025_recurring_share_pct": 84,
+        "fy2025_operating_lease_revenue_usd": 874300000,
+        "fy2025_installed_base_units": 12101,
+        "fy2025_recurring_per_installed_unit_usd": 699553,
+        "fy2025_ia_per_installed_unit_usd": 497389,
+        "fy2025_service_per_installed_unit_usd": 129915,
+        "fy2025_service_contract_annual_fee_range_usd": [
+          95000,
+          225000
+        ],
+        "fy2025_ia_per_procedure_range_usd": [
+          900,
+          3700
+        ],
+        "fy2025_product_gross_margin_pct": 66.3,
+        "fy2025_service_gross_margin_pct": 64.6,
+        "q2_2026_revenue_total_usd": 2892300000,
+        "q2_2026_ia_revenue_usd": 1734900000,
+        "q2_2026_systems_revenue_usd": 685000000,
+        "q2_2026_service_revenue_usd": 472400000,
+        "q2_2026_recurring_revenue_usd": 2469100000,
+        "q2_2026_recurring_share_pct": 85,
+        "q2_2026_installed_base_units": 12806,
+        "q2_2026_ia_per_procedure_usd": 1852,
+        "software_subscription_revenue": "immaterial",
+        "model_layer_revenue_per_deployed_unit_usd": 0,
+        "product_gross_margin_pct_fy2023": 65.7,
+        "product_gross_margin_pct_fy2024": 67.2,
+        "product_gross_margin_pct_fy2025": 66.3,
+        "service_gross_margin_pct_fy2025": 64.6,
+        "consolidated_gross_margin_pct_fy2025": 66.0,
+        "consolidated_gross_margin_pct_fy2024": 67.5,
+        "revenue_usd_fy2025": 10064700000,
+        "product_revenue_usd_fy2025": 8492600000,
+        "instruments_accessories_revenue_usd_fy2025": 6018900000,
+        "systems_revenue_usd_fy2025": 2473700000,
+        "service_revenue_usd_fy2025": 1572100000,
+        "system_asp_usd_fy2025": 1600000,
+        "installed_base_units_fy2025": 11106,
+        "manufacturing_headcount_share_pct_fy2025": 44.8,
+        "tariff_cost_of_revenue_impact_usd_fy2025": 63000000,
+        "fy2025_revenue_usd": 10064700000,
+        "recurring_revenue_share_pct": 84,
+        "installed_base_units": 12101,
+        "product_gross_margin_pct": 66.3,
+        "consolidated_gross_margin_pct": 66.0,
+        "da_vinci_placements_op_lease_share_pct_fy2025": 51,
+        "op_lease_installed_base_share_pct_q2_2026": 29.8,
+        "ab_medica_acquisition_cash_usd": 533100000,
+        "us_revenue_share_pct_fy2025": 68,
+        "ia_share_of_revenue_pct_fy2025": 59.8,
+        "us_share_of_revenue_pct_fy2025": 68,
+        "recurring_revenue_usd_fy2025": 8465300000,
+        "service_revenue_per_installed_unit_usd_fy2025": 129900,
+        "recurring_revenue_per_installed_unit_usd_fy2025": 699600,
+        "remaining_performance_obligations_usd": 3400000000,
+        "product_gm_fy2023_pct": 65.7,
+        "product_gm_fy2024_pct": 67.2,
+        "product_gm_fy2025_pct": 66.3,
+        "product_gm_q2_2026_pct": 67.9,
+        "total_gm_fy2025_pct": 66.0,
+        "total_gm_fy2024_pct": 67.5,
+        "total_gm_fy2023_pct": 66.4,
+        "system_asp_fy2025_usd": 1600000,
+        "system_asp_fy2024_usd": 1500000,
+        "system_asp_h1_2026_usd": 1660000,
+        "ia_revenue_per_procedure_fy2025_usd": 1826,
+        "ia_revenue_per_procedure_q2_2026_usd": 1852,
+        "service_revenue_per_system_year_fy2025_usd": 141554,
+        "recurring_share_fy2025_pct": 84.0,
+        "recurring_share_q2_2026_pct": 85.0,
+        "installed_base_davinci_fy2025": 11106,
+        "installed_base_davinci_q2_2026": 11710
+      },
+      "metric_sources": {
+        "fy2025_revenue_total_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_ia_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_systems_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_service_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_ia_share_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_systems_share_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_service_share_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_recurring_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_recurring_share_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_operating_lease_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_installed_base_units": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_recurring_per_installed_unit_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_ia_per_installed_unit_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_service_per_installed_unit_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_service_contract_annual_fee_range_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_ia_per_procedure_range_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_product_gross_margin_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "fy2025_service_gross_margin_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_revenue_total_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_ia_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_systems_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_service_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_recurring_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_recurring_share_pct": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_installed_base_units": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "q2_2026_ia_per_procedure_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "software_subscription_revenue": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "model_layer_revenue_per_deployed_unit_usd": [
+          "artifacts/ISRG/2026-09-11_0023_revenue-decomp_default.md"
+        ],
+        "product_gross_margin_pct_fy2023": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "product_gross_margin_pct_fy2024": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "product_gross_margin_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "service_gross_margin_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2024": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "revenue_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "product_revenue_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "instruments_accessories_revenue_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "systems_revenue_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "service_revenue_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "system_asp_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "installed_base_units_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "manufacturing_headcount_share_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "tariff_cost_of_revenue_impact_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "fy2025_revenue_usd": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_business-model-classification.md"
+        ],
+        "recurring_revenue_share_pct": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_business-model-classification.md"
+        ],
+        "installed_base_units": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_business-model-classification.md"
+        ],
+        "product_gross_margin_pct": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_business-model-classification.md"
+        ],
+        "consolidated_gross_margin_pct": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_business-model-classification.md"
+        ],
+        "da_vinci_placements_op_lease_share_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_distribution-channel-analysis.md"
+        ],
+        "op_lease_installed_base_share_pct_q2_2026": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_distribution-channel-analysis.md"
+        ],
+        "ab_medica_acquisition_cash_usd": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_distribution-channel-analysis.md"
+        ],
+        "us_revenue_share_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_distribution-channel-analysis.md"
+        ],
+        "ia_share_of_revenue_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md"
+        ],
+        "us_share_of_revenue_pct_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md"
+        ],
+        "recurring_revenue_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md"
+        ],
+        "service_revenue_per_installed_unit_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md"
+        ],
+        "recurring_revenue_per_installed_unit_usd_fy2025": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md"
+        ],
+        "remaining_performance_obligations_usd": [
+          "artifacts/ISRG/2026-09-11_0025_business-model_revenue-composition-and-concentration.md"
+        ],
+        "product_gm_fy2023_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "product_gm_fy2024_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "product_gm_fy2025_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "product_gm_q2_2026_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "total_gm_fy2025_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "total_gm_fy2024_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "total_gm_fy2023_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "system_asp_fy2025_usd": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "system_asp_fy2024_usd": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "system_asp_h1_2026_usd": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "ia_revenue_per_procedure_fy2025_usd": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "ia_revenue_per_procedure_q2_2026_usd": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "service_revenue_per_system_year_fy2025_usd": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "recurring_share_fy2025_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "recurring_share_q2_2026_pct": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "installed_base_davinci_fy2025": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ],
+        "installed_base_davinci_q2_2026": [
+          "artifacts/ISRG/2026-09-11_0026_unit-economics_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "ISRG",
+          "metric": "instruments_accessories_revenue_usd",
+          "value": 6018900000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11",
+          "note": "proposed map addition — dispatcher to confirm"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "systems_revenue_usd",
+          "value": 2473700000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11",
+          "note": "proposed map addition — dispatcher to confirm"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_revenue_usd",
+          "value": 1572100000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11",
+          "note": "proposed map addition — dispatcher to confirm"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 84,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 85,
+          "unit": "pct",
+          "period": "Q2-2026",
+          "source": "10-Q:page40",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 12101,
+          "unit": "units",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 12806,
+          "unit": "units",
+          "period": "Q2-2026",
+          "source": "10-Q:page32",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 66.3,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1852,
+          "unit": "USD",
+          "period": "Q2-2026",
+          "source": "10-Q:page32;10-Q:page38",
+          "retrieved_at": "2026-09-11",
+          "note": "[DEDUCTED] I&A revenue 1,734.9M / (da Vinci 889,000 + Ion 47,900) procedures"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "model_layer_revenue_per_deployed_unit_usd",
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11",
+          "note": "[DEDUCTED] digital-solutions/software revenue immaterial per 10-K; falsifier threshold is 5,000"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 65.7,
+          "unit": "pct",
+          "period": "FY2023",
+          "source": "10-K:sec166 page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 67.2,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:sec166 page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 66.3,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:sec166 page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 84.0,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:sec166 page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 11106,
+          "unit": "units",
+          "period": "FY2025",
+          "source": "10-K:sec166 page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1909,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived: I&A revenue sec166 page77 / da Vinci procedures sec166 page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 66.3,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 84,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 12101,
+          "unit": "units",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1826,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived: 10-K:page69 + 10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 85,
+          "unit": "pct",
+          "period": "Q2-2026",
+          "source": "10-Q:page40",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 12806,
+          "unit": "units",
+          "period": "Q2-2026",
+          "source": "10-Q:page32 + 10-Q:page35",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 66.3,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 84,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 85,
+          "unit": "pct",
+          "period": "Q2-2026",
+          "source": "10-Q:page40",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 12101,
+          "unit": "units",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 12806,
+          "unit": "units",
+          "period": "Q2-2026",
+          "source": "10-Q:page32 + 10-Q:page35",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1826,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived: 10-K:page69 + 10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1852,
+          "unit": "USD",
+          "period": "Q2-2026",
+          "source": "derived: 10-Q:page32 + 10-Q:page38",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 65.7,
+          "unit": "pct",
+          "period": "FY2023",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 67.2,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 66.3,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 67.9,
+          "unit": "pct",
+          "period": "2026Q2",
+          "source": "10-Q:page41",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_margin_pct",
+          "value": 67.3,
+          "unit": "pct",
+          "period": "H1-2026",
+          "source": "10-Q:page41",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 84.0,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "recurring_revenue_share_pct",
+          "value": 85.0,
+          "unit": "pct",
+          "period": "2026Q2",
+          "source": "10-Q:page40",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 11106,
+          "unit": "units",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "installed_base_units",
+          "value": 11710,
+          "unit": "units",
+          "period": "2026Q2",
+          "source": "10-Q:page32",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1826,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived:10-K:page69,page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "revenue_per_procedure_usd",
+          "value": 1852,
+          "unit": "USD",
+          "period": "2026Q2",
+          "source": "derived:10-Q:page32,page38",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "system_asp_usd",
+          "value": 1500000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "10-K:page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "system_asp_usd",
+          "value": 1600000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page78",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "system_asp_usd",
+          "value": 1660000,
+          "unit": "USD",
+          "period": "H1-2026",
+          "source": "10-Q:page40",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_revenue_per_system_year_usd",
+          "value": 141554,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived:10-K:page69,page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "total_gross_margin_pct",
+          "value": 66.4,
+          "unit": "pct",
+          "period": "FY2023",
+          "source": "derived:XBRL",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "total_gross_margin_pct",
+          "value": 67.5,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "total_gross_margin_pct",
+          "value": 66.0,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_gross_margin_pct",
+          "value": 69.8,
+          "unit": "pct",
+          "period": "FY2023",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_gross_margin_pct",
+          "value": 69.0,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_gross_margin_pct",
+          "value": 64.6,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_gross_margin_pct",
+          "value": 67.2,
+          "unit": "pct",
+          "period": "2026Q2",
+          "source": "10-Q:page41",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_cost_of_revenue_usd",
+          "value": 2041800000,
+          "unit": "USD",
+          "period": "FY2023",
+          "source": "derived:10-K:page77,page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_cost_of_revenue_usd",
+          "value": 2313100000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "derived:10-K:page77,page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_cost_of_revenue_usd",
+          "value": 2866100000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived:10-K:page77,page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_cost_of_revenue_usd",
+          "value": 352800000,
+          "unit": "USD",
+          "period": "FY2023",
+          "source": "derived:10-K:page77,page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_cost_of_revenue_usd",
+          "value": 404800000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "derived:10-K:page77,page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_cost_of_revenue_usd",
+          "value": 556300000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "derived:10-K:page77,page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "consolidated_revenue_usd",
+          "value": 7124100000,
+          "unit": "USD",
+          "period": "FY2023",
+          "source": "XBRL:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "consolidated_revenue_usd",
+          "value": 8352100000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "XBRL:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "consolidated_revenue_usd",
+          "value": 10064700000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "XBRL:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "consolidated_cogs_usd",
+          "value": 2394600000,
+          "unit": "USD",
+          "period": "FY2023",
+          "source": "XBRL:CostOfGoodsAndServicesSold",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "consolidated_cogs_usd",
+          "value": 2717900000,
+          "unit": "USD",
+          "period": "FY2024",
+          "source": "XBRL:CostOfGoodsAndServicesSold",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "consolidated_cogs_usd",
+          "value": 3422400000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "XBRL:CostOfGoodsAndServicesSold",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_revenue_usd",
+          "value": 8492600000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_revenue_usd",
+          "value": 1572100000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "product_gross_profit_usd",
+          "value": 5626500000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_gross_profit_usd",
+          "value": 1015800000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page79",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "instruments_accessories_revenue_usd",
+          "value": 6018900000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "instruments_accessories_revenue_usd",
+          "value": 1734900000,
+          "unit": "USD",
+          "period": "2026Q2",
+          "source": "10-Q:page38",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "da_vinci_procedures",
+          "value": 3153000,
+          "unit": "procedures",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "da_vinci_procedures",
+          "value": 889000,
+          "unit": "procedures",
+          "period": "2026Q2",
+          "source": "10-Q:page32",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "ion_procedures",
+          "value": 144100,
+          "unit": "procedures",
+          "period": "FY2025",
+          "source": "10-K:page69",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "ion_procedures",
+          "value": 47900,
+          "unit": "procedures",
+          "period": "2026Q2",
+          "source": "10-Q:page32",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "ieepa_tariff_refund_usd",
+          "value": 27500000,
+          "unit": "USD",
+          "period": "2026Q2",
+          "source": "10-Q:page41",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "system_price_range_min_usd",
+          "value": 700000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "system_price_range_max_usd",
+          "value": 3100000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_contract_fee_range_min_usd",
+          "value": 95000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "service_contract_fee_range_max_usd",
+          "value": 225000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "ia_revenue_per_procedure_range_min_usd",
+          "value": 900,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "ISRG",
+          "metric": "ia_revenue_per_procedure_range_max_usd",
+          "value": 3700,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page77",
+          "retrieved_at": "2026-09-11"
+        }
+      ],
+      "conclusions": [
+        "FY2025 revenue decomposition reconciles exactly to the T-001 baseline: I&A 59.8% / systems 24.6% / service 15.6%; recurring 84% (rising to 85% in Q2/H1 2026).",
+        "The software/subscription layer (My Intuitive+, Case Insights/Advanced Insights Suite, My Intuitive, SimNow, 3D Models) generates immaterial revenue; software monetizes as features bundled into hardware sales and service contracts, not as a standalone model layer.",
+        "PIL-3 NOT falsified: model-layer revenue per deployed unit is approximately zero vs the >$5,000 falsification threshold; per-unit recurring revenue (~$700K) is dominated by disposables and maintenance, not software.",
+        "Residual: falsification would require only ~$60.5M/yr of undisclosed software revenue, and amounts up to ~1% of revenue (~$100.6M) could hide under immateriality — a narrow unresolved zone.",
+        "PIL-1: ISRG keeps the actuation-heavy content of the da Vinci value chain in-house — instruments & accessories (the motion layer) are 70.9% of product revenue, manufacturing operations are 44.8% of headcount, and production spans owned US/MX/EU sites plus a China JV.",
+        "PIL-2: Sourcing is a large multi-supplier base on purchase orders with sole-/single-source exceptions and minimal finished-goods inventory; China exposure runs through rare-earth/magnet inputs and the Shanghai JV, not through outsourced actuation assembly.",
+        "GM series FY2023-FY2025 (product 65.7/67.2/66.3; consolidated 66.4/67.5/66.0) reconciles exactly with the T-001 baseline and XBRL; the 2025 compression is tariff/ramp-driven, not a structural BOM-cost shift.",
+        "Business model: premium capital-equipment product business with razor-razorblade recurring stream; 84% of FY2025 revenue is recurring (I&A + service + operating-lease).",
+        "Model layer on-device compute is enormous (da Vinci 5 >10,000x dv Xi), but the disclosed digital-subscription slice (My Intuitive+) is not material revenue — PIL-3 subscription-case input lands in mode revenue-composition-and-concentration.",
+        "Go-to-market is a hybrid: direct sales organizations in major markets (U.S., most of Europe, China-JV, Japan, S.Korea, India, Taiwan, Canada) plus distributors elsewhere; no numeric direct:indirect revenue split is disclosed.",
+        "Channel evolution is measurable along two axes: (1) leasing (op-lease share of da Vinci placements 48% → 51% → 51%, 2023-2025; 54% Q2-2026) and (2) distributor-to-direct conversion in Europe via the $533.1M ab medica acquisition (March 2026).",
+        "Concentration: Instruments & Accessories = 59.8% of FY2025 revenue and U.S. = 68% — both >20% concentration flags; 84% of revenue is recurring, an unusually high attach-rate structure for a 'product' company.",
+        "PIL-3 direct test input: disclosed software-subscription revenue (My Intuitive+) is not material (~$0/unit), BUT the per-unit subscription-bearing service contract ($95K-$225K/system/year; realized $129.9K/system FY2025) exceeds the $5,000/unit falsification threshold by ~26x — under the pillar's 'INCLUDES per-unit software/subscription revenue' definition, the subscription case falsifies PIL-3 unless model-layer revenue is restricted to standalone digital subscriptions.",
+        "ISRG product GM series FY2023->FY2025 (65.7 -> 67.2 -> 66.3) confirms the integrated-system margin anchor with a tariff/depreciation-driven FY2025 dip; feeds the PIL-1b gap-change computation.",
+        "Razor/razor-blade model confirmed: 84-85% recurring revenue with I&A per procedure ~$1.83K and service ~$141.6K per system-year against a ~$1.60M system ASP.",
+        "Product COGS (83.7% of total COGS) dominates the integrated-system cost stack; filing-level BOM decomposition is not disclosed, so product COGS intensity (33.7% of product revenue) is the ceiling proxy for the PIL-1a BOM-share test.",
+        "Q2-2026 margin rebound includes one-off IEEPA tariff refunds ($27.5M), so the FY series, not quarterly, should anchor the PIL-1b margin-trend test."
+      ],
+      "counts": {
+        "facts_count": 148,
+        "deducted_count": 42,
+        "views_count": 18,
+        "citation_count": 106
+      }
+    },
+    "NVDA": {
+      "artifacts": [
+        "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md",
+        "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+      ],
+      "key_metrics": {
+        "consolidated_gross_margin_pct_fy2025": 75.0,
+        "consolidated_gross_margin_pct_fy2026": 71.1,
+        "consolidated_gross_margin_pct_q1-fy2027": 74.9,
+        "edge_computing_revenue_usd_q1-fy2027": 6369000000,
+        "data_center_revenue_usd_q1-fy2027": 75246000000,
+        "hyperscale_revenue_usd_q1-fy2027": 37869000000,
+        "acie_revenue_usd_q1-fy2027": 37377000000,
+        "total_revenue_usd_fy2026": 215938000000,
+        "total_revenue_usd_q1-fy2027": 81615000000,
+        "china_revenue_usd_fy2025": 25048000000,
+        "china_revenue_usd_fy2026": 19677000000,
+        "china_revenue_usd_q1-fy2027": 4550000000,
+        "china_revenue_share_pct_fy2025": 19.2,
+        "china_revenue_share_pct_fy2026": 9.1,
+        "china_revenue_share_pct_q1-fy2027": 5.6,
+        "h20_inventory_charge_usd_q1-fy2026": 4500000000,
+        "h20_licensed_revenue_usd_fy2026": 60000000,
+        "inventory_provision_net_gm_impact_pct_q1-fy2027": 1.2,
+        "inventory_provision_net_gm_impact_pct_fy2026": 2.6,
+        "customer_concentration_top3_pct_q1-fy2027": 54,
+        "cumulative_rd_usd": 76700000000,
+        "rd_expense_usd_fy2026": 18497000000,
+        "revenue_fy2026_usd_b": 215.9,
+        "gross_margin_fy2026_pct": 71.1,
+        "gross_margin_fy2025_pct": 75.0,
+        "gross_margin_fy2024_pct": 72.7,
+        "gross_margin_q1fy2027_pct": 74.9,
+        "gross_margin_q1fy2026_pct": 60.5,
+        "gm_change_fy2024_to_fy2026_pp": -1.6,
+        "h20_charge_q1fy2026_usd_b": 4.5,
+        "h20_licensed_revenue_aug2025_usd_m": 60,
+        "h200_import_tariff_pct": 25,
+        "china_revenue_fy2026_usd_b": 19.7,
+        "china_revenue_share_fy2026_pct": 9.1,
+        "china_revenue_share_fy2024_pct": 20.2,
+        "china_revenue_q1fy2027_usd_b": 4.55,
+        "china_revenue_share_q1fy2027_pct": 5.6,
+        "supply_commitments_fy2026_end_usd_b": 95.2,
+        "supply_commitments_apr2026_usd_b": 119,
+        "cloud_commitments_apr2026_usd_b": 30,
+        "inventory_fy2026_end_usd_b": 21.4,
+        "edge_revenue_q1fy2027_usd_b": 6.37,
+        "edge_share_q1fy2027_revenue_pct": 7.8,
+        "data_center_revenue_fy2026_usd_b": 193.7,
+        "top1_direct_customer_share_fy2026_pct": 22,
+        "top2_direct_customer_share_fy2026_pct": 14,
+        "top_direct_customer_shares_q1fy2027_pct": [
+          21,
+          17,
+          16
+        ],
+        "nonus_revenue_share_fy2026_pct": 31,
+        "segment_operating_income_margin_fy2026_pct": 64.5
+      },
+      "metric_sources": {
+        "consolidated_gross_margin_pct_fy2025": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "consolidated_gross_margin_pct_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "edge_computing_revenue_usd_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "data_center_revenue_usd_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "hyperscale_revenue_usd_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "acie_revenue_usd_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "total_revenue_usd_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "total_revenue_usd_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "china_revenue_usd_fy2025": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "china_revenue_usd_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "china_revenue_usd_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "china_revenue_share_pct_fy2025": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "china_revenue_share_pct_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "china_revenue_share_pct_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "h20_inventory_charge_usd_q1-fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "h20_licensed_revenue_usd_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "inventory_provision_net_gm_impact_pct_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "inventory_provision_net_gm_impact_pct_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "customer_concentration_top3_pct_q1-fy2027": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "cumulative_rd_usd": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "rd_expense_usd_fy2026": [
+          "artifacts/NVDA/2026-09-11_0022_competitive-positioning_default.md"
+        ],
+        "revenue_fy2026_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "gross_margin_fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "gross_margin_fy2025_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "gross_margin_fy2024_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "gross_margin_q1fy2027_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "gross_margin_q1fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "gm_change_fy2024_to_fy2026_pp": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "h20_charge_q1fy2026_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "h20_licensed_revenue_aug2025_usd_m": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "h200_import_tariff_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "china_revenue_fy2026_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "china_revenue_share_fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "china_revenue_share_fy2024_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "china_revenue_q1fy2027_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "china_revenue_share_q1fy2027_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "supply_commitments_fy2026_end_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "supply_commitments_apr2026_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "cloud_commitments_apr2026_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "inventory_fy2026_end_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "edge_revenue_q1fy2027_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "edge_share_q1fy2027_revenue_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "data_center_revenue_fy2026_usd_b": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "top1_direct_customer_share_fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "top2_direct_customer_share_fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "top_direct_customer_shares_q1fy2027_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "nonus_revenue_share_fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ],
+        "segment_operating_income_margin_fy2026_pct": [
+          "artifacts/NVDA/2026-09-11_0024_supply-chain_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 75.0,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page41",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 71.1,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page41",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 74.9,
+          "unit": "pct",
+          "period": "Q1-FY2027",
+          "source": "10-Q:page24",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "edge_computing_revenue_usd",
+          "value": 6369000000,
+          "unit": "USD",
+          "period": "Q1-FY2027",
+          "source": "10-Q:page25",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 72.7,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page51",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 75.0,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page51",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 71.1,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page37",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 74.9,
+          "unit": "pct",
+          "period": "2027Q1",
+          "source": "10-Q:page27",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "NVDA",
+          "metric": "edge_computing_revenue_usd",
+          "value": 6369000000,
+          "unit": "USD",
+          "period": "2027Q1",
+          "source": "10-Q:page21",
+          "retrieved_at": "2026-09-11"
+        }
+      ],
+      "conclusions": [
+        "NVDA compute-layer moat (CUDA ecosystem, cadence, platform co-design) is intact; FY2026 GM dip to 71.1% was Hopper-to-Blackwell mix transition plus a one-off $4.5B H20 charge, not competitive erosion — GM recovered to 74.9% in Q1 FY2027.",
+        "China is structurally lost as a data-center compute market: NVDA states it is 'effectively foreclosed', China revenue share fell from 19.2% (FY2025) to 5.6% (Q1 FY2027), and the company admits the foreclosure is feeding competitor ecosystems globally.",
+        "Export controls — not customer ASICs — are the principal substitution risk to the compute-layer moat; ASIC development by customers is disclosed as a real but slower-moving threat.",
+        "Pricing power evidence is strong: 74.9% GM with demand-constrained supply, non-cancellable purchase orders, and stated pricing stability against short-term cost moves.",
+        "PIL-1: NVDA confirms the compute/model-layer margin anchor (71.1% FY2026 GM, 64.5% segment OI margin); within its own chain, profit concentrates at the bottlenecks NVDA owns or pre-purchases (architecture/IP, CoWoS advanced packaging, HBM capacity) while assembly is outsourced to Hon Hai/Wistron/Fabrinet.",
+        "PIL-1b input: NVDA model-layer GM changed -1.6pp over FY2024-FY2026 (72.7% to 71.1%); the motion-minus-model gap falsifier (< -10pp) would require PH motion-layer GM to fall roughly 8.5pp+ over the same window.",
+        "PIL-2: NVDA-China is the canonical import-substitution case - $4.5B H20 charge, ~$60M licensed revenue, H200 25% tariff, effective foreclosure from China DC compute; China revenue share fell 20.2% (FY2024) to 9.1% (FY2026) to 5.6% (Q1 FY2027), with Chinese-government procurement steering toward domestic competitors.",
+        "Supply-side structure: $95.2B manufacturing/supply/capacity commitments at FY2026-end grew to $119B by Apr 2026 (+$23.8B in one quarter); dependence concentrated in Taiwan (TSMC, CoWoS) and South Korea (HBM).",
+        "Edge platform ($6.37B Q1 FY2027, +29% YoY; robotics/automotive/AI-RAN) is NVDA's direct physical-AI device-economics exposure and the demand-side bridge to the thesis's motion/sensing layers."
+      ],
+      "counts": {
+        "facts_count": 81,
+        "deducted_count": 19,
+        "views_count": 11,
+        "citation_count": 74
+      }
+    },
+    "PH": {
+      "artifacts": [
+        "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md",
+        "artifacts/PH/2026-09-11_0018_business-model_distribution-channel-analysis.md",
+        "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md",
+        "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md",
+        "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md",
+        "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+      ],
+      "key_metrics": {
+        "consolidated_net_sales_usd": 21499000000,
+        "consolidated_gross_margin_pct": 37.7,
+        "diversified_industrial_segment_operating_margin_pct": 23.8,
+        "aerospace_segment_operating_margin_pct": 26.0,
+        "adjusted_segment_operating_margin_pct": 27.3,
+        "aerospace_aftermarket_share_of_aerospace_pct": 49.0,
+        "subscription_revenue_mentions_in_10k": 0,
+        "manufacturing_plants": 323,
+        "countries_with_facilities": 43,
+        "di_north_america_net_sales_usd": 8392000000,
+        "di_international_net_sales_usd": 6046000000,
+        "sgna_percent_of_sales": 16.1,
+        "aerospace_share_of_consolidated_pct": 32.8,
+        "motion_systems_share_of_consolidated_pct": 16.6,
+        "north_america_revenue_share_pct": 66.9,
+        "largest_single_product_share_pct": "<1",
+        "q4_fy2026_revenue_usd": 5755000000,
+        "consolidated_net_sales_usd_fy2026": 21499000000,
+        "motion_systems_revenue_usd_fy2026": 3580000000,
+        "diversified_industrial_revenue_usd_fy2026": 14438000000,
+        "aerospace_systems_revenue_usd_fy2026": 7061000000,
+        "consolidated_gross_margin_pct_fy2026": 37.7,
+        "di_segment_operating_margin_pct_fy2026": 23.8,
+        "aerospace_segment_operating_margin_pct_fy2026": 26.0,
+        "software_subscription_revenue_usd_fy2026": 0,
+        "motion_systems_revenue_fy2026_usd": 3580000000,
+        "diversified_industrial_operating_margin_fy2026_pct": 23.8,
+        "consolidated_gross_margin_fy2026_pct": 37.7,
+        "consolidated_gross_margin_fy2025_pct": 36.9,
+        "consolidated_gross_margin_fy2024_pct": 35.8,
+        "total_backlog_jun2026_usd": 12800000000,
+        "diversified_industrial_backlog_jun2026_usd": 4332000000,
+        "adjusted_segment_operating_margin_fy2026_pct": 27.3,
+        "fy2031_adjusted_segment_operating_margin_target_pct": 30,
+        "apac_revenue_fy2026_usd": 2711000000,
+        "us_revenue_fy2026_usd": 13819000000,
+        "rd_expense_fy2026_usd": 267000000,
+        "iiepa_tariff_refund_fy2026_usd": 84000000,
+        "motion_systems_revenue_usd_fy2025": 3341000000,
+        "motion_systems_revenue_usd_fy2024": 3706000000,
+        "consolidated_gross_margin_pct_fy2026_ex_iiepa": 37.3,
+        "consolidated_gross_margin_pct_fy2025": 36.9,
+        "consolidated_gross_margin_pct_fy2024": 35.8,
+        "diversified_industrial_operating_margin_pct_fy2026": 23.8,
+        "aerospace_operating_margin_pct_fy2026": 26.0,
+        "backlog_usd_jun2026": 12800000000,
+        "diversified_industrial_backlog_usd_jun2026": 4332000000,
+        "aerospace_backlog_usd_jun2026": 8498000000,
+        "manufacturing_plants_count": 323,
+        "iiepa_tariff_refund_cost_of_sales_reduction_usd_q4fy2026": 84000000,
+        "scf_ending_balance_usd_fy2026": 262000000,
+        "raw_materials_inventory_usd_jun2026": 639000000,
+        "non_us_selling_location_sales_share_pct_fy2026": 36,
+        "asia_pacific_revenue_usd_fy2026": 2711000000
+      },
+      "metric_sources": {
+        "consolidated_net_sales_usd": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md"
+        ],
+        "consolidated_gross_margin_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md"
+        ],
+        "diversified_industrial_segment_operating_margin_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md"
+        ],
+        "aerospace_segment_operating_margin_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md"
+        ],
+        "adjusted_segment_operating_margin_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md"
+        ],
+        "aerospace_aftermarket_share_of_aerospace_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md",
+          "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md"
+        ],
+        "subscription_revenue_mentions_in_10k": [
+          "artifacts/PH/2026-09-11_0018_business-model_business-model-classification.md"
+        ],
+        "manufacturing_plants": [
+          "artifacts/PH/2026-09-11_0018_business-model_distribution-channel-analysis.md"
+        ],
+        "countries_with_facilities": [
+          "artifacts/PH/2026-09-11_0018_business-model_distribution-channel-analysis.md"
+        ],
+        "di_north_america_net_sales_usd": [
+          "artifacts/PH/2026-09-11_0018_business-model_distribution-channel-analysis.md"
+        ],
+        "di_international_net_sales_usd": [
+          "artifacts/PH/2026-09-11_0018_business-model_distribution-channel-analysis.md"
+        ],
+        "sgna_percent_of_sales": [
+          "artifacts/PH/2026-09-11_0018_business-model_distribution-channel-analysis.md"
+        ],
+        "aerospace_share_of_consolidated_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md"
+        ],
+        "motion_systems_share_of_consolidated_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md"
+        ],
+        "north_america_revenue_share_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md"
+        ],
+        "largest_single_product_share_pct": [
+          "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md"
+        ],
+        "q4_fy2026_revenue_usd": [
+          "artifacts/PH/2026-09-11_0018_business-model_revenue-composition-and-concentration.md"
+        ],
+        "consolidated_net_sales_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md"
+        ],
+        "motion_systems_revenue_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md",
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "diversified_industrial_revenue_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md"
+        ],
+        "aerospace_systems_revenue_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md",
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "di_segment_operating_margin_pct_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md"
+        ],
+        "aerospace_segment_operating_margin_pct_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md"
+        ],
+        "software_subscription_revenue_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0019_revenue-decomp_default.md"
+        ],
+        "motion_systems_revenue_fy2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "diversified_industrial_operating_margin_fy2026_pct": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "consolidated_gross_margin_fy2026_pct": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "consolidated_gross_margin_fy2025_pct": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "consolidated_gross_margin_fy2024_pct": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "total_backlog_jun2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "diversified_industrial_backlog_jun2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "adjusted_segment_operating_margin_fy2026_pct": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "fy2031_adjusted_segment_operating_margin_target_pct": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "apac_revenue_fy2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "us_revenue_fy2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "rd_expense_fy2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "iiepa_tariff_refund_fy2026_usd": [
+          "artifacts/PH/2026-09-11_0021_competitive-positioning_default.md"
+        ],
+        "motion_systems_revenue_usd_fy2025": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "motion_systems_revenue_usd_fy2024": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2026_ex_iiepa": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2025": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "consolidated_gross_margin_pct_fy2024": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "diversified_industrial_operating_margin_pct_fy2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "aerospace_operating_margin_pct_fy2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "backlog_usd_jun2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "diversified_industrial_backlog_usd_jun2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "aerospace_backlog_usd_jun2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "manufacturing_plants_count": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "iiepa_tariff_refund_cost_of_sales_reduction_usd_q4fy2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "scf_ending_balance_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "raw_materials_inventory_usd_jun2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "non_us_selling_location_sales_share_pct_fy2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ],
+        "asia_pacific_revenue_usd_fy2026": [
+          "artifacts/PH/2026-09-11_0025_supply-chain_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3580000000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page44:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 23.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page25:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.7,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page23:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3580000000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page44:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 23.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page25:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.7,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page23:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3580000000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page44:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 23.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page25:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.7,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page23:sec166",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3580000000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page44",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 23.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page25",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.7,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page23",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3580000000,
+          "unit": "USD",
+          "period": "FY2026",
+          "source": "10-K:page44",
+          "retrieved_at": "2026-09-11",
+          "note": "[FACT] sec166 Motion Systems technology platform, Diversified Industrial"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 23.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page25",
+          "retrieved_at": "2026-09-11",
+          "note": "[FACT] sec166; FY2025 22.8"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.7,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page23",
+          "retrieved_at": "2026-09-11",
+          "note": "[FACT] sec166; FY2025 36.9; includes $84M IEEPA tariff-refund benefit (~39bps)"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 35.8,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page35",
+          "retrieved_at": "2026-09-11",
+          "note": "[DEDUCTED] (19,930-12,802)/19,930 from sec166 income statement"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 22.0,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page67",
+          "retrieved_at": "2026-09-11",
+          "note": "[DEDUCTED] 3,176/14,458 from sec166 segment table"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_share_of_di_revenue_pct",
+          "value": 24.8,
+          "unit": "pct",
+          "period": "FY2026",
+          "source": "10-K:page44",
+          "retrieved_at": "2026-09-11",
+          "note": "[DEDUCTED] 3,580/14,438; derived arithmetic on map metrics"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3580000000,
+          "unit": "USD",
+          "period": "2026Q4",
+          "source": "10-K:page44",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3341000000,
+          "unit": "USD",
+          "period": "2025Q4",
+          "source": "10-K:page44",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "motion_systems_revenue_usd",
+          "value": 3706000000,
+          "unit": "USD",
+          "period": "2024Q4",
+          "source": "10-K:page44",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "diversified_industrial_segment_operating_margin_pct",
+          "value": 23.8,
+          "unit": "pct",
+          "period": "2026Q4",
+          "source": "10-K:page25",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.7,
+          "unit": "pct",
+          "period": "2026Q4",
+          "source": "10-K:page23",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 36.9,
+          "unit": "pct",
+          "period": "2025Q4",
+          "source": "10-K:page23",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 35.8,
+          "unit": "pct",
+          "period": "2024Q4",
+          "source": "10-K:page35",
+          "retrieved_at": "2026-09-11"
+        },
+        {
+          "entity": "PH",
+          "metric": "consolidated_gross_margin_pct",
+          "value": 37.3,
+          "unit": "pct",
+          "period": "2026Q4",
+          "source": "10-K:page35 (ex-IEEPA)",
+          "retrieved_at": "2026-09-11"
+        }
+      ],
+      "conclusions": [
+        "PH is a pure product (hardware) business model — no platform, no software/subscription revenue stream; revenue recognized at shipment.",
+        "PIL-3 null case holds: model-layer revenue per deployed unit is zero — 'subscription' appears 0 times in the FY2026 10-K.",
+        "Razor-blade economics exist in hardware-only form: Aerospace aftermarket is 49.0% of Aerospace revenue; FGC acquisition adds 500bps of filtration aftermarket.",
+        "Positioning is premium-differentiated: 37.7% consolidated GM, 23.8% DI and 26.0% Aerospace segment margins, record 27.3% adjusted segment margin.",
+        "All three T-001 PH baseline figures re-retrieved and confirmed with zero contradictions.",
+        "Distribution model is a hybrid: DI sells direct to OEMs plus through independent distributors via field sales; Aerospace is direct-only to OEMs and end users.",
+        "No quantitative direct:indirect channel split is disclosed by Parker — channel mix must be treated as qualitative-only (coverage gap).",
+        "Distribution reach is a disclosed competitive factor; channel breadth is extreme (several hundred thousand OEM/distributor locations).",
+        "Aerospace direct model correlates with higher segment margin (26.0%) vs DI's hybrid 23.8%, consistent with OEM-direct pricing power plus aftermarket control.",
+        "Top-3 product lines: Aerospace Systems 32.8%, Filtration & Engineered Materials 28.1%, Flow & Process Control 22.4%; Motion Systems 16.6% of consolidated.",
+        "Concentration risk minimal: no single product >1% of net sales (verbatim 10-K, confirms T-001); no product or segment exceeds the 20% flag except the Aerospace segment itself at 32.8%.",
+        "T-001 'no product >1%' verified verbatim; Motion Systems $3,580M FY2026 verified; zero contradictions vs T-001 baselines.",
+        "Aerospace mix is rising (27.5% → 32.8% of revenue FY2024→FY2026); aerospace aftermarket is 49.0% of Aerospace revenue.",
+        "Revenue is ~100% B2B; no software/connected-services revenue line exists — even IoT ('connected products') capabilities monetize as hardware.",
+        "PIL-3 null case CONFIRMED: PH discloses zero software, subscription, or royalty revenue; its entire revenue disaggregation is hardware platforms and aerospace market segments, and 'subscription' returns 0 hits across the FY2026 10-K.",
+        "PH's motion-layer revenue pool (Motion Systems) is $3.58B of $21.50B total sales in FY2026; no model-layer software rent exists in the mix.",
+        "PH cannot falsify the PIL-3 threshold (model_layer_revenue_per_deployed_unit_usd > 5000): its software/subscription revenue per unit is $0.",
+        "Motion Systems is PH's smallest DI platform ($3.58B, 24.8% of DI revenue) and the only one still below its FY2024 revenue level; pricing power evidence is strong at the segment level but the platform-level margin is not disclosed.",
+        "PH's disclosed competitive set in motion/control is entirely non-Chinese (Bosch Rexroth, SMC, Festo, Danfoss, IMI/Norgren, etc.); China appears in filings as a trade-policy risk and supply risk (rare earths), not as a named competitive threat — PIL-2 falsifier cannot be tested from filing evidence alone.",
+        "Barriers rest on application engineering, distribution reach, aftermarket content, and breadth of interconnected technologies — explicitly NOT on patents, which the company states are not material to any extent.",
+        "PIL-1 supply-chain evidence holds: 323 plants, in-house manufacture of motion-control systems and components, and a highly fragmented customer base; external supplier reliance is confined to specialty inputs (rare earths, specialty electronics, aerospace super alloys, specialty chemicals, filtration media).",
+        "PIL-2 China-cost dynamics: the rare-earth 'limited suppliers' disclosure is NEW in the FY2026 10-K (absent from FY2025); China is flagged as a trade-barrier risk; no quantitative China/rare-earth cost data is disclosed — proxy-only support, as anticipated by the Deviation Register.",
+        "Consolidated GM series (PIL-1b test input): 35.8% FY2024 → 36.9% FY2025 → 37.7% FY2026; FY2026 includes ~40bp of non-recurring IEEPA tariff-refund benefit (ex-IEEPA 37.3%).",
+        "Tariff/IEEPA exposure is material but two-sided: $84M refund recognized in Q4 FY2026 cost of sales; additional refund applications pending and unbooked; raw-material tariff risk and price pass-through lag disclosed.",
+        "All four T-001 baselines reconciled (Motion Systems $3,580M, DI op margin 23.8%, GM 37.7%, backlog $12.8B). The get_segment_data gold-vs-filed conflict could not be re-tested (tool INTERNAL_ERROR); 10-K values are authoritative per directive."
+      ],
+      "counts": {
+        "facts_count": 188,
+        "deducted_count": 54,
+        "views_count": 17,
+        "citation_count": 74
+      }
+    },
+    "SPCX": {
+      "artifacts": [
+        "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+      ],
+      "key_metrics": {
+        "ai_segment_capex_usd": 23551000000,
+        "space_segment_capex_usd": 2226000000,
+        "connectivity_segment_capex_usd": 2699000000,
+        "total_capex_yoy_multiple": 4.1,
+        "ai_capex_q2_yoy_multiple": 21.1,
+        "ai_capex_share_q2_2025_pct": 26.5,
+        "nameplate_compute_draw_gw": 1.4,
+        "tesla_megapack_purchases_usd": 329000000,
+        "valor_lease_debt_usd": 13329000000,
+        "echostar_spectrum_consideration_usd": 19600000000,
+        "customer_a_revenue_share_pct": 17.9,
+        "customer_b_revenue_share_pct": 12.2,
+        "backlog_usd": 47461000000,
+        "rfcc_excluding_assessed_tax_usd": 12508000000,
+        "us_gaap_revenues_fact_count": 0,
+        "cloud_service_agreements_contracted_sales_usd": 14100000000
+      },
+      "metric_sources": {
+        "ai_segment_capex_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "space_segment_capex_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "connectivity_segment_capex_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "total_capex_yoy_multiple": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "ai_capex_q2_yoy_multiple": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "ai_capex_share_q2_2025_pct": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "nameplate_compute_draw_gw": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "tesla_megapack_purchases_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "valor_lease_debt_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "echostar_spectrum_consideration_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "customer_a_revenue_share_pct": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "customer_b_revenue_share_pct": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "backlog_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "rfcc_excluding_assessed_tax_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "us_gaap_revenues_fact_count": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ],
+        "cloud_service_agreements_contracted_sales_usd": [
+          "artifacts/SPCX/2026-09-11_0018_supply-chain_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "SPCX",
+          "metric": "capital_expenditure_usd",
+          "value": 28476000000,
+          "unit": "USD",
+          "period": "H1-2026",
+          "source": "10-Q:page9",
+          "retrieved_at": "2026-09-11",
+          "tag": "[FACT]"
+        },
+        {
+          "entity": "SPCX",
+          "metric": "ai_segment_capex_share_pct",
+          "value": 82.7,
+          "unit": "pct",
+          "period": "H1-2026",
+          "source": "10-Q:page31",
+          "retrieved_at": "2026-09-11",
+          "tag": "[DEDUCTED]"
+        }
+      ],
+      "conclusions": [
+        "PIL-1 demand-side pull confirmed: H1-2026 capex $28.5B with AI segment 82.7% — end-market demand flows to the compute layer, dwarfing motion/sensing-layer economics.",
+        "AI capex inflected from 26.5% of total (Q2-2025) to 86.2% (Q2-2026); nameplate compute draw 1.4GW, 3.5x YoY.",
+        "SPCX supply chain is US-centric and only partially disclosed: Tesla (Megapacks), Valor (AI hardware leases), EchoStar (spectrum); servers/networking suppliers unnamed.",
+        "No long-term binding purchase orders with parts/raw-materials suppliers — a structurally flexible, capital-intense sourcing model.",
+        "Customer concentration moderate: two >10% customers (17.9% and 12.2% of H1 revenue); one AI-only.",
+        "P2.1 anomaly verified: revenue tagged under RFCCExcludingAssessedTax ($12.508B H1-2026); us-gaap:Revenues has zero facts — tagging anomaly, not absent revenue."
+      ],
+      "counts": {
+        "facts_count": 36,
+        "deducted_count": 11,
+        "views_count": 5,
+        "citation_count": 15
+      }
+    },
+    "TSLA": {
+      "artifacts": [
+        "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+      ],
+      "key_metrics": {
+        "fy2025_automotive_gross_margin_pct": 17.8,
+        "fy2024_automotive_gross_margin_pct": 18.4,
+        "fy2023_automotive_gross_margin_pct": 19.4,
+        "fy2025_automotive_revenue_usd_bn": 69.526,
+        "fy2025_automotive_cogs_usd_bn": 57.165,
+        "fy2025_automotive_gross_profit_usd_bn": 12.361,
+        "fy2025_deliveries_m": 1.64,
+        "fy2025_revenue_per_vehicle_usd": 42394,
+        "fy2025_cost_per_vehicle_usd": 34857,
+        "fy2025_gross_profit_per_vehicle_usd": 7537,
+        "fy2025_total_gross_margin_pct": 18.0,
+        "fy2025_capex_usd_bn": 8.53
+      },
+      "metric_sources": {
+        "fy2025_automotive_gross_margin_pct": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2024_automotive_gross_margin_pct": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2023_automotive_gross_margin_pct": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_automotive_revenue_usd_bn": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_automotive_cogs_usd_bn": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_automotive_gross_profit_usd_bn": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_deliveries_m": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_revenue_per_vehicle_usd": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_cost_per_vehicle_usd": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_gross_profit_per_vehicle_usd": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_total_gross_margin_pct": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ],
+        "fy2025_capex_usd_bn": [
+          "artifacts/TSLA/2026-09-11_0032_unit-economics_default.md"
+        ]
+      },
+      "entity_claims": [
+        {
+          "entity": "TSLA",
+          "metric": "automotive_gross_margin_pct",
+          "value": 17.8,
+          "unit": "pct",
+          "period": "FY2025",
+          "source": "10-K:page43",
+          "retrieved_at": "2026-09-11",
+          "tag": "FACT"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "automotive_gross_margin_pct",
+          "value": 18.4,
+          "unit": "pct",
+          "period": "FY2024",
+          "source": "10-K:page43",
+          "retrieved_at": "2026-09-11",
+          "tag": "FACT"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "automotive_gross_margin_pct",
+          "value": 19.4,
+          "unit": "pct",
+          "period": "FY2023",
+          "source": "10-K:page43",
+          "retrieved_at": "2026-09-11",
+          "tag": "FACT"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "automotive_cost_of_revenue_usd",
+          "value": 57165000000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page43",
+          "retrieved_at": "2026-09-11",
+          "tag": "FACT"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "automotive_revenue_usd",
+          "value": 69526000000,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page42",
+          "retrieved_at": "2026-09-11",
+          "tag": "FACT"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "revenue_per_vehicle_usd",
+          "value": 42394,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page42",
+          "retrieved_at": "2026-09-11",
+          "tag": "DEDUCTED"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "cost_per_vehicle_usd",
+          "value": 34857,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page43",
+          "retrieved_at": "2026-09-11",
+          "tag": "DEDUCTED"
+        },
+        {
+          "entity": "TSLA",
+          "metric": "gross_profit_per_vehicle_usd",
+          "value": 7537,
+          "unit": "USD",
+          "period": "FY2025",
+          "source": "10-K:page43",
+          "retrieved_at": "2026-09-11",
+          "tag": "DEDUCTED"
+        }
+      ],
+      "conclusions": [
+        "TSLA automotive GM series FY2023→FY2025 (19.4% → 18.4% → 17.8%, −1.6pp over three fiscal years) is reproduced from sec253 p43 and is a shallow negative trend — an input to PIL-1b's motion_model_gm_gap_change_pp test, far from the −10pp falsifier band on its own.",
+        "FY2025 per-vehicle economics (~$42.4K revenue / ~$34.9K cost / ~$7.5K gross profit on ~1.64M deliveries) reproduce the T-001 baseline exactly; automotive COGS is the only filed per-unit cost reference for the vertically-integrated motion structure.",
+        "No Optimus per-unit cost, BOM split, or price disclosure exists in any retrieved filing; the automotive cost stack is the PIL-1 analogue and is labeled as such throughout — PIL-1a's >55% actuation+sensing BOM share cannot be validated from TSLA disclosures.",
+        "The 10-K enumerates automotive COGS components qualitatively (materials, labor, overhead/depreciation, logistics, tariffs, warranty, connectivity/FSD maintenance); the only numeric structural fact is segment D&A (5.5% of automotive-segment COGS FY2025)."
+      ],
+      "counts": {
+        "facts_count": 16,
+        "deducted_count": 8,
+        "views_count": 3,
+        "citation_count": 55
+      }
+    }
+  },
+  "synthesis": {
+    "pillar_verdicts": {
+      "PIL-1": "indeterminate",
+      "PIL-2": "indeterminate",
+      "PIL-3": "supported"
+    },
+    "capability_timeline": {}
+  }
+}

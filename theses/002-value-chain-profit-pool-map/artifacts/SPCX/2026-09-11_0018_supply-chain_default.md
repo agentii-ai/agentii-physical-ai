@@ -46,22 +46,22 @@ citations:
 pillars_addressed: [PIL-1, PIL-2]
 claim_state: pinned
 key_metrics:
-  - {entity: SPCX, metric: ai_segment_capex_usd, value: 23551000000, unit: USD, period: H1-2026, source: "10-Q:page31", tag: "[FACT]"}
-  - {entity: SPCX, metric: space_segment_capex_usd, value: 2226000000, unit: USD, period: H1-2026, source: "10-Q:page31", tag: "[FACT]"}
-  - {entity: SPCX, metric: connectivity_segment_capex_usd, value: 2699000000, unit: USD, period: H1-2026, source: "10-Q:page31", tag: "[FACT]"}
-  - {entity: SPCX, metric: total_capex_yoy_multiple, value: 4.1, unit: x, period: H1-2026_vs_H1-2025, source: "10-Q:page9", tag: "[DEDUCTED]"}
-  - {entity: SPCX, metric: ai_capex_q2_yoy_multiple, value: 21.1, unit: x, period: Q2-2026_vs_Q2-2025, source: "10-Q:page30", tag: "[DEDUCTED]"}
-  - {entity: SPCX, metric: ai_capex_share_q2_2025_pct, value: 26.5, unit: pct, period: Q2-2025, source: "10-Q:page31", tag: "[DEDUCTED]"}
-  - {entity: SPCX, metric: nameplate_compute_draw_gw, value: 1.4, unit: GW, period: 2026-06-30, source: "10-Q:page36", tag: "[FACT]"}
-  - {entity: SPCX, metric: tesla_megapack_purchases_usd, value: 329000000, unit: USD, period: H1-2026, source: "10-Q:page30", tag: "[FACT]"}
-  - {entity: SPCX, metric: valor_lease_debt_usd, value: 13329000000, unit: USD, period: 2026-06-30, source: "10-Q:page30", tag: "[DEDUCTED]"}
-  - {entity: SPCX, metric: echostar_spectrum_consideration_usd, value: 19600000000, unit: USD, period: 2026-06-30, source: "10-Q:page49", tag: "[FACT]"}
-  - {entity: SPCX, metric: customer_a_revenue_share_pct, value: 17.9, unit: pct, period: H1-2026, source: "10-Q:page14", tag: "[FACT]"}
-  - {entity: SPCX, metric: customer_b_revenue_share_pct, value: 12.2, unit: pct, period: H1-2026, source: "10-Q:page14", tag: "[FACT]"}
-  - {entity: SPCX, metric: backlog_usd, value: 47461000000, unit: USD, period: 2026-06-30, source: "10-Q:page14", tag: "[FACT]"}
-  - {entity: SPCX, metric: rfcc_excluding_assessed_tax_usd, value: 12508000000, unit: USD, period: H1-2026, source: "XBRL:spcx-20260630.htm", tag: "[FACT]"}
-  - {entity: SPCX, metric: us_gaap_revenues_fact_count, value: 0, unit: facts, period: all, source: "XBRL:spcx-20260630.htm", tag: "[FACT]"}
-  - {entity: SPCX, metric: cloud_service_agreements_contracted_sales_usd, value: 14100000000, unit: USD, period: Q2-2026, source: "8-K:page9", tag: "[FACT]"}
+  ai_segment_capex_usd: 23551000000
+  space_segment_capex_usd: 2226000000
+  connectivity_segment_capex_usd: 2699000000
+  total_capex_yoy_multiple: 4.1
+  ai_capex_q2_yoy_multiple: 21.1
+  ai_capex_share_q2_2025_pct: 26.5
+  nameplate_compute_draw_gw: 1.4
+  tesla_megapack_purchases_usd: 329000000
+  valor_lease_debt_usd: 13329000000
+  echostar_spectrum_consideration_usd: 19600000000
+  customer_a_revenue_share_pct: 17.9
+  customer_b_revenue_share_pct: 12.2
+  backlog_usd: 47461000000
+  rfcc_excluding_assessed_tax_usd: 12508000000
+  us_gaap_revenues_fact_count: 0
+  cloud_service_agreements_contracted_sales_usd: 14100000000
 conclusions:
   - "PIL-1 demand-side pull confirmed: H1-2026 capex $28.5B with AI segment 82.7% — end-market demand flows to the compute layer, dwarfing motion/sensing-layer economics."
   - "AI capex inflected from 26.5% of total (Q2-2025) to 86.2% (Q2-2026); nameplate compute draw 1.4GW, 3.5x YoY."
