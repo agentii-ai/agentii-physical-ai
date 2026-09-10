@@ -7,13 +7,13 @@
 
 **Thesis**: `theses/001-physical-ai-technology-baseline/`
 **Constitution pin**: `1.2.0`
-**Planned**: 2026-09-10 (rev. 2 — see Revision Note)
+**Planned**: 2026-09-10 (rev. 3 — see Revision Note)
 **Phase**: 0 — Foundation (gates all other theses)
-**Tasks**: 23 generated, 13 parallelisable — see `tasks.md`
+**Tasks**: 25 generated (23 decomposition + 2 synthesis), 13 parallelisable — see `tasks.md`
 
 ---
 
-## Revision Note (rev. 2, 2026-09-10)
+## Revision Note (rev. 3, 2026-09-10)
 
 Rev. 1 was evaluated against its own spec and four defects were found:
 
@@ -32,6 +32,25 @@ Rev. 1 was evaluated against its own spec and four defects were found:
    physical-AI bearing. Reduced to `standard`.
 4. **Task count was wrong.** Rev. 1 claimed 34; the generator produces 23 at the
    corrected matrix.
+
+Rev. 3 additions (tasks pass, 2026-09-10): `tasks.md` was audited against the
+`agentii.tasks` contract and four further defects were found and fixed — two in the
+upstream generator.
+
+5. **`src:` was vacuous.** The generator hardcoded `{"pillar": "P1"}`, so every row
+   read `(src: P1)` regardless of which pillar the work served, defeating Q26
+   traceability. The generator now derives each task's pillar from the spec's
+   `Subscribed:` lists (the same Q9 source used for reconciliation). Verified:
+   `risk` → `PIL-3`, `unit-economics`/`supply-chain` → `PIL-2`+.
+6. **`purpose` was a placeholder.** The matrix's Purpose column was parsed away, so
+   all 23 rows read "per spec deployment matrix". Now carried through.
+7. **No synthesis task existed.** The plan names cross-stock synthesis and a
+   snapshot as Phase 4 deliverables, but no task owned them. Added T024/T025,
+   marked never-`[P]` per the template's cross-ticker rule.
+8. **The file was not append-only.** Rev. 2's header said "regenerate rather than
+   hand-edit", which contradicts the template's Q26 contract ("never rewritten,
+   renumbered, reordered or deleted from"). The header now states the append-only
+   rule and carries the `agentii.converge` marker.
 
 ---
 
@@ -68,10 +87,12 @@ Every `ticker × skill` pair below appears in `spec.md` §3 and in its pillar's
 | 4 — Risk and Timing Synthesis | Fuse phases 1–3 into a dated capability timeline with explicit falsifiers; produce cross-stock synthesis and snapshot | `NVDA × risk × standard`, `TSLA × risk × standard`, cross-stock synthesis | Phases 1–3 |
 | 5 — Trade Ideas | Dateable catalysts + sizing per `constitution.yaml` | Position sizing + catalyst dating | Phase 4 |
 
-**Budget**: 23 tasks (see `tasks.md`), within the `max_tasks: 80` thesis budget and
-the `max_tasks_per_day: 60` workspace budget. 13 tasks carry `[P]` (distinct files,
-no incomplete dependencies) and may run concurrently; the remaining 10 serialise
-behind their `(ticker, skill)` predecessor.
+**Budget**: 25 tasks (see `tasks.md`) — 23 ticker×skill×mode rows plus 2 synthesis
+deliverables. Within the `max_tasks: 80` thesis budget and the `max_tasks_per_day: 60`
+workspace budget. 13 tasks carry `[P]` and may run concurrently; 10 serialise behind
+their `(ticker, skill)` predecessor; the 2 synthesis tasks are never `[P]` (cross-ticker).
+Each task's `src:` names the pillar it serves, derived from the spec's `Subscribed:`
+lists via the fixed generator.
 
 ---
 
@@ -100,7 +121,7 @@ Phase 1, PIL-1 is testable from `secular-trends` and `supply-chain` output alone
 | `entities.md` | written | `entity_claims` schema + entity/metric map. **No bars schema required** — this thesis is `market_data_stage: none` |
 | `reproduce.md` | written | Skills + five pins + `as_of`; now also records the missing `plan` subcommand |
 | `contracts/` | written | Output frontmatter schemas + `requires:` declarations |
-| `tasks.md` | written | 23 generated tasks, grouped by phase |
+| `tasks.md` | written | 25 generated tasks, grouped by phase; append-only with a converge marker |
 
 ### Q42 check — bars schema
 

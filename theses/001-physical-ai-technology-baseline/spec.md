@@ -74,9 +74,9 @@ Consensus timing for a step-change in general-purpose embodied capability is 202
 ## 3. Skill Deployment Matrix
 | Skill | Vertical | Depth | Tickers | Market Data Stage (Q41) | Purpose |
 |---|---|:---:|---|---|---|
-| `secular-trends` | equity-research-core | standard | NVDA, ISRG, TSLA | none | Technology adoption curve and disruption timing (was deep — 8 modes pulled in EV and quantum modes with no physical-AI bearing) |
-| `unit-economics` | business-intelligence | standard | TSLA, ISRG, PH | none | Per-unit cost structure; PH Motion Systems segment cost stack for PIL-2 |
-| `supply-chain` | industry-analysis | standard | NVDA, AMZN, PH | none | Physical dependency mapping; actuator/motion chain for PIL-2. Standard until registry essentials_modes are populated |
+| `secular-trends` | equity-research-core | standard | NVDA, ISRG, TSLA | none | Technology adoption curve and disruption timing |
+| `unit-economics` | business-intelligence | standard | TSLA, ISRG, PH | none | Per-unit cost structure; PH Motion Systems segment cost stack |
+| `supply-chain` | industry-analysis | standard | NVDA, AMZN, PH | none | Physical dependency mapping; actuator/motion component chain |
 | `operational-kpi` | business-intelligence | standard | ISRG, AMZN | none | Reliability and utilisation metrics |
 | `risk` | equity-research-core | standard | NVDA, TSLA | none | Technology and execution risk |
 

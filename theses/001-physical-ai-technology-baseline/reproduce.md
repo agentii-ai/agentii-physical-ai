@@ -35,7 +35,7 @@
 | `corpus_version` | `agentii-2026-09-10` | Workspace retrieval snapshot |
 | `as_of` | **2026-09-10** | Date of all retrieval in this plan |
 | `skill_pin` | `75ce82d` | Kit commit; per-skill hashes populate at implement |
-| `plan_rev` | `2` | Plan revision — rev. 2 fixed the PIL-2 evidence gap and reconciled the three deployment sets |
+| `plan_rev` | `3` | rev.2 fixed the PIL-2 evidence gap + reconciled deployment sets; rev.3 fixed generator src:/purpose, added synthesis tasks, made tasks.md append-only |
 
 **Reproducibility caveat.** A reader reconstructing this work at a later date must
 supply `constitution_pin: 1.2.0` and `assumption_pin: 1`. If the constitution has
@@ -112,7 +112,11 @@ python3 scripts/agentii_cmd.py tasks \
    correctly. This thesis uses `standard` throughout. **Upstream fix needed**: populate
    `essentials_modes` for the 62 affected skills, or make `depth_to_modes` reject
    section-heading slugs.
-4. **`agentii.clarify` scanner had two defects** (fixed upstream, kit commit
+4. **`tasks_from_spec()` dropped two fields** (fixed upstream): it hardcoded
+   `{"pillar": "P1"}` so every task's `src:` was `P1` regardless of the pillar
+   served, and it parsed away the matrix's Purpose column so every row read "per
+   spec deployment matrix". Both defeated Q26 traceability.
+5. **`agentii.clarify` scanner had two defects** (fixed upstream, kit commit
    `0b43378`): the subscription capture was not line-anchored, and its predicate
    accepted `skill × mode` in place of `TICKER × skill`. Together these produced one
    false positive per spec while missing every real violation.
