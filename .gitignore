@@ -8,3 +8,5 @@ raw-data/
 
 # macOS
 .DS_Store
+# report renders — regenerable via scripts/render_report.py (Chrome+poppler)
+theses/*/report/pages/

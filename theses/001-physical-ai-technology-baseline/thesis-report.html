@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--
-  thesis-report.html — the print-first thesis report template (spec 046 Q46), v0.2.0.
+  thesis-report.html — the print-first thesis report template (spec 046 Q46), v0.3.0.
   Letter pages (8.5×11in = 215.9mm × 279.4mm), all CSS/JS embedded, images
   base64 data-URI. Zero external links — the file must print offline.
   Layout technique informed by the AI-Sci-Vi reference (converted to letter).
 
-  v0.2.0 (LLM-authored content): page 1 is a cover shell owned by the template
-  (title / claim / pins / universe / generated / TOC — filled by the assembler);
-  the LLM-authored page sequence is injected at <!-- PAGES -->. Variable page
-  count — the build-time overflow gate (check_page_overflow.py) is the blocking
-  authority per page.
+  v0.3.0 (LLM-authored AND LLM-optimized): page 1 is a navy ink cover owned by
+  the template (kicker / title / claim / pins / universe / generated / TOC —
+  filled by the assembler, plus a template-owned spiral motif); the LLM-authored
+  page sequence is injected at the PAGES injection point below. The assembler
+  injects the running sheet head/foot + page marks + corner registration marks
+  into every page. (NOTE: never write a nested comment-closing marker inside
+  this header — it would end the comment early and leak prose into the body.)
+  The LLM authors content only — section kickers, KPI stat tiles, verdict and
+  taxonomy badges, the timeline, tables and citations.
+
+  Visual QA loop: scripts/render_report.py (Chrome headless → PDF → per-page
+  PNGs) — the LLM reads the renders and iterates on content.html; the build-time
+  overflow gate (check_page_overflow.py) remains the deterministic gate.
 
   Pins: sources_hash / template_version are embedded by synthesize_report.py;
   converge.py flags html_stale on mismatch (the open-time JS bar below is a
@@ -70,63 +78,154 @@
   .page-overflow { outline: 1px solid #c00; }
   .page-overflow::after { content: "⚠ overflow"; position: absolute; top: 2mm;
                           right: 2mm; color: #c00; font-size: 9pt; }
+
+  /* ── v0.3.0 component systems (AI-Sci-Vi layout language + style.md) ── */
+  .sec-kicker { font-family: 'Courier New', monospace; font-size: 7pt; font-weight: 600;
+                letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+                margin-bottom: 2mm; }
+  /* KPI stat tiles */
+  .stat-row { display: flex; gap: 3mm; margin: 3mm 0; }
+  .stat { flex: 1; background: var(--accent-foreground); border: 1px solid #999;
+          border-top: 1mm solid var(--primary); padding: 2.5mm 3mm; }
+  .stat .num { font-family: 'Courier New', monospace; font-size: 16pt; font-weight: 700;
+               color: var(--accent); letter-spacing: -0.02em; }
+  .stat .lbl { font-family: 'Courier New', monospace; font-size: 8.5pt;
+               text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1mm;
+               color: #222; }
+  .stat .sub { font-size: 7.5pt; color: #555; margin-top: 0.5mm; }
+  /* Badges — taxonomy axis (FR-092) and verdict axis (pillar verdicts) */
+  .badge { display: inline-block; font-family: 'Courier New', monospace; font-size: 7pt;
+           font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+           padding: 0.4mm 1.6mm; border-radius: 999px; }
+  .badge-fact       { background: #eef6ef; color: #1a7a3c; border: 0.3mm solid #1a7a3c; }
+  .badge-deducted   { background: #eef3fa; color: #1a3a8a; border: 0.3mm solid #1a3a8a; }
+  .badge-view       { background: #fdf3e7; color: #b3661a; border: 0.3mm solid #b3661a; }
+  .badge-supported  { background: #eef6ef; color: #1a7a3c; border: 0.3mm solid #1a7a3c; }
+  .badge-indeterminate { background: var(--accent-foreground); color: var(--accent);
+                         border: 0.3mm solid var(--accent); }
+  .badge-refuted    { background: #fdf0ef; color: #b3312c; border: 0.3mm solid #b3312c; }
+  /* Capability timeline */
+  .timeline { border-left: 0.6mm solid var(--primary); margin: 2mm 0 2mm 2mm;
+              padding-left: 6mm; }
+  .tl-item { position: relative; margin-bottom: 5mm; }
+  .tl-item::before { content: ""; position: absolute; left: -7.6mm; top: 1mm;
+                     width: 2.4mm; height: 2.4mm; border-radius: 50%;
+                     background: var(--primary); }
+  .tl-phase { font-family: 'Courier New', monospace; font-size: 8pt; text-transform: uppercase;
+              letter-spacing: 0.1em; color: var(--accent); font-weight: 700; }
+  /* Running sheet head/foot + registration marks (assembler-injected) */
+  .sheet-head, .sheet-foot { position: absolute; left: 15mm; right: 15mm; display: flex;
+                             justify-content: space-between;
+                             font-family: 'Courier New', monospace; font-size: 7pt;
+                             letter-spacing: 0.08em; text-transform: uppercase; color: #555; }
+  .sheet-head { top: 7mm; border-bottom: 0.3mm solid var(--primary); padding-bottom: 1mm; }
+  .sheet-foot { bottom: 7mm; border-top: 0.3mm solid #999; padding-top: 1mm; }
+  .page-mark { font-weight: 700; color: var(--accent); }
+  .reg { position: absolute; width: 3mm; height: 3mm; }
+  .reg-tl { top: 5mm; left: 5mm; border-top: 0.5mm solid var(--primary); border-left: 0.5mm solid var(--primary); }
+  .reg-tr { top: 5mm; right: 5mm; border-top: 0.5mm solid var(--primary); border-right: 0.5mm solid var(--primary); }
+  .reg-bl { bottom: 5mm; left: 5mm; border-bottom: 0.5mm solid var(--primary); border-left: 0.5mm solid var(--primary); }
+  .reg-br { bottom: 5mm; right: 5mm; border-bottom: 0.5mm solid var(--primary); border-right: 0.5mm solid var(--primary); }
+  /* Cover ink field */
+  .cover { background: var(--accent); color: var(--accent-foreground); }
+  .cover .report-header { border-bottom-color: var(--primary); }
+  .cover .report-header .brand, .cover .report-header .brand a,
+  .cover .report-header .contact { color: var(--accent-foreground); }
+  .cover h1 { color: #fff; font-size: 26pt; border-bottom: 0.4mm solid var(--primary);
+              padding-bottom: 3mm; }
+  .cover .claim { color: var(--accent-foreground); }
+  .cover #cover-meta th { background: transparent; color: var(--primary);
+                          border: 0.3mm solid #4a5670; }
+  .cover #cover-meta td { border: 0.3mm solid #4a5670; color: var(--accent-foreground); }
+  .cover .toc a { color: var(--accent-foreground); }
+  .cover .toc { border-top: 0.3mm solid #4a5670; margin-top: 6mm; padding-top: 4mm; }
+  .cover .sec-kicker { color: var(--primary); }
+  .cover .sheet-head, .cover .sheet-foot { color: #b8b08a; }
+  .cover .sheet-foot { border-top-color: var(--primary); }
+  .cover .reg { border-color: var(--primary); }
+  .cover-motif { position: absolute; right: 12mm; bottom: 16mm; width: 68mm; opacity: 0.55; }
+
   @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page-overflow { page-break-after: always; }
     .stale-bar { display: none !important; }
   }
 </style>
 </head>
-<body data-sources-hash="a07609d717508557" data-template-version="0.2.0">
+<body data-sources-hash="a07609d717508557" data-template-version="0.3.0">
 <div class="stale-bar" id="stale-bar">This report was generated on a previous
   state of its source data — see reproduce.md before distributing.</div>
 
-<!-- ⬇ Page 1: cover shell — owned by the template, filled by the assembler -->
-<section class="page" data-report-page="1">
+<!-- ⬇ Page 1: navy ink cover — owned by the template, filled by the assembler -->
+<section class="page cover" data-report-page="1">
+  <i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i>
+  <div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>COVER</span></div>
   <div class="report-header">
     <span class="brand"><a href="https://www.agentii.ai">www.agentii.ai</a><br>
       Agent-Use-Ready Financial Data and Skills Platform</span>
     <span class="contact">hello@agentii.xyz</span>
   </div>
+  <span id="cover-kicker" class="sec-kicker">AGENTII THESIS REPORT · 001</span>
   <h1 id="cover-title">Physical AI Technology Baseline</h1>
   <p id="cover-claim" class="claim">Embodied AI is data-bound, not compute-bound; the binding engineering constraint is manipulation reliability, and the value pool sits in actuation and sensing rather than the model layer.</p>
   <table id="cover-meta">
     <tr><th>Constitution pin</th><td id="cover-pin">1.3.0</td></tr>
     <tr><th>As of</th><td id="cover-as-of">2026-09-10</td></tr>
     <tr><th>Universe</th><td id="cover-universe">NVDA ~16.7% · ISRG ~16.7% · TSLA ~16.7% · AMZN ~16.7% · PH ~16.7% · SPCX ~16.7%</td></tr>
-    <tr><th>Generated</th><td id="cover-generated">2026-09-10 15:03 UTC</td></tr>
+    <tr><th>Generated</th><td id="cover-generated">2026-09-10 16:20 UTC</td></tr>
   </table>
-  <div id="cover-toc" class="toc"><h2>Contents</h2><ol><li><a href="#page-2">Executive Summary</a></li><li><a href="#page-3">Pillar Verdicts</a></li><li><a href="#page-4">PIL-2 — Actuators dominate BOM; compute is marginal</a></li><li><a href="#page-5">PIL-3 — Manipulation reliability, not intelligence, gates deployment</a></li><li><a href="#page-6">PIL-4 — The GPT-3.5 moment arrives late 2027 through 2028</a></li><li><a href="#page-7">Capability Timeline</a></li><li><a href="#page-8">Evidence — NVDA</a></li><li><a href="#page-9">Evidence — ISRG</a></li><li><a href="#page-10">Evidence — TSLA</a></li><li><a href="#page-11">Evidence — AMZN</a></li><li><a href="#page-12">Evidence — PH &amp;amp; SPCX</a></li><li><a href="#page-13">Coverage Gaps</a></li><li><a href="#page-14">Data-Quality Flags &amp;amp; Contract Compliance</a></li></ol></div>
+  <div id="cover-toc" class="toc"><h2>Contents</h2><ol><li><a href="#page-2">Executive Summary</a></li><li><a href="#page-3">Pillar Verdicts</a></li><li><a href="#page-4">PIL-2 — Actuators dominate BOM; compute is marginal</a></li><li><a href="#page-5">PIL-3 — Manipulation reliability, not intelligence, gates deployment</a></li><li><a href="#page-6">PIL-4 — The GPT-3.5 moment arrives late 2027 through 2028</a></li><li><a href="#page-7">Capability Timeline</a></li><li><a href="#page-8">NVDA — the compute-boundness counterfactual</a></li><li><a href="#page-9">ISRG — the deployed-robot economics analogue</a></li><li><a href="#page-10">TSLA — the only filed humanoid timeline</a></li><li><a href="#page-11">AMZN — deployment economics, not humanoids</a></li><li><a href="#page-12">PH — the motion-control proxy</a></li><li><a href="#page-13">SPCX — compute-led capex, one public quarter</a></li><li><a href="#page-14">Coverage Gaps</a></li><li><a href="#page-15">Data-Quality Flags &amp;amp; Contract Compliance</a></li></ol></div>
+  <svg class="cover-motif" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- golden-ratio spiral: quarter arcs scaling by 1/φ per level -->
+    <g fill="none" stroke="#dcaf3e" stroke-width="1.4">
+      <path d="M 0 200 A 200 200 0 0 1 200 0"/>
+      <path d="M 200 0 A 123.6 123.6 0 0 1 76.4 123.6"/>
+      <path d="M 76.4 123.6 A 76.4 76.4 0 0 1 0 47.2"/>
+      <path d="M 0 47.2 A 47.2 47.2 0 0 1 47.2 0"/>
+      <path d="M 47.2 0 A 29.2 29.2 0 0 1 18 29.2"/>
+      <path d="M 18 29.2 A 18 18 0 0 1 0 11.1"/>
+      <path d="M 0 11.1 A 11.1 11.1 0 0 1 11.1 0"/>
+      <path d="M 11.1 0 A 6.9 6.9 0 0 1 4.2 6.9"/>
+    </g>
+  </svg>
+  <div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">01 / 15</span></div>
 </section>
 
-<section class="page" data-report-page="2" id="page-2">
+<section class="page" data-report-page="2" id="page-2"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">02 / 15</span></div>
+<span class="sec-kicker">Executive Summary · Thesis 001 · As of 2026-09-10</span>
 <h2>Executive Summary</h2>
-<p>Across six names and 24 artifacts, the Q3-2026 disclosure record is consistent with — but does not prove — the thesis's central claim: embodied AI is data- and reliability-bound rather than compute-bound, with a step-change window of <b>2027-Q4 to 2028-Q2</b>.</p>
-<div class="headline"><b>Headline output:</b> GPT-3.5-moment interval <b>2027-Q4 to 2028-Q2</b>, confidence <b>medium</b> — an interval with a confidence band, never a point estimate.</div>
-<h3>Pillar verdicts</h3>
+<div class="stat-row">
+<div class="stat"><div class="num">24</div><div class="lbl">Artifacts</div><div class="sub">6 tickers · 5 skills</div></div>
+<div class="stat"><div class="num">264</div><div class="lbl">Key Metrics</div><div class="sub">machine-extracted, cited</div></div>
+<div class="stat"><div class="num">2 / 4</div><div class="lbl">Pillars Supported</div><div class="sub">PIL-3 · PIL-4</div></div>
+<div class="stat"><div class="num">2027-Q4–2028-Q2</div><div class="lbl">GPT-3.5 Moment</div><div class="sub">confidence: medium</div></div>
+</div>
+<div class="headline"><b>Headline output:</b> the GPT-3.5-moment interval is <b>2027-Q4 to 2028-Q2</b>, confidence <b>medium</b> — an interval with a confidence band, never a point estimate.</div>
+<p>Across six names and 24 artifacts, the Q3-2026 disclosure record is consistent with — but does not prove — the thesis's central claim: embodied AI is data- and reliability-bound rather than compute-bound.</p>
 <ul>
-<li><b>PIL-1 — data-bound: indeterminate.</b> No company discloses embodied-data volumes; the &gt;3-orders-of-magnitude gap test is unmeasurable. Mechanism evidence (NVDA simulation-first, TSLA fleet-data strategy) is directionally consistent; TSLA's chip-supply commentary is a recorded counterpoint.</li>
-<li><b>PIL-2 — actuator BOM 40–70%: indeterminate.</b> No teardown or 10-K discloses a humanoid BOM anywhere; PH's premium-margin Motion Systems franchise is the closest structural proxy and supports direction, not magnitude.</li>
-<li><b>PIL-3 — reliability gates: supported.</b> No MTBF is disclosed anywhere — including ISRG after 25 years and 13M+ procedures; TSLA management twice states reliability (not capability) is the deployment gate. Falsifier (&gt;2,000h MTBF disclosed) untriggered.</li>
-<li><b>PIL-4 — 2027-Q4–2028 inflection: supported.</b> TSLA's own 10-K: "we have yet to commercialize Bots"; no commercial humanoid units disclosed by anyone; TSLA's ramp, ISRG's S-curves, AMZN's sequencing and SPCX's compute-led capex all point to late-2027/2028. Unit-count aspirations treated as promotional.</li>
+<li><span class="badge badge-indeterminate">indeterminate</span> <b>PIL-1 (data-bound)</b> — no company discloses embodied-data volumes; the &gt;3-orders-of-magnitude gap test is unmeasurable. Mechanism evidence (NVDA simulation-first, TSLA fleet-data strategy) is directionally consistent; TSLA's chip-supply commentary is a recorded counterpoint.</li>
+<li><span class="badge badge-indeterminate">indeterminate</span> <b>PIL-2 (actuator BOM 40–70%)</b> — no teardown or 10-K discloses a humanoid BOM anywhere; PH's premium-margin Motion Systems franchise supports direction, not magnitude.</li>
+<li><span class="badge badge-supported">supported</span> <b>PIL-3 (reliability gates)</b> — no MTBF is disclosed anywhere, including ISRG after 25 years and 13M+ procedures; TSLA management twice states reliability (not capability) is the deployment gate.</li>
+<li><span class="badge badge-supported">supported</span> <b>PIL-4 (2027-Q4–2028 inflection)</b> — TSLA's own 10-K: "we have yet to commercialize Bots"; TSLA's ramp, ISRG's S-curves, AMZN's sequencing and SPCX's compute-led capex all point to late-2027/2028. Unit-count aspirations treated as promotional.</li>
 </ul>
-<p><b>Method note.</b> This report is the single-point synthesis of the thesis's 24 per-ticker markdown artifacts (NVDA ×6, ISRG ×5, TSLA ×7, AMZN ×2, PH ×2, SPCX ×1), the cross-stock synthesis task T025, constitution pin 1.3.0, as of 2026-09-10. All evidence and citations are carried verbatim from those artifacts — no retrieval was performed for this report.</p>
+<p><b>Method note.</b> This report is the single-point synthesis of the thesis's 24 per-ticker markdown artifacts (NVDA ×6, ISRG ×5, TSLA ×7, AMZN ×2, PH ×2, SPCX ×1), the cross-stock synthesis task T025, constitution pin 1.3.0. All evidence and citations are carried verbatim from those artifacts — no retrieval was performed for this report.</p>
 </section>
 
-<section class="page" data-report-page="3" id="page-3">
+<section class="page" data-report-page="3" id="page-3"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">03 / 15</span></div>
+<span class="sec-kicker">Falsifier Evaluation · The Four Pillars</span>
 <h2>Pillar Verdicts</h2>
 <table>
-<thead><tr><th style="width:12%">Pillar</th><th style="width:14%">Verdict</th><th>Falsifier note</th></tr></thead>
+<thead><tr><th style="width:12%">Pillar</th><th style="width:16%">Verdict</th><th>Falsifier note</th></tr></thead>
 <tbody>
-<tr><td><b>PIL-1</b></td><td>indeterminate</td><td>Embodied-data gap &gt;3 orders of magnitude — UNTESTABLE (no embodied-data volumes disclosed anywhere in the corpus)</td></tr>
-<tr><td><b>PIL-2</b></td><td>indeterminate</td><td>Actuator share &lt;35% — NOT TRIGGERED but NO EVIDENCE EXISTS (no humanoid teardown or 10-K BOM disclosure anywhere; 40–70% remains industry estimate)</td></tr>
-<tr><td><b>PIL-3</b></td><td>supported</td><td>Humanoid MTBF &gt;2,000h disclosed — NOT TRIGGERED (no MTBF disclosed anywhere, incl. ISRG); gating premise corroborated by TSLA management statements</td></tr>
-<tr><td><b>PIL-4</b></td><td>supported</td><td>&gt;10,000 commercial humanoid units before 2027-Q4 — NOT TRIGGERED (TSLA 10-K: "We have yet to commercialize Bots"; zero disclosed units)</td></tr>
+<tr><td><b>PIL-1</b></td><td><span class="badge badge-indeterminate">indeterminate</span></td><td>Embodied-data gap &gt;3 orders of magnitude — UNTESTABLE (no embodied-data volumes disclosed anywhere in the corpus)</td></tr>
+<tr><td><b>PIL-2</b></td><td><span class="badge badge-indeterminate">indeterminate</span></td><td>Actuator share &lt;35% — NOT TRIGGERED but NO EVIDENCE EXISTS (no humanoid teardown or 10-K BOM disclosure anywhere; 40–70% remains industry estimate)</td></tr>
+<tr><td><b>PIL-3</b></td><td><span class="badge badge-supported">supported</span></td><td>Humanoid MTBF &gt;2,000h disclosed — NOT TRIGGERED (no MTBF disclosed anywhere, incl. ISRG); gating premise corroborated by TSLA management statements</td></tr>
+<tr><td><b>PIL-4</b></td><td><span class="badge badge-supported">supported</span></td><td>&gt;10,000 commercial humanoid units before 2027-Q4 — NOT TRIGGERED (TSLA 10-K: "We have yet to commercialize Bots"; zero disclosed units)</td></tr>
 </tbody>
 </table>
 <h3>PIL-1 — Data, not compute, is the binding constraint</h3>
 <p><span class="wrong_if">metric=embodied_dataset_hours_vs_llm_pretrain_token_gap_order_of_magnitude threshold=&gt;3 source=industry_technical_disclosures op=&gt;</span></p>
-<p><b>Falsifier test result: UNTESTABLE</b> — not triggered, not passed. No industry technical disclosure quantifying embodied-data volumes versus LLM pretrain tokens exists in the retrieval scope, and no company in the six-name corpus discloses any embodied-data volume (dataset hours, teleoperation hours, episodes, or tokens). The metric cannot be computed; the pillar can be neither falsified nor confirmed in magnitude.</p>
-<p><b>Best evidence:</b></p>
+<p><b>Falsifier test result: UNTESTABLE</b> — not triggered, not passed. No industry technical disclosure quantifying embodied-data volumes versus LLM pretrain tokens exists in the retrieval scope, and no company in the six-name corpus discloses any embodied-data volume (dataset hours, teleoperation hours, episodes, or tokens). The metric cannot be computed.</p>
 <ul>
 <li><b>NVDA</b> (compute-boundness counterfactual): management names energy, data-center capacity and capital as the binding constraints on the LLM regime — bounding PIL-1's scope to embodied AI, exactly as the thesis frames it. NVDA's embodied-AI strategy is simulation-first (Omniverse, Cosmos, DRIVE re-simulation), consistent with field embodied data being scarce, but discloses zero embodied-data quantities. <a href="https://agentii.ai/v/NVDA/sec169/36">sec169/36</a> <a href="https://agentii.ai/v/NVDA/sec169/7">sec169/7</a></li>
 <li><b>TSLA</b> (mechanism, no magnitude): discloses the embodied-data collection stack in full — factory-human observation fleet, dedicated demo team, internet video, Optimus Academy RL loop — and earmarks the first Optimus builds for data collection rather than sale, but zero volumes. Its disclosures are compute-rich (~250 MW → ~400 MW planned; AI-infrastructure PP&amp;E $10.8B) and data-poor in units. Recorded counterpoint, not suppressed: management itself treats chip supply as a prospective binding constraint ("we simply won't have enough AI chips" to scale Optimus). <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a> <a href="https://agentii.ai/v/TSLA/ect61/3">ect61/3</a> <a href="https://agentii.ai/v/TSLA/sec258/10">sec258/10</a> <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a></li>
@@ -136,13 +235,13 @@
 <p><b>Verdict: indeterminate</b> — plausible and directionally corroborated, but the falsifier is unmeasurable from this corpus. Not upgraded (no_verdict_inflation).</p>
 </section>
 
-<section class="page" data-report-page="4" id="page-4">
+<section class="page" data-report-page="4" id="page-4"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">04 / 15</span></div>
+<span class="sec-kicker">Falsifier Evaluation · Pillar 2</span>
 <h2>PIL-2 — Actuators dominate BOM; compute is marginal</h2>
 <p><span class="wrong_if">metric=actuator_share_of_humanoid_bom_pct threshold=&lt;35 source=public_teardown_or_10K_disclosure op=&lt;</span></p>
 <p><b>Falsifier test result: NOT TRIGGERED, but no evidence of either sign exists.</b> No humanoid teardown is in the corpus and no 10-K discloses any humanoid BOM split whatsoever. The 40–70% actuator / 10–15% compute claim remains an industry estimate: an honest reading cannot falsify it from filings, and equally cannot confirm it.</p>
-<p><b>Best evidence:</b></p>
 <ul>
-<li><b>PH (closest structural proxy):</b> Motion Systems — the platform containing the exact PIL-2 categories (electromechanical/hydraulic actuators, pumps/motors, drives/controllers) — $3,580M FY2026. Premium economics: DI segment operating margin 23.8%, Aerospace 26.0%, consolidated GM 37.7% — actuators are high-value engineered content, directionally consistent with a large BOM share. But PH has zero humanoid/robotics disclosure ("robot" = 0 hits in the FY2026 10-K), no content-per-platform dollars, no platform-level profitability, and no quantitative rare-earth data. <a href="https://agentii.ai/v/PH/sec166/44">sec166/44</a> <a href="https://agentii.ai/v/PH/sec166/25">sec166/25</a> <a href="https://agentii.ai/v/PH/sec166/26">sec166/26</a> <a href="https://agentii.ai/v/PH/sec166/23">sec166/23</a> <a href="https://agentii.ai/v/PH/sec166/11">sec166/11</a></li>
+<li><b>PH (closest structural proxy):</b> Motion Systems — the platform containing the exact PIL-2 categories (electromechanical/hydraulic actuators, pumps/motors, drives/controllers) — $3,580M FY2026. Premium economics: DI segment operating margin 23.8%, Aerospace 26.0%, consolidated GM 37.7% — actuators are high-value engineered content, directionally consistent with a large BOM share. But PH has zero humanoid/robotics disclosure ("robot" = 0 hits in the FY2026 10-K), no content-per-platform dollars, and no quantitative rare-earth data. <a href="https://agentii.ai/v/PH/sec166/44">sec166/44</a> <a href="https://agentii.ai/v/PH/sec166/25">sec166/25</a> <a href="https://agentii.ai/v/PH/sec166/26">sec166/26</a> <a href="https://agentii.ai/v/PH/sec166/23">sec166/23</a> <a href="https://agentii.ai/v/PH/sec166/11">sec166/11</a></li>
 <li><b>ISRG (disclosed analogue, direction only):</b> effectively ~100% of its revenue stack is actuation-adjacent — instruments &amp; accessories 59.8% of FY2025 revenue, actuated capital at $0.6–3.1M, precision-maintenance service $95–225K/yr — and da Vinci ASPs rose $1.50M → $1.66M on actuation/feature content while compute costs elsewhere deflate. The finest disclosed cost cut is product vs service gross margin (66.3%/64.6%); no BOM-level split exists to calibrate the 40–70% magnitude. <a href="https://agentii.ai/v/ISRG/sec166/page77">sec166/page77</a> <a href="https://agentii.ai/v/ISRG/sec166/page78">sec166/page78</a> <a href="https://agentii.ai/v/ISRG/sec166/page79">sec166/page79</a></li>
 <li><b>TSLA:</b> zero Optimus BOM or per-unit cost disclosure. The only cost-structure commentary is compute-side — "a lot of really specialized power electronics and circuit boards", Samsung/TSMC/Micron AI-compute investment — consistent with compute being the scarce minority (~10–15%) of BOM, silent on the actuator figure. <a href="https://agentii.ai/v/TSLA/sec253/36">sec253/36</a> <a href="https://agentii.ai/v/TSLA/ect61/5">ect61/5</a> <a href="https://agentii.ai/v/TSLA/ect61/3">ect61/3</a></li>
 <li><b>NVDA (supplier-side mix, not a BOM):</b> today's value-weighted physical-AI stack is compute, not actuators (Data Center $75.2B vs Edge $6.4B Q1 FY2027) — a statement about the build-out phase, not a humanoid's bill of materials. <a href="https://agentii.ai/v/NVDA/sec173/21">sec173/21</a></li>
@@ -150,11 +249,11 @@
 <p><b>Verdict: indeterminate</b> — the &lt;35% falsifying evidence has not appeared and nothing contradicts the claim, but the claim itself is an unverified industry estimate; PH's Motion Systems segment is the structural proxy to monitor.</p>
 </section>
 
-<section class="page" data-report-page="5" id="page-5">
+<section class="page" data-report-page="5" id="page-5"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">05 / 15</span></div>
+<span class="sec-kicker">Falsifier Evaluation · Pillar 3</span>
 <h2>PIL-3 — Manipulation reliability, not intelligence, gates deployment</h2>
 <p><span class="wrong_if">metric=humanoid_mtbf_hours_in_commercial_deployment threshold=&gt;2000 source=company_disclosure_or_fleet_operator op=&gt;</span></p>
 <p><b>Falsifier test result: NOT TRIGGERED</b> — no company or fleet operator discloses a humanoid MTBF at all, let alone one above 2,000 hours. The disclosure that would falsify the pillar does not exist anywhere in the six-name corpus, including ISRG.</p>
-<p><b>Best evidence:</b></p>
 <ul>
 <li><b>ISRG (the reliability benchmark's own non-disclosure):</b> after 25+ years, &gt;13M cumulative Xi procedures, and ~13k installed systems, ISRG publishes no MTBF, uptime, or failure-rate metric anywhere in its 10-K/10-Q/transcripts; reliability appears only as a design goal. The only quantitative reliability-adjacent metric is utilization (procedures/system/year): +3% FY2025, +3% Q2 2026. Even the leader runs a human service layer around reliability — 24/7 support, proactive health monitoring, OnSite: reliability is a serviced, fleet-level property, not a published spec. <a href="https://agentii.ai/v/ISRG/ect75/page1">ect75/page1</a> <a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a> <a href="https://agentii.ai/v/ISRG/sec172/page32">sec172/page32</a> <a href="https://agentii.ai/v/ISRG/sec166/page11">sec166/page11</a></li>
 <li><b>TSLA (the only disclosed humanoid programme — management corroboration):</b> two independent statements name reliability, not model capability, as the gate: robotaxi scaling constrained by "the March of 9s of reliability... Ideally, you want 99.999% reliable" — "the only thing really constraining our growth in robotaxi"; and "if we injure even one person... regulators will immediately clamp down on our activities". Optimus "needs to be out in the field and not break down". Capability exists (FSD v14 in production, v15 tracks merged) while deployment is throttled — capability ≠ deployment. No quantitative MTBF disclosed for either program. <a href="https://agentii.ai/v/TSLA/ect61/4">ect61/4</a> <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a></li>
@@ -164,11 +263,11 @@
 <p><b>Verdict: supported</b> — falsifier untriggered; the gating premise is corroborated by the actors themselves (TSLA) and by the reliability leader's non-disclosure pattern (ISRG). Caveat: no quantitative humanoid MTBF exists to measure against the 2,000h threshold — the verdict rests on gating-premise evidence, not on an MTBF observation.</p>
 </section>
 
-<section class="page" data-report-page="6" id="page-6">
+<section class="page" data-report-page="6" id="page-6"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">06 / 15</span></div>
+<span class="sec-kicker">Falsifier Evaluation · Pillar 4</span>
 <h2>PIL-4 — The GPT-3.5 moment arrives late 2027 through 2028</h2>
 <p><span class="wrong_if">metric=general_purpose_humanoid_commercial_units_deployed threshold=&gt;10000 source=company_and_fleet_disclosures</span></p>
 <p>A commercially deployed, general-purpose humanoid fleet at scale before 2027-Q4 falsifies the pillar. <b>Falsifier test result: NOT TRIGGERED</b> — zero commercial general-purpose humanoid units are disclosed by any company in the corpus. TSLA's own filings state "We have yet to commercialize Bots" and describe a "nascent industry that has yet to develop commercially"; no other name discloses a humanoid deployment at all. <a href="https://agentii.ai/v/TSLA/sec253/21">sec253/21</a> <a href="https://agentii.ai/v/TSLA/sec253/20">sec253/20</a></p>
-<p><b>Best evidence:</b></p>
 <ul>
 <li><b>TSLA (the only filed humanoid timeline):</b> starter production late Jul-Aug 2026; initial S-curve "quite flat and long" across "10,000 unique items"; "useful outside of Tesla sometime next year" (2027); second factory (Giga Texas) ~summer 2027; first builds go to Optimus Academy data collection, not customers. The "1 million bots delivered" CEO-award milestone and the "10 million units a year" Optimus 4 aspiration are promotional and excluded from the verdict. <a href="https://agentii.ai/v/TSLA/ect60/3">ect60/3</a> <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a> <a href="https://agentii.ai/v/TSLA/ect60/1">ect60/1</a> <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a> <a href="https://agentii.ai/v/TSLA/sec253/86">sec253/86</a> <a href="https://agentii.ai/v/TSLA/ect61/5">ect61/5</a></li>
 <li><b>ISRG (deployment-curve floor rate):</b> ~25 years to reach ~12–13k systems at ~1.7–2.0k placements/year; the dv5 generational-compute transition reached ~1.7k units in ~2 years. A &gt;10,000-unit humanoid fleet by 2027-Q4 would require a deployment curve roughly 6× faster than the most successful surgical-robot platform transition on record, in a less-proven application. Hardware cycles are multi-year S-curves (7-year Xi precedent), and deployment-cost deflation arrives via tiering and cost-per-use (extended-use instruments from H1 2027), not list-price collapse. <a href="https://agentii.ai/v/ISRG/sec166/page69">sec166/page69</a> <a href="https://agentii.ai/v/ISRG/ect75/page5">ect75/page5</a> <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a></li>
@@ -179,23 +278,40 @@
 <p><b>Verdict: supported</b> — falsifier untriggered (zero commercial units exist, so a &gt;10,000-unit fleet before 2027-Q4 cannot exist), and five independent disclosure sets each place first meaningful scale in late-2027/2028. Disclosed unit-count and aspiration claims are promotional and excluded.</p>
 </section>
 
-<section class="page" data-report-page="7" id="page-7">
+<section class="page" data-report-page="7" id="page-7"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">07 / 15</span></div>
+<span class="sec-kicker">Headline Output · Capability Curve</span>
 <h2>Capability Timeline</h2>
 <p><b>GPT-3.5 moment estimate: 2027-Q4 to 2028-Q2</b> — an interval with a confidence band, never a point estimate. <b>Confidence: medium.</b></p>
-<table>
-<thead><tr><th style="width:22%">Phase</th><th>Evidence anchors (citations carried from artifacts)</th></tr></thead>
-<tbody>
-<tr><td><b>2026 H2 — compute and data infrastructure completes</b></td><td>VeraRubin ships Q3 2026 <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a>; Optimus starter production late Jul-Aug 2026, first builds → data collection <a href="https://agentii.ai/v/TSLA/ect60/3">ect60/3</a> <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a>; AMZN robotic-arm fleet doubles in 2026 <a href="https://agentii.ai/v/AMZN/ect83/2">ect83/2</a>; SPCX compute draw 1.4 GW with ~$18B/quarter capex run-rate <a href="https://agentii.ai/v/SPCX/sec8/36">sec8/36</a> <a href="https://agentii.ai/v/SPCX/ect1/4">ect1/4</a>; TSLA 2026 capex &gt;$20B → &gt;$25B including the Optimus factory <a href="https://agentii.ai/v/TSLA/ect59/2">ect59/2</a> <a href="https://agentii.ai/v/TSLA/sec259/30">sec259/30</a></td></tr>
-<tr><td><b>2027 H1 — capacity and cost-curve preparation</b></td><td>Giga Texas Optimus plant ~summer 2027; "useful outside Tesla" sometime 2027 <a href="https://agentii.ai/v/TSLA/ect60/1">ect60/1</a>; ISRG extended-use instruments H1 2027 — the cost-per-use deflation template <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a>; Rubin ramping <a href="https://agentii.ai/v/NVDA/sec173/33">sec173/33</a></td></tr>
-<tr><td><b>2027-Q4 to 2028-Q2 — the band (headline output)</b></td><td>First meaningful Optimus scale per the flat-and-long S-curve and "no significant production volume until end of 2026" <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a> <a href="https://agentii.ai/v/TSLA/ect59/3">ect59/3</a>; deployment-cost inflection via tiering + cost-per-use per the ISRG template <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a>; SPCX 6-month cloud contracts (from Oct 2026) absorbing compute capacity <a href="https://agentii.ai/v/SPCX/ect1/3">ect1/3</a></td></tr>
-<tr><td><b>2028+ — fleet formation</b></td><td>Uber robotaxi fleet ~30 cities / 4 continents by 2028 <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a>; NVDA "physical AI third wave" 5-year framing, directional and undated <a href="https://agentii.ai/v/NVDA/ect81/5">ect81/5</a></td></tr>
-</tbody>
-</table>
+<div class="timeline">
+<div class="tl-item">
+<span class="tl-phase">2026 H2 — compute &amp; data infrastructure completes</span>
+<p>VeraRubin ships Q3 2026 <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a>; Optimus starter production late Jul-Aug 2026, first builds → data collection <a href="https://agentii.ai/v/TSLA/ect60/3">ect60/3</a> <a href="https://agentii.ai/v/TSLA/sec258/9">sec258/9</a>; AMZN robotic-arm fleet doubles in 2026 <a href="https://agentii.ai/v/AMZN/ect83/2">ect83/2</a>; SPCX compute draw 1.4 GW with ~$18B/quarter capex run-rate <a href="https://agentii.ai/v/SPCX/sec8/36">sec8/36</a> <a href="https://agentii.ai/v/SPCX/ect1/4">ect1/4</a>; TSLA 2026 capex &gt;$20B → &gt;$25B including the Optimus factory <a href="https://agentii.ai/v/TSLA/ect59/2">ect59/2</a> <a href="https://agentii.ai/v/TSLA/sec259/30">sec259/30</a>.</p>
+</div>
+<div class="tl-item">
+<span class="tl-phase">2027 H1 — capacity &amp; cost-curve preparation</span>
+<p>Giga Texas Optimus plant ~summer 2027; "useful outside Tesla" sometime 2027 <a href="https://agentii.ai/v/TSLA/ect60/1">ect60/1</a>; ISRG extended-use instruments H1 2027 — the cost-per-use deflation template <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a>; Rubin ramping <a href="https://agentii.ai/v/NVDA/sec173/33">sec173/33</a>.</p>
+</div>
+<div class="tl-item">
+<span class="tl-phase">2027-Q4 to 2028-Q2 — the band (headline output)</span>
+<p>First meaningful Optimus scale per the flat-and-long S-curve and "no significant production volume until end of 2026" <a href="https://agentii.ai/v/TSLA/ect61/1">ect61/1</a> <a href="https://agentii.ai/v/TSLA/ect59/3">ect59/3</a>; deployment-cost inflection via tiering + cost-per-use per the ISRG template <a href="https://agentii.ai/v/ISRG/ect75/page2">ect75/page2</a>; SPCX 6-month cloud contracts (from Oct 2026) absorbing compute capacity <a href="https://agentii.ai/v/SPCX/ect1/3">ect1/3</a>.</p>
+</div>
+<div class="tl-item">
+<span class="tl-phase">2028+ — fleet formation</span>
+<p>Uber robotaxi fleet ~30 cities / 4 continents by 2028 <a href="https://agentii.ai/v/NVDA/ect81/1">ect81/1</a>; NVDA "physical AI third wave" 5-year framing, directional and undated <a href="https://agentii.ai/v/NVDA/ect81/5">ect81/5</a>.</p>
+</div>
+</div>
 <p><b>Band rationale.</b> The lower bound (2027-Q4) is set by TSLA's own filed statements — no significant production volume before end-2026, external usefulness in 2027, second factory summer 2027 — and by the falsifier design itself (a &gt;10,000-unit fleet before 2027-Q4 falsifies PIL-4; nothing in the corpus suggests that is possible). The upper bound (2028-Q2) reflects the deployment-cost deflation mechanism (ISRG tiering/cost-per-use) and the capex absorption cycle (SPCX contract-backed compute). <b>Confidence is medium, not high</b>, because: (1) every timing input is company disclosure with promotional bias; (2) no unit-cost data exists anywhere, so an inflection cannot be measured as it arrives; (3) ISRG and AMZN are analogue curves, not humanoid data; (4) the falsifier is untriggered only because no units exist at all — the negative evidence is absence, not measurement.</p>
 </section>
 
-<section class="page" data-report-page="8" id="page-8">
-<h2>Evidence — NVDA</h2>
+<section class="page" data-report-page="8" id="page-8"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">08 / 15</span></div>
+<span class="sec-kicker">The Corpus · Compute Reference</span>
+<h2>NVDA — the compute-boundness counterfactual</h2>
+<div class="stat-row">
+<div class="stat"><div class="num">$75.2B</div><div class="lbl">Data Center Q1 FY27</div><div class="sub">+92% YoY · $193.7B FY26</div></div>
+<div class="stat"><div class="num">$6.4B</div><div class="lbl">Edge (robotics) Q1 FY27</div><div class="sub">+29% YoY</div></div>
+<div class="stat"><div class="num">&gt;$9B</div><div class="lbl">Physical AI (LTM)</div><div class="sub">undifferentiated inside Edge</div></div>
+<div class="stat"><div class="num">$119B</div><div class="lbl">Supply Commitments</div><div class="sub">Apr 2026 · $4.5B H20 charge</div></div>
+</div>
 <table>
 <thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
 <tbody>
@@ -209,11 +325,18 @@
 <tr><td>China Hopper shipments Q1 FY2027</td><td>$0 (vs $4.6B a year earlier)</td><td><a href="https://agentii.ai/v/NVDA/sec173/25">sec173/25</a></td></tr>
 </tbody>
 </table>
-<p>NVDA is the compute-boundness counterfactual — and the compute side is ready ahead of the 2027-Q4–2028-Q2 window (VeraRubin Q3 2026). Its robotics revenue remains undifferentiated inside Edge Computing.</p>
+<p><span class="badge badge-fact">fact</span> 204 · <span class="badge badge-deducted">deducted</span> 43 · <span class="badge badge-view">view</span> 22 · 114 citations (7 artifacts). The compute side is ready ahead of the 2027-Q4–2028-Q2 window; the deployment-gate shock that has materialized is regulatory, not reliability.</p>
 </section>
 
-<section class="page" data-report-page="9" id="page-9">
-<h2>Evidence — ISRG</h2>
+<section class="page" data-report-page="9" id="page-9"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">09 / 15</span></div>
+<span class="sec-kicker">The Corpus · Reliability Benchmark</span>
+<h2>ISRG — the deployed-robot economics analogue</h2>
+<div class="stat-row">
+<div class="stat"><div class="num">84%</div><div class="lbl">Recurring Revenue</div><div class="sub">FY2025 · $8.47B</div></div>
+<div class="stat"><div class="num">3.15M</div><div class="lbl">Procedures FY2025</div><div class="sub">+18% YoY · 11,106 installed</div></div>
+<div class="stat"><div class="num">&gt;10,000×</div><div class="lbl">dv5 Compute vs Xi</div><div class="sub">spent on data capture</div></div>
+<div class="stat"><div class="num">+3%</div><div class="lbl">Utilization</div><div class="sub">only reliability proxy</div></div>
+</div>
 <table>
 <thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
 <tbody>
@@ -226,11 +349,18 @@
 <tr><td>MTBF disclosure</td><td>None anywhere (negative finding)</td><td><a href="https://agentii.ai/v/ISRG/ect75/page1">ect75/page1</a></td></tr>
 </tbody>
 </table>
-<p>ISRG is the reliability benchmark — and its 25-year non-disclosure of MTBF is itself the PIL-3 evidence. Utilization and I&amp;A-per-procedure are the only quantitative reliability proxies in the corpus.</p>
+<p><span class="badge badge-fact">fact</span> 165 · <span class="badge badge-deducted">deducted</span> 29 · <span class="badge badge-view">view</span> 19 · 59 citations (5 artifacts). The reliability benchmark's 25-year MTBF non-disclosure is itself the PIL-3 evidence — reliability is a serviced, fleet-level property, not a published spec.</p>
 </section>
 
-<section class="page" data-report-page="10" id="page-10">
-<h2>Evidence — TSLA</h2>
+<section class="page" data-report-page="10" id="page-10"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">10 / 15</span></div>
+<span class="sec-kicker">The Corpus · Integrated Humanoid Programme</span>
+<h2>TSLA — the only filed humanoid timeline</h2>
+<div class="stat-row">
+<div class="stat"><div class="num">$94.8B</div><div class="lbl">FY2025 Revenue</div><div class="sub">−3% YoY</div></div>
+<div class="stat"><div class="num">17.8%</div><div class="lbl">Auto Gross Margin</div><div class="sub">FY2025</div></div>
+<div class="stat"><div class="num">&gt;$20B</div><div class="lbl">2026 Capex Guide</div><div class="sub">vs $8.5B FY2025</div></div>
+<div class="stat"><div class="num">$42.4K</div><div class="lbl">Revenue / Vehicle</div><div class="sub">~$34.9K cost</div></div>
+</div>
 <table>
 <thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
 <tbody>
@@ -244,11 +374,19 @@
 <tr><td>2026 capex</td><td>FY2025 actual $8.53B → &gt;$20B guided (Q4 call) → &gt;$25B (10-Q)</td><td><a href="https://agentii.ai/v/TSLA/sec253/36">sec253/36</a> ; <a href="https://agentii.ai/v/TSLA/ect59/2">ect59/2</a> ; <a href="https://agentii.ai/v/TSLA/sec259/30">sec259/30</a></td></tr>
 </tbody>
 </table>
-<p>TSLA is the only filed humanoid programme. The reliability gate (management's "March of 9s" statement, <a href="https://agentii.ai/v/TSLA/ect61/4">ect61/4</a>) and the flat-and-long S-curve are the timing anchors for the 2027-Q4–2028-Q2 band.</p>
+<p><span class="badge badge-fact">fact</span> 147 · <span class="badge badge-deducted">deducted</span> 34 · <span class="badge badge-view">view</span> 28 · 135 citations (7 artifacts). The reliability gate ("March of 9s", <a href="https://agentii.ai/v/TSLA/ect61/4">ect61/4</a>) and the flat-and-long S-curve are the timing anchors for the 2027-Q4–2028-Q2 band.</p>
 </section>
 
-<section class="page" data-report-page="11" id="page-11">
-<h2>Evidence — AMZN</h2>
+<section class="page" data-report-page="11" id="page-11"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">11 / 15</span></div>
+<span class="sec-kicker">The Corpus · Fleet-Scale Deployer</span>
+<h2>AMZN — deployment economics, not humanoids</h2>
+<div class="stat-row">
+<div class="stat"><div class="num">&gt;1M</div><div class="lbl">Warehouse Robots</div><div class="sub">Feb 2026 · arms doubling</div></div>
+<div class="stat"><div class="num">$128.3B</div><div class="lbl">FY2025 Cash Capex</div><div class="sub">vs $77.7B FY2024</div></div>
+<div class="stat"><div class="num">$96.3B</div><div class="lbl">H1 2026 Cash Capex</div><div class="sub">Q2 alone $53.1B</div></div>
+<div class="stat"><div class="num">15.2%</div><div class="lbl">Fulfillment Intensity</div><div class="sub">vs 15.4% — payback visible</div></div>
+</div>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMjIwIiB2aWV3Qm94PSIwIDAgNjAwIDIyMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiNmMGVkZTMiLz48cG9seWxpbmUgcG9pbnRzPSIyMC4wLDIwMC4wIDMwMC4wLDQwLjAgNTgwLjAsMTQxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFlMmE0YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48Y2lyY2xlIGN4PSIyMC4wIiBjeT0iMjAwLjAiIHI9IjMuNSIgZmlsbD0iI2RjYWYzZSIvPjxjaXJjbGUgY3g9IjMwMC4wIiBjeT0iNDAuMCIgcj0iMy41IiBmaWxsPSIjZGNhZjNlIi8+PGNpcmNsZSBjeD0iNTgwLjAiIGN5PSIxNDEuMiIgcj0iMy41IiBmaWxsPSIjZGNhZjNlIi8+PHRleHQgeD0iMjAuMCIgeT0iMjE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjkiIGZpbGw9IiMxZTJhNGEiPkZZMjAyNDwvdGV4dD48dGV4dCB4PSIzMDAuMCIgeT0iMjE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjkiIGZpbGw9IiMxZTJhNGEiPkZZMjAyNTwvdGV4dD48dGV4dCB4PSI1ODAuMCIgeT0iMjE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjkiIGZpbGw9IiMxZTJhNGEiPkgxIDIwMjY8L3RleHQ+PC9zdmc+" alt="kpi_trend" height="130" style="width:100%;object-fit:contain">
 <table>
 <thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
 <tbody>
@@ -261,12 +399,18 @@
 <tr><td>"robot" in FY2025 10-K</td><td>Zero hits (negative finding)</td><td>— (keyword scan, sec131)</td></tr>
 </tbody>
 </table>
-<p>AMZN is warehouse automation, not humanoids — its evidence bears on deployment economics and sequencing only (greenfield → fleetwide retrofit, a ~2-year bridge).</p>
+<p><span class="badge badge-fact">fact</span> 59 · <span class="badge badge-deducted">deducted</span> 16 · <span class="badge badge-view">view</span> 7 · 23 citations (2 artifacts). Greenfield → fleetwide retrofit is a ~2-year bridge: capex intensity concentrates in years 2–4 of a deployment wave.</p>
 </section>
 
-<section class="page" data-report-page="12" id="page-12">
-<h2>Evidence — PH &amp; SPCX</h2>
-<h3>PH — the actuator franchise</h3>
+<section class="page" data-report-page="12" id="page-12"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">12 / 15</span></div>
+<span class="sec-kicker">The Corpus · Actuator Franchise</span>
+<h2>PH — the motion-control proxy</h2>
+<div class="stat-row">
+<div class="stat"><div class="num">$3.58B</div><div class="lbl">Motion Systems FY2026</div><div class="sub">16.7% of sales</div></div>
+<div class="stat"><div class="num">37.7%</div><div class="lbl">Consolidated GM</div><div class="sub">FY2026</div></div>
+<div class="stat"><div class="num">23.8%</div><div class="lbl">DI Segment Margin</div><div class="sub">Aerospace 26.0%</div></div>
+<div class="stat"><div class="num">$12.8B</div><div class="lbl">Record Backlog</div><div class="sub">Jun 30, 2026</div></div>
+</div>
 <table>
 <thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
 <tbody>
@@ -278,7 +422,19 @@
 <tr><td>Robotics disclosure</td><td>Zero "robot" hits in 10-K and both transcripts (negative finding)</td><td>— (keyword scans, sec166/ect72/ect71)</td></tr>
 </tbody>
 </table>
-<h3>SPCX — upstream leading indicator</h3>
+<p><span class="badge badge-fact">fact</span> 65 · <span class="badge badge-deducted">deducted</span> 13 · <span class="badge badge-view">view</span> 6 · 34 citations (2 artifacts). PH's zero-robotics disclosure is the single most important PIL-4 negative evidence: the largest listed actuator franchise does not yet claim a humanoid revenue stream.</p>
+</section>
+
+<section class="page" data-report-page="13" id="page-13"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">13 / 15</span></div>
+<span class="sec-kicker">The Corpus · Upstream Leading Indicator</span>
+<h2>SPCX — compute-led capex, one public quarter</h2>
+<div class="stat-row">
+<div class="stat"><div class="num">$28.5B</div><div class="lbl">H1 2026 Capex</div><div class="sub">vs $7.0B H1 2025 · +309%</div></div>
+<div class="stat"><div class="num">82.7%</div><div class="lbl">AI Share of Capex</div><div class="sub">86.2% in Q2</div></div>
+<div class="stat"><div class="num">1.4 GW</div><div class="lbl">Nameplate Compute</div><div class="sub">vs 0.4 GW YoY</div></div>
+<div class="stat"><div class="num">$47.5B</div><div class="lbl">Backlog</div><div class="sub">$12.5B H1 revenue</div></div>
+</div>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMjIwIiB2aWV3Qm94PSIwIDAgNjAwIDIyMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiNmMGVkZTMiLz48cG9seWxpbmUgcG9pbnRzPSIyMC4wLDIwMC4wIDU4MC4wLDQwLjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFlMmE0YSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48Y2lyY2xlIGN4PSIyMC4wIiBjeT0iMjAwLjAiIHI9IjMuNSIgZmlsbD0iI2RjYWYzZSIvPjxjaXJjbGUgY3g9IjU4MC4wIiBjeT0iNDAuMCIgcj0iMy41IiBmaWxsPSIjZGNhZjNlIi8+PHRleHQgeD0iMjAuMCIgeT0iMjE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjkiIGZpbGw9IiMxZTJhNGEiPkgxIDIwMjU8L3RleHQ+PHRleHQgeD0iNTgwLjAiIHk9IjIxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSIjMWUyYTRhIj5IMSAyMDI2PC90ZXh0Pjwvc3ZnPg==" alt="kpi_trend" height="110" style="width:100%;object-fit:contain">
 <table>
 <thead><tr><th style="width:34%">Headline [FACT]</th><th style="width:38%">Value</th><th>Citation</th></tr></thead>
 <tbody>
@@ -291,10 +447,11 @@
 <tr><td>Deployment-rate analogue</td><td>Falcon launches 77 H1 2026 (vs 81); mass to orbit 485t (vs 652t)</td><td><a href="https://agentii.ai/v/SPCX/sec8/35">sec8/35</a></td></tr>
 </tbody>
 </table>
-<p>PH's zero-robotics disclosure is the single most important PIL-4 negative evidence; SPCX's compute-led capex is the upstream timing indicator — growth is compute-led, not launch-led.</p>
+<p><span class="badge badge-fact">fact</span> 38 · <span class="badge badge-deducted">deducted</span> 8 · <span class="badge badge-view">view</span> 11 · 26 citations (1 artifact). Growth is compute-led, not launch-led — the infrastructure for the 2027–2028 window is being capitalized now. One-quarter issuer: forward compute targets are promotional.</p>
 </section>
 
-<section class="page" data-report-page="13" id="page-13">
+<section class="page" data-report-page="14" id="page-14"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">14 / 15</span></div>
+<span class="sec-kicker">What This Report Cannot Claim</span>
 <h2>Coverage Gaps</h2>
 <p>Aggregated from the artifacts — ten items that bound what this report can and cannot claim.</p>
 <h3>Universe-level gaps</h3>
@@ -307,15 +464,16 @@
 <h3>Ticker-level gaps (as declared by the artifacts)</h3>
 <ul>
 <li><b>AMZN</b> is warehouse automation, not humanoids: its evidence bears on deployment economics only; the word "robot" appears zero times in the FY2025 10-K — fleet metrics (&gt;1M robots, arm doubling) live only in earnings-call transcripts.</li>
-<li><b>PH</b> has zero robotics disclosure: zero "robot" hits in the FY2026 10-K and the Q3/Q4 FY2026 transcripts; no quantitative rare-earth/magnet sourcing data; no platform-level COGS or margin for Motion Systems; no supplier names. The largest listed actuator franchise does not yet claim a humanoid revenue stream — the single most important PIL-4 negative evidence.</li>
-<li><b>SPCX</b> is a one-quarter issuer: a single 10-Q (2026-08-04) plus 8-Ks; no multi-year history; no named GPU/ASIC/memory/power suppliers in filings (NVIDIA is transcript-only); supplier contracts carry no long-term binding purchase orders. Forward compute targets (&gt;2 GW end-2026, 10 GW end-2027) are promotional.</li>
+<li><b>PH</b> has zero robotics disclosure: zero "robot" hits in the FY2026 10-K and the Q3/Q4 FY2026 transcripts; no quantitative rare-earth/magnet sourcing data; no platform-level COGS or margin for Motion Systems; no supplier names.</li>
+<li><b>SPCX</b> is a one-quarter issuer: a single 10-Q (2026-08-04) plus 8-Ks; no multi-year history; no named GPU/ASIC/memory/power suppliers in filings (NVIDIA is transcript-only); supplier contracts carry no long-term binding purchase orders.</li>
 <li><b>NVDA</b>: no robotics standalone revenue; no embodied-data quantities; no China outlook beyond "no China data-center compute revenue"; Q2 FY2027 10-Q not yet filed (corpus one quarter stale for near-term risk reads).</li>
 <li><b>TSLA</b>: no per-unit economics for Optimus or FSD (no churn/MRR); no quantitative reliability metrics (miles-per-incident, MTBF); robotaxi fleet size disclosed only qualitatively; H2 2026 filings absent.</li>
 <li><b>ISRG</b>: no I&amp;A standalone gross margin; no CAC/payback per hospital; Q2 2026 10-Q citation_ids not surfaced by search_documents (quarterly data cited via transcript + XBRL).</li>
 </ul>
 </section>
 
-<section class="page" data-report-page="14" id="page-14">
+<section class="page" data-report-page="15" id="page-15"><div class="sheet-head"><span>AGENTII THESIS REPORT</span><span>THESIS 001</span></div><i class="reg reg-tl"></i><i class="reg reg-tr"></i><i class="reg reg-bl"></i><i class="reg reg-br"></i><div class="sheet-foot"><span>001-PHYSICAL-AI-TECHNOLOGY-BASELINE</span><span class="page-mark">15 / 15</span></div>
+<span class="sec-kicker">Data Quality · Contract Compliance</span>
 <h2>Data-Quality Flags &amp; Contract Compliance</h2>
 <h3>Flags surfaced by the agents</h3>
 <ol>
